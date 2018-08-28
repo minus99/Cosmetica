@@ -1,0 +1,12 @@
+@include fontFace('regular', '/styles/fonts/hk-grotesk/regular/hkgrotesk-regular-webfont', normal);
+@include fontFace('medium', '/styles/fonts/hk-grotesk/medium/hkgrotesk-medium-webfont', normal);
+@include fontFace('tl', '/styles/fonts/tl/abakutlsymsans', normal);
+
+// Old
+@include fontFace('bold', '/styles/fonts/roboto/bold/RobotoBold', normal);
+@include fontFace('sBold', '/styles/fonts/roboto/medium/RobotoMedium', normal);
+@include fontFace('light', '/styles/fonts/roboto/light/RobotoLight', normal);
+@include fontFace('pdRegular', '/styles/fonts/play-fair/regular/PlayfairDisplayRegular', normal);
+@include fontFace('pdBoldItalic', '/styles/fonts/play-fair/bold-italic/PlayfairDisplayBoldItalic', normal);
+@include fontFace('dRegular', '/styles/fonts/play-fair/regular/PlayfairDisplayRegular', normal);
+@include fontFace('dItalic', '/styles/fonts/play-fair/bold-italic/PlayfairDisplayBoldItalic', normal);

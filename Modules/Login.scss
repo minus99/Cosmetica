@@ -1,0 +1,299 @@
+@media screen and (min-width: $breakpointXSM){
+    .ems-page-default{
+        &-login{
+            .ems-container-section{
+                .ems-col{
+                    width: calc(100% - 490px);
+                }
+                .ems-login-cover{
+                    margin-top: 53px;
+                    width:450px;
+                    min-height: 313px;
+                    float: right;
+                    background:url(#{$baseHref + "/UPLOAD/BANNERS/covers/login-page-cover.jpg"}) center center no-repeat !important;
+                    background-size: cover !important;
+                }
+            }    
+        }    
+    }    
+}
+
+.ems-page-default{
+    &-member-login{
+        width: 100%;
+        max-width: 1000px;
+        padding: 50px 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &-login{
+        padding: 0;
+        .ems-container-section{
+            position: relative;
+            min-height: 500px;
+            .ems-login-cover-text{display: none;}
+            .ems-login-cover{
+                position: relative;
+                &-text{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    padding-top: 50px;
+                    padding-left: 30px; 
+                    .login{
+                        display: none;
+                        .big{
+                            &:before{
+                                font-family: 'tl';
+                                content: 't';
+                                color: #fff;
+                                display: inline-block;
+                                font-size: 29px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    > div >{
+                        span{
+                            display: block;
+                            color: #fff;
+                            &.small{
+                                font-family: $regular;
+                                font-size: 14px;
+                            }
+                            &.big{
+                                margin-top: 10px;
+                                font-family: $medium;
+                                font-size: 40px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .ems-login-tab{display: none;}
+            #validateUye{
+                span[id$="lbfEmailKayitli"]{
+                    &:empty{display: none;}
+                    display: block;
+                    background:#ff566b;
+                    margin-bottom: 20px;
+                    padding: 15px;
+                    color: #ffffff;
+                    line-height: 18px;
+                }
+            }
+            .ems-login, .ems-signup{
+                &-header{
+                    > span{
+                        > span{
+                            display: block;
+                            text-align: left;
+                            font-family: $medium;
+                            font-size: 26px;
+                            padding-bottom: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .ems-form-inner{
+            .ems-field{
+                .ems-form-obj{
+                    padding-left: 0;
+                }
+                &.enter-link{
+                    .btn-login-page{
+                        margin: 0;
+                        > a{
+                            display: block;
+                            padding:15px 10px;
+                            font-family: $regular;
+                            u{font-family: $medium;}
+                        }
+                    }
+                }
+                &.mobile-phone{
+                    .ems-form-label{left:100px;}
+                    .ems-form-obj{
+                        input[id$="CEPTELEFONALAN"]{border-right: none; width: 20% !important;}
+                        input[id$="CEPTELEFONALAN"]::-webkit-input-placeholder,
+                        input[id$="CEPTELEFONALAN"]::-moz-placeholder,
+                        input[id$="CEPTELEFONALAN"]:-ms-input-placeholder,
+                        input[id$="CEPTELEFONALAN"]:-moz-placeholder{color:$lDark;}
+                        input[id$="CEPTELEFONALAN"] + input[id$="CEPTELEFON"]{width: 80% !important;}
+                    }
+                }
+                &-checkbox{
+                    .ems-form-obj{
+                        padding-left: 0;
+                    }
+                }
+                &-password-forget{
+                    margin-bottom: 0;
+                    .ems-form-obj{
+                        text-align: center;
+                        a{
+                            font-family: $regular;
+                            font-size: 14px;
+                            color: $lDark;
+                        }
+                    }
+                }
+                &-facebook{
+                    .ems-form-obj{
+                        padding-bottom: 0;
+                    }
+                }
+                &-checkbox-special{
+                    .ems-form-obj{
+                        > span{
+                            position: relative;
+                            padding-left: 30px;
+                            display: block;
+                        }
+                    }
+                    .checkbox-special{
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        margin-top: -9px;
+                        background: #fff;
+                        width: 18px;
+                        height: 18px;
+                        border-width: 1px 1px 1px 1px;
+                        border-style: solid;
+                        border-color: #171d2f;
+                        display: inline-block;
+                        cursor: pointer;
+                        @include transition(all 0.2s ease);
+                        &.checked{
+                            background: #171d2f;
+                            &:after{
+                                font-family: 'icomoon';
+                                content:'\e918';
+                                font-size: 8px;
+                                color: #fff;
+                                width: 8px;
+                                height: 8px;
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                right: 0;
+                                margin-top: -8px;
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+                        }
+                    }
+                }
+                &-submit{
+                    .btnLogin, .btnYeniUyeKaydet{
+                        background: $lDark;
+                        &:hover{
+                            background: $btnColor;    
+                        }
+                    }
+                }
+                .sStylerMainWrp.sStylerWrp_select{
+                    .sStylerWrp{
+                        &:after{
+                            margin-left: 0;
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -6px;
+                            right: 15px;
+                        }
+                    }
+                }
+                span.checkbox .sStylerMainWrp span.cStyler{
+                    position: relative;
+                    &.checked{
+                        &:after{
+                            font-family: 'icomoon';
+                            content:'\e918';
+                            font-size: 8px;
+                            color: #fff;
+                            width: 8px;
+                            height: 8px;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            right: 0;
+                            margin-top: -8px;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ems-signup{
+        display: none;
+    }
+}
+
+.ems-signup-body{
+    .ems-page-default{
+        .ems-login{
+            display: none;
+        }
+        .ems-signup{
+            display: block;
+        }
+        &-login{
+            .ems-container-section {
+                .ems-login-cover{
+                    min-height: 480px;
+                    background:url(#{$baseHref + "/UPLOAD/BANNERS/covers/login-page-cover-alternate.jpg"}) center center no-repeat !important;
+                    background-size: cover !important;
+                    &-text{
+                        .logoff{
+                            display: none;
+                        }
+                        .login{
+                            display: block;
+                        }   
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ems-login-box {
+    .ems-message{
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .vailLogin{
+        display: none;
+    }
+    .ems-page-default{
+        padding: 0;
+        &-login{
+            .ems-form-inner .ems-field.mobile-phone .ems-form-label{left:70px;}
+            .ems-container-section{
+                .ems-login-cover{
+                    height: 150px;
+                    background:url(#{$baseHref + "/UPLOAD/BANNERS/covers/login-page-cover.jpg"}) center center no-repeat !important;
+                    background-size: cover !important;
+                    &-text{
+                        padding-top: 25px;
+                    }
+                }
+                .ems-col.right{display: none;}
+            }
+        }
+        &-member-login{
+            .ems-col{
+                padding:30px 20px;
+            }
+        }
+    }
+    .ems-signup-body .ems-page-default-login .ems-container-section .ems-login-cover{min-height: inherit; height: 150px;}
+}

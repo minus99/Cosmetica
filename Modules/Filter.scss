@@ -1,0 +1,479 @@
+.kutuOzellikFiltre{
+    .kutuHeaderDefault,
+    .kutuFooterDefault,
+    .urunKiyaslamaOzellik_temizle,
+    .ayiracDefault,
+    .urunKiyaslamaOzellik_btnArama { display: none; }
+}
+
+@media screen and (min-width: 850px){
+    .kutuOzellikFiltre{
+        .kutuBodyOzellikFiltre{
+            > table{
+                > tbody{
+                    > tr{
+                        width: 100%;
+                        @include flex();
+                        justify-content: flex-start;
+                        > td{
+                            &:empty{display:none;}
+                            .urunKiyaslamaOzellik_ozellik{
+                                .urunKiyaslamaOzellik_ozellikAd{
+                                    font-family: $regular;
+                                    font-size: 14px;
+                                    padding: 20px;
+                                    position: relative;
+                                    cursor: pointer;
+                                    overflow: hidden;
+                                    &:after{
+                                        font-family: 'icomoon';
+                                        content: "\e904";
+                                        margin-top: -5px;
+                                        line-height: 1;
+                                        font-size: 10px;
+                                        margin-left: 8px;
+                                    }
+                                    &:before{
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: -5px;
+                                        height: 2px;
+                                        width: 100%;
+                                        background: $lDark;
+                                        @include transition(all .2s ease);
+                                    }
+                                    .mobile-element-filter-span-select{
+                                        &:empty{display: none; }
+                                    }
+                                }
+                                &.activeted{
+                                    .urunKiyaslamaOzellik_ozellikAd{
+                                        &:before{
+                                            bottom: 1px;
+                                        }
+                                    }
+                                }
+                                .urunKiyaslamaOzellik_ozellikIcerik{
+                                    display: none;
+                                    position: absolute;
+                                    background: $lGray;
+                                    width: 580px;
+                                    top: 55px;
+                                    z-index: 1;
+                                    padding:20px 40px 40px 40px; 
+                                    table{
+                                        > tbody{
+                                            >{
+                                                tr{
+                                                    display: table;
+                                                    > td{
+                                                        width: 50%;
+                                                        display: table-cell;
+                                                        vertical-align: top;
+                                                        text-align: left;
+                                                        a{
+                                                            display: inline-block;
+                                                            padding: 10px 10px 8px 30px;
+                                                            font-family: $regular;
+                                                            font-size: 14px;
+                                                            position: relative;
+                                                            color: $lDark;
+                                                            &:before{
+                                                                content:'';
+                                                                width: 18px;
+                                                                height: 18px;
+                                                                background: $lGray;
+                                                                border: solid 1px $gray3;
+                                                                position: absolute;
+                                                                top: 50%;
+                                                                left: 0;
+                                                                margin-top: -9px;
+                                                            }
+                                                            &.link_selected{
+                                                                &:before{
+                                                                    background: $lDark;
+                                                                    border: solid 1px $lDark;
+                                                                } 
+                                                                .filter-count{display: none;}
+                                                            }
+                                                            &:hover{
+                                                                color: $lDark;
+                                                                .filter-count{
+                                                                    color: $lDark;    
+                                                                }
+                                                            }
+                                                        }
+                                                        .urunKiyaslamaOzellik_ozellik {
+                                                            .filter-count{
+                                                                display: none;
+                                                             }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .desktop-element.desktop-filter-clear{
+                                        display:block !important;
+                                        .urunKiyaslamaOzellik_temizle{
+                                            display: block;
+                                            &:empty{display: none;}
+                                            > a{
+                                                background: $lDark;
+                                                display: inline-block;
+                                                padding: 15px;
+                                                width: 100%;
+                                                max-width: 120px;
+                                                text-align: center;
+                                                margin-top: 30px;
+                                                span{color: #fff;}
+                                            }
+                                        }
+                                    }
+                                }
+                                &.filtreBeden{
+                                    .urunKiyaslamaOzellik_ozellikIcerik{ 
+                                        table{
+                                            > tbody{
+                                                >{
+                                                    tr{
+                                                        > td{
+                                                           width: 20%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &.filtreRenk{
+                                    .urunKiyaslamaOzellik_ozellikIcerik{ 
+                                        table{
+                                            > tbody{
+                                                >{
+                                                    tr{
+                                                        > td{
+                                                           .urunKiyaslamaOzellik_ozellik {
+                                                               .urunKiyaslamaOzellik{
+                                                                   img{display: none;}
+                                                               }
+                                                           }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .vailFilter{z-index: 1;}
+    .ems-filter-opened{
+        .vailFilter{opacity: .7; visibility: visible;}
+    }
+    
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .kutuOzellikFiltre{
+        .kutuBodyOzellikFiltre{
+            > table {   
+                > tbody{
+                    > tr{
+                        > td{
+                            &:empty{display: none;}
+                            display: block;
+                            width: 100%;
+                            margin-top: 10px;
+                            .urunKiyaslamaOzellik_ozellik{
+                                position: relative;
+                                .urunKiyaslamaOzellik_ozellikAd{
+                                    font-family: $medium;
+                                    color: $nDark;
+                                    padding:23px 15px 22px 15px;
+                                    padding-right: 100px;
+                                    position: relative;
+                                    background: $lGray;
+                                    > span{
+                                        &:empty{display: none;}
+                                    }
+                                    &:after{
+                                        font-family: 'icomoon';
+                                        content: '\e904';
+                                        position: absolute;
+                                        top: 50%;
+                                        right: 15px;
+                                        width: 24px;
+                                        height: 24px;
+                                        line-height: 25px;
+                                        margin-top: -12px;
+                                        font-size: 12px;
+                                        text-align: center;
+                                    }
+                                    .mobile-element-filter-span-select{
+                                        &:empty{display: none; }
+                                    }
+                                }
+                                &.activeted{
+                                    .urunKiyaslamaOzellik_ozellikAd{
+                                        &:after{
+                                            content: '\e905'; 
+                                        }
+                                    }
+                                }
+                                .urunKiyaslamaOzellik_temizle{
+                                    position: absolute;
+                                    top: 18px;
+                                    right: 45px;
+                                    display: inline-block;
+                                    z-index: 1;
+                                    &:empty{display: none;}
+                                    a{
+                                        display: inline-block;
+                                        padding: 5px 0;
+                                        position: relative;
+                                        text-align: center;
+                                        span{
+                                            font-size: 12px;
+                                            color: $lDark;
+                                        }
+                                    }
+                                }
+                                .urunKiyaslamaOzellik_ozellikIcerik{
+                                    display: none;
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    table{
+                                        > tbody{
+                                            >{
+                                                tr{
+                                                    display: table;
+                                                    > td{
+                                                        width: 100%;
+                                                        display: block;
+                                                        vertical-align: top;
+                                                        text-align: left;
+                                                        a{
+                                                            display: block;
+                                                            padding: 10px 10px 10px 30px;
+                                                            margin-left: 15px;
+                                                            margin-right: 15px;
+                                                            font-family: $regular;
+                                                            font-size: 14px;
+                                                            position: relative;
+                                                            color: $lDark;
+                                                            &:before{
+                                                                content:'';
+                                                                width: 18px;
+                                                                height: 18px;
+                                                                background: #fff;
+                                                                border: solid 1px $gray3;
+                                                                position: absolute;
+                                                                top: 50%;
+                                                                left: 0;
+                                                                margin-top: -9px;
+                                                            }
+                                                            &.link_selected{
+                                                                &:before{
+                                                                    background: $lDark;
+                                                                    border: solid 1px $lDark;
+                                                                } 
+                                                                .filter-count{display: none;}
+                                                            }
+                                                            > img{display: none;}
+                                                        }
+                                                        .urunKiyaslamaOzellik_ozellik {
+                                                            .filter-count{ display: none; }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &.filtreBeden{
+                                    .urunKiyaslamaOzellik_ozellikIcerik{
+                                        table{
+                                            > tbody{
+                                                > tr{
+                                                    &:first-child{
+                                                        margin-top: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ems-mobile{
+        &-sort-popup{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            @include setTransform(translateX(-100%));
+            @include transition(transform 333ms ease-in-out);
+            will-change: transform;
+            .ems-mobile-filter-sort{
+                position: relative;
+                background: $lDark;
+                padding: 18px 40px;
+                text-align: center;
+                .ems-mobile-filter-text{
+                    span{
+                        display: block;
+                        color: #fff;
+                        font-family: $medium;
+                    }
+                }
+                .ems-mobile-filter-btn{
+                    position: absolute;
+                        top: 50%;
+                        right: 15px;
+                        width: 24px;
+                        height: 24px;
+                        margin-top: -12px;
+                        a{
+                            display: block;
+                            text-align: center;
+                            i{line-height: 24px;}
+                            i, i:before{
+                                font-size: 12px;
+                                color: #fff;
+                            }
+                        }
+                }
+            }
+            &-body{
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 100px);
+                overflow-x: hidden;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                ul{
+                    li{
+                        a{
+                            display: block;
+                            font-family: $regular;
+                            color: $nDark;
+                            font-size: 14px;
+                            padding: 15px 20px 15px 50px;
+                            position: relative;
+                            &:before{
+                                content: '';
+                                width: 18px;
+                                height: 18px;
+                                border: solid 1px $gray3;
+                                position: absolute;
+                                top: 50%;
+                                left: 20px;
+                                margin-top: -10px;
+                            }
+                        }
+                        &.selected{
+                            a{
+                                &:before{
+                                    border-color: $lDark;
+                                    background: $lDark;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-filter-buttons{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 50px;
+            .btnDefault {
+                display: inline-block;
+                vertical-align: middle;
+                width: 50%;
+                background: $lDark;
+                span{ color: #fff; }
+                &.btnDefaultMobFilterAction, &.btnDefaultMobPpFilterAction{
+                    background: $btnColor;
+                }
+            }
+        }
+    }
+
+    .ems-custom-filtered{
+        border: none;
+        margin: 0;
+        &-header{
+            span{
+                font-size: 20px;
+            }
+        }
+        &-body{
+            max-width: 90%;
+            > ul{
+                > li{
+                    width: 100%;
+                }
+            }
+        }
+        &-left{
+            padding-right:10px;
+        }
+        &-right{
+            padding-left:10px;
+        }
+        &-footer{
+            max-width: 100%;
+            margin: 0 auto;
+            width: 100%;
+            > div{
+                width: 50%;
+                display: inline-block;
+                .btnDefault, .btnDefault span{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+    .sort-popup-ready{ 
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sort-popup-animate{
+        .ems-mobile{
+            &-fixed-popup{
+                @include setTransform(translateX(0));
+            }    
+        }
+    }
+
+}
