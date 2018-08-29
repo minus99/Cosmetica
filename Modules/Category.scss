@@ -61,7 +61,7 @@
                 position: absolute;
                 top: 55px;
                 left: 0;
-                background: $lGray;
+                background: $Gray;
                 width: 580px;
                 z-index: 1;
                 padding:20px 40px 40px 40px; 
@@ -85,8 +85,8 @@
                             content:'';
                             width: 20px;
                             height: 20px;
-                            background: $lGray;
-                            border: solid 1px $gray3;
+                            background: $Gray;
+                            border: solid 1px $dGray;
                             position: absolute;
                             top: 50%;
                             left: 0;
@@ -173,7 +173,7 @@
                 > b{height: 60px;}
                 > a{
                     display: block;
-                    background: $lGray;
+                    background: $Gray;
                     padding: 23px 35px 22px 15px;
                     font-family: $medium;
                     &:before{ display: none; }

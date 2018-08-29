@@ -92,7 +92,7 @@
                     margin-top: 0;
                     margin-bottom: 10px;
                     font-size: 14px;
-                    color: $nDark;
+                    color: $darkBlack;
                 }
                 span{
                     display: block;
@@ -208,7 +208,7 @@
                 font-weight: normal;
             }
             h1{
-                font-family:$bold;
+                font-family:$regular;
                 font-size: 50px;
             }
             h2{
@@ -224,7 +224,6 @@
                 }
                 &-span, &-btn{
                     display: inline-block;
-                    background: $fdYellow;
                     width: 100%;
                     max-width: 225px;
                     position: absolute;
@@ -235,7 +234,7 @@
                     text-align: center;
                     font-size: 15px;
                     letter-spacing: 0.9px;
-                    font-family: $bold;
+                    font-family: $regular;
                     i.icon-ico_arrow-right{ margin-left:20px; }
                     i.icon-ico_arrow-right, i.icon-ico_arrow-right:before{
                         font-size: 12px;
@@ -831,7 +830,7 @@ button.swiper-pagination-bullet {
 @media screen and (min-width: $breakpointXSM){
     .main-slider-container{
         width: 100%;
-        max-width: 1460px;
+        max-width: 1220px;
         margin: 0 auto;
     }
     .swiper-container{
@@ -1027,7 +1026,7 @@ button.swiper-pagination-bullet {
                 }
                 span{
                     font-family: $medium;
-                    color: $nDark;
+                    color: $darkBlack;
                     font-size: 24px;
                 }
             }

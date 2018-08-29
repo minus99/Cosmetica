@@ -71,11 +71,25 @@ a.btnDefault, .ems-col.ems-col-link a{
     }
 } 
 
+.btnAlternate{
+    background: #ffffff;
+    border: solid 1px #000000;
+    padding: 12px 10px 11px 10px;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    span{
+        font-family: $bold;
+        font-size: 14px;
+        color: $darkBlack;
+    }
+}
+
 .link-btn{
     display: inline-block;
     color: #fff;
     letter-spacing: 1px;
-    font-family: $bold;
+    font-family: $regular;
     font-size: 15px;
     > span, i{
         display: inline-block;

@@ -6,7 +6,7 @@
 .ems-page{
     &-home{
         .order-gray{
-            background:$lGray;
+            background:$Gray;
         }
     }
 }
@@ -226,7 +226,6 @@
                 &-big{
                     span{
                         margin-top: 15px;
-                        font-family: $pdRegular;
                         font-size: 72px;
                     }
                 }

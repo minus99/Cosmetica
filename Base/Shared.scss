@@ -1,7 +1,7 @@
 ::selection {background: #cc0000; color: #FFFFFF; text-shadow: 0 1px 3px #4a536c;}
 ::-moz-selection {background: #cc0000; color: #FFFFFF; text-shadow: 0 1px 3px #4a536c;}
 
-body { -webkit-font-smoothing: antialiased; -moz-font-smoothing: none; color:$lDark; font-family: $regular; }
+body { -webkit-font-smoothing: antialiased; -moz-font-smoothing: none; color:$darkBlack; font-family: $regular; }
 html{-webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;}
  
 span[id$='lbfURN_KDVDAHILSATIS'], span[id$='lbfURN_KDVDAHILSATISILK'] {display:none;}
@@ -11,6 +11,8 @@ i {	font-style: normal; }
 a {outline:none;}    
 
 b {font-weight: 700;}
+
+strong{font-weight: normal;}
 
 body table{ width: 100%; table-layout: fixed; border-collapse: collapse; }
 body table, thead, tbody, tr { width: 100%; }
@@ -116,11 +118,11 @@ body { overflow-x: hidden; }
 	padding: 15px;
 	color: #ffffff;
 	line-height: 18px;
-	b{ font-weight: normal; font-family: $bold; }
+	b{ font-weight: normal; font-family: $regular; }
 }
 
 .ems-message, .pageLogin_yeniUyelikHata, .pageErrorUyeSifre, .pageErrorSifremiUnuttum, .pageSifremiUnuttum_mesaj, .ems-page-new-address .pageErrorDefault {
-	b{ font-weight: normal; font-family: $bold; }
+	b{ font-weight: normal; font-family: $regular; }
 }
 
 .pageLogin_yeniUyelikHata { color:inherit !important; b { font-weight:normal; } }
@@ -157,7 +159,7 @@ body { overflow-x: hidden; }
     position: relative;
     display: block;
 	font-size: 15px;
-	font-family: $bold;
+	font-family: $regular;
     + .page-top-desc, + .pageDescDefault {
         margin-top: 20px;
     }

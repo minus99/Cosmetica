@@ -90,10 +90,10 @@
                     width: 2px;
                 }
                 ::-webkit-scrollbar-track {
-                    background: $eGray;
+                    background: $dGray;
                 }
                 ::-webkit-scrollbar-thumb {
-                    background: $lDark;
+                    background: $dGray;
                 }
                 ::-webkit-scrollbar-thumb:window-inactive {
                     background: $lDark;
@@ -238,7 +238,6 @@
         }
         &-text-span{
             span{
-                font-family: $dRegular;
                 display: block;
                 color: #fff;
                 font-size: 48px;
@@ -1425,11 +1424,11 @@
                     top: 50px;
                     .big-text{
                         font-size: 48px;
-                        color: $nDark;
+                        color: $darkBlack;
                     }
                     .btn-view{
                         small{
-                            color: $nDark;
+                            color: $darkBlack;
                             &:after{
                                 background: $lDark;
                             }
@@ -1515,7 +1514,7 @@
                                 padding-left: 10px;
                                 padding-right: 10px;
                                 font-size: 16px;
-                                color: $nDark;
+                                color: $darkBlack;
                                 &:before{
                                     background:#0d2048;
                                 }
@@ -1531,7 +1530,6 @@
 .ems-content-detail{
     &-title{
         display: block;
-        font-family: $dRegular;
         font-size: 30px;
         color: $lDark;
         padding-bottom: 20px;
@@ -1675,7 +1673,7 @@
                     width: 3px;
                 }
                 ::-webkit-scrollbar-track {
-                    background: $eGray;
+                    background: $dGray;
                 }
                 ::-webkit-scrollbar-thumb {
                     background: $lDark;
@@ -2043,12 +2041,11 @@
                         }
                         &.selected{
                             a{
-                                font-family: $bold;
+                                font-family: $regular;
                                 color: #4c4c4c;
                                 &:before{
                                     width: 13px;
                                     height: 13px;
-                                    background: $fdYellow;
                                     margin-top: -6px;
                                     left: 0;
                                 }
@@ -2325,7 +2322,7 @@
                     padding:30px 20px;
                     span{
                         font-size: 14px;
-                        color: $nDark;
+                        color: $darkBlack;
                         letter-spacing: 3px;
                     }
                     p{font-size: 24px;}
@@ -2398,8 +2395,7 @@
     .ems-content-detail{
         padding-bottom: 0;
         &-title{
-            display: block;
-            font-family: $dRegular;
+            display: block; 
             font-size: 30px;
             color: $lDark;
             padding-bottom: 20px;

@@ -159,7 +159,7 @@
                         align-items: center;
                     }
                     .ems-desktop-count{
-                        .urunKiyaslamaOzellik_UrunSayi span{color:$gray3; font-size: 14px;}
+                        .urunKiyaslamaOzellik_UrunSayi span{color:$dGray; font-size: 14px;}
                         span[id$="lblFiltreler"]{display: none;}
                         span[id$="lblKayitSayisi"]{display: none;}   
                     }
@@ -168,7 +168,7 @@
                             .sStylerWrp{
                                 height:35px;
                                 line-height:25px;
-                                color:$nDark;
+                                color:$darkBlack;
                                 font-size: 14px;
                                 border: none;
                                 padding-right: 30px;
@@ -570,7 +570,7 @@ ul.emosInfinite {
             &-first{
                 font-size: 14px;
                 font-family: $regular;
-                color: $gray3;
+                color: $dGray;
                 text-decoration: line-through;
             }
             &-selling{
@@ -869,7 +869,7 @@ ul.emosInfinite {
                     }
                 }
                 &-first{
-                    background: $lGray;
+                    background: $Gray;
                     padding-bottom: 10px;
                 }
                 &-center{

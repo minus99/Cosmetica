@@ -2,7 +2,7 @@
     .mod-mini-login{
         &-header{
             cursor: pointer;
-            padding:30px 15px;
+            padding:15px;
             @include transition(all 333ms ease);
             position: relative;
             > span[id$="lbhKUTU_HESABIM"]{
@@ -35,7 +35,9 @@
                     display: inline-block;
                     vertical-align: middle;
                 }
-                span{ display: none;}
+                span{
+                
+                }
                 .icon-ico_member, .icon-ico_member:before{
                     font-size: 20px;
                 }
@@ -237,7 +239,6 @@
             .sub-title{
                 display: block;
                 padding:20px 40px 20px 40px;
-                border-bottom: 1px solid $eGray;
                 text-align: left;
                 position: relative;
                 span{
@@ -283,7 +284,6 @@
                         .seperator {
                             span{
                                 font-size: 14px;
-                                font-family: $light;
                                 display: none;
                                 line-height: 22px;
                             }

@@ -5,7 +5,7 @@ $baseHref: '//cosmetica.proj-e.com';
 $marginAuto: 0 auto 0 auto;
 $singleOuter: 1.6rem;
 
-$siteContainerWidth: 1460px;
+$siteContainerWidth: 1240px;
 $siteContainerWidthMiddle: 1200px;
 $siteContainerWidthFull: 100%;
 
@@ -13,40 +13,40 @@ $siteContainerWidthFull: 100%;
 $rgbBg: rgba(35,31,32,0.95);
 
 /*Site fonts*/
-$bold: "bold";
-$sBold: "sBold";
-$light: "light";
 $regular: "regular";
 $medium: "medium";
-$pdRegular: "pdRegular";
-$pdBoldItalic: "pdBoldItalic";
-
-$dRegular: "dRegular";
-$dItalic: "dItalic";
+$bold: "bold";
+$regularA: "regularA";
+$mediumA: "mediumA";
+$boldA: "boldA";
 $tl:"tl";
 
-$ltSpace:4px;
 
-/*New colors*/
-$lGray:#f6f7f9;
-$lDark:#171d2f; 
-$gray3:#a2a5ac;
-$dGray: #5c606d;
-$eGray:#e6e7e9;
-$nDark: #28354f;
-$darkBlack:#0d2048;
-$red:#ff374a;
-$green:#1edeac;
+
+$ltSpace:0.5px;
+
+/*Color style guides*/
+$Gray:#e1e1e1;
+$dGray:#a2a5ac;
+
+$lDark:#171d2f;
+$darkBlack:#000000;
+
+$red:#ee0676;
+$Pink:#fef0f7;
+$Blue:#4849ff;
 $gold: #ffb604;
-$ffYellowL:#ffb604;
+$White: #ffffff;
+
+$green:#2dad6c;
+$lGreen: #5ffcad;
 
 $fbBtnColor:#3656b7;
 $btnColor: #06c0d9;
 $btnAlternateColor:#171d2f;
 
+$radius: 3px;
 
-/*Old site colors*/
-$fdYellow:#fdde00;
-$edGray:#ededed;
-$border:#e6e7e9;
+/*site border*/
+$border:#d3d3d3;
 $inputborder:#e6e7e9;

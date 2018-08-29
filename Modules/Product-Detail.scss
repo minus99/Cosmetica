@@ -5,7 +5,7 @@
 .jconfirm-box-container.col-md-10.installment-popup .jconfirm-content-pane{margin-bottom: 0 !important;}
 .jconfirm-box-container.col-md-10.installment-popup .jconfirm-content{ padding: 50px 28px 20px 28px;}
 .jconfirm-box-container.col-md-10.installment-popup .jconfirm-content ::-webkit-scrollbar { width: 5px; }
-.jconfirm-box-container.col-md-10.installment-popup .jconfirm-content ::-webkit-scrollbar-track { background: $eGray; }
+.jconfirm-box-container.col-md-10.installment-popup .jconfirm-content ::-webkit-scrollbar-track { background: $dGray; }
 .jconfirm-box-container.col-md-10.installment-popup .jconfirm-content ::-webkit-scrollbar-thumb { background: $lDark; }
 .jconfirm-box-container.col-md-10.installment-popup .jconfirm-content ::-webkit-scrollbar-thumb:window-inactive { background: $lDark; }
 .installment-popup .popupTaksit{display: block; overflow-x: hidden; max-height:500px; padding-right: 20px;}
@@ -62,7 +62,7 @@
             width: 0;
         }
         ::-webkit-scrollbar-track {
-            background: $eGray;
+            background: $dGray;
         }
         ::-webkit-scrollbar-thumb {
             background: $lDark;
@@ -323,10 +323,10 @@
                                 > li {
                                     &.title{
                                         text-align: left;
-                                        font-family:$bold;    
+                                        font-family:$regular;    
                                     }
                                     text-align: left;
-                                    font-family:$bold;
+                                    font-family:$regular;
                                 }
                             }
                         }
@@ -343,7 +343,7 @@
                         }
                         .body{
                             > li.title{
-                                font-family:$bold;
+                                font-family:$regular;
                                 font-size:14px;
                                 text-align: center;
                                 padding: 11px 5px;
@@ -355,7 +355,6 @@
                                 font-size: 12px;
                                 padding: 12px 5px;
                                 color:$lDark;
-                                border-bottom:1px solid $eGray;
                                 @include transition(all .2s ease);
                             }
                         }
@@ -412,7 +411,7 @@
                     width: 0;
                 }
                 ::-webkit-scrollbar-track {
-                    background: $eGray;
+                    background: $dGray;
                 }
                 ::-webkit-scrollbar-thumb {
                     background: $lDark;
@@ -626,7 +625,7 @@
                 width: 0;
             }
             ::-webkit-scrollbar-track {
-                background: $eGray;
+                background: $dGray;
             }
             ::-webkit-scrollbar-thumb {
                 background: $lDark;
@@ -711,7 +710,6 @@
     .ems-prd-size-chart{
         &-head{
             padding:25px 20px 25px 60px;
-            border-bottom:1px solid $eGray;
             span{font-size:18px;}
             > span{
                 display: inline-block;
@@ -748,7 +746,7 @@
                 width: 0;
             }
             ::-webkit-scrollbar-track {
-                background: $eGray;
+                background: $dGray;
             }
             ::-webkit-scrollbar-thumb {
                 background: $lDark;
@@ -854,8 +852,7 @@
             .ems-prd-name{
                 display: inline-block !important;
                 font-size: 14px;
-                color: $gray3;
-                font-family: $light;
+                color: $dGray;
                 &:before{
                     content: '/';
                     display: inline-block;
@@ -958,7 +955,7 @@
                 font-family: $medium;
                 text-decoration: line-through;
                 margin-left: 5px;
-                color: $gray3;
+                color: $dGray;
             }   
         }
         &-group{
@@ -1061,7 +1058,6 @@
                         color: $lDark;
                         padding: 20px 0;
                         margin-top: 15px;
-                        border-top: 1px solid $eGray;
                         img{margin-right: 10px;}
                         span, img{
                             display: inline-block;
@@ -1322,7 +1318,7 @@
                 p{
                     font-family: $medium;
                     font-size: 12px;
-                    color: $gray3;
+                    color: $dGray;
                     margin-top: 35px;
                     margin-bottom: 0;
                 }
@@ -1333,7 +1329,6 @@
             p{
                 &:empty{display: none;}
                 font-size: 14px;
-                font-family: $light;
                 line-height: 22px;
                 margin-top: 10px;
                 margin-bottom: 0;
@@ -1343,13 +1338,11 @@
                 display: block;
                 margin-top: 25px;
                 font-size: 14px;
-                font-family: $light;
             }
         }
         &-sort-desc-2{
             &:empty{display: none;}
             padding-top: 15px;
-            border-top: 1px solid $eGray;
             margin-top: 20px;
             a{
                 padding: 20px 40px;
@@ -1838,7 +1831,7 @@
                 min-height: 50px;
                 flex-direction: inherit;
                 flex-wrap: wrap;
-                background: $lGray;
+                background: $Gray;
                 border-top: 1px solid $border;
 
                 &-left{ flex-grow: 1; flex-shrink: 1; flex-basis: auto; }
@@ -1952,7 +1945,7 @@
                 width: 100%;
                 height: calc(100% - 100px);
                 z-index: 19;
-                background: $lGray;
+                background: $Gray;
                 @include flex();
                 flex-wrap: wrap; 
                 align-content: flex-start;
@@ -1977,7 +1970,7 @@
                         min-width: auto;
                         display: block;
                         font-family: $regular;
-                        color: $nDark;
+                        color: $darkBlack;
                         font-size: 14px;
                         padding-top: 13px;
                         padding-bottom: 13px;

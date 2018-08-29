@@ -9,14 +9,13 @@
             display: inline-block;
             padding: 10px 5px 10px 0;
             font-size: 14px;
-            font-family: $light;
-            color: $gray3;
+            color: $dGray;
             &:before{
                 content:'/';
                 display: inline-block;
                 vertical-align: middle;
                 margin-right: 5px;
-                color: $gray3;
+                color: $dGray;
                 position: relative;
                 top: -1px;
             }
@@ -36,12 +35,11 @@
 @media screen and (max-width: $breakpointXSM){
     .navigasyon {
         > span{
-            background: $lGray;
+            background: $Gray;
             a{
                 padding: 0;
                 display: block;
                 font-size: 24px;
-                font-family: $dRegular;
                 color: $lDark;
                 &.homePageBtn{display: none;}
                 

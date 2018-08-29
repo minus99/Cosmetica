@@ -3,9 +3,10 @@
         &-header{
             .ems-cart-info{
                 cursor: pointer;
-                padding:30px 15px;
+                padding:15px;
                 text-align: center;
                 position: relative;
+                background: $red;
                 span{
                     .icon-ico_mini-card, span{
                         display: inline-block;
@@ -13,20 +14,22 @@
                     }
                     .icon-ico_mini-card, .icon-ico_mini-card:before{
                         font-size:20px;
+                        color: $White;
                     }
                 }
                 span[id$="lbfKUTU_URUN"]{ display:none; }
                 span[id$="lbfKUTU_SEPET"]{
                     display:inline-block;
                     vertical-align:middle;
-                    > span{ display:none; }
+                    > span{
+                        color: $White;
+                    }
                 }   
                 span[id$="lblUrunAdet"]{
-                    background:#00d3e7;
+                    background:$White;
                     position: absolute;
                     top: 20px;
                     right: 5px;
-                    background: #00d3e7;
                     width: 23px;
                     height: 23px;
                     padding: 2px 2px 1px 0;
@@ -139,7 +142,7 @@
                 width: 0;
             }
             ::-webkit-scrollbar-track {
-                background: $eGray;
+                background: $dGray;
             }
             ::-webkit-scrollbar-thumb {
                 background: $lDark;
@@ -174,7 +177,6 @@
                 border-top: none;
             }
             .ems-col{
-                border-top: 1px solid $eGray;
                 padding-top: 10px;
                 > div{
                     display: table-cell;
@@ -193,13 +195,13 @@
                         display: none;
                     }
                     .cart-prd-size{
-                        color: $gray3;
+                        color: $dGray;
                         padding-top: 10px;
                         &:before{
                             content:'Beden:';
                             display: inline-block;
                             padding-right:5px; 
-                            color: $gray3;
+                            color: $dGray;
                             font-size: 14px;
                             font-family: $regular;
                         }
@@ -257,7 +259,7 @@
                         min-width:50px;
                         text-align:center;
                         padding:3px 3px 3px 3px;
-                        font-family: $bold;
+                        font-family: $regular;
                         font-size: 15px;
                     }
                     a, span{ display:inline-block; vertical-align:middle; min-height: 25px; }

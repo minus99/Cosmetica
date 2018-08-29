@@ -497,7 +497,7 @@
                     a {
                         font-size: 13px;
                         font-family: $regular;
-                        color: $lGray;
+                        color: $Gray;
                         margin-top: 5px;
                         display: block;
                     }
@@ -508,7 +508,7 @@
                     span[id$="lblSCD_AD1"]{
                         font-family: $regular;
                         text-align: left;
-                        color: $gray3;
+                        color: $dGray;
                         &:before{
                             content:'Beden';
                             font-family: $regular;
@@ -781,7 +781,7 @@
                         position: absolute; 
                         right: 0; 
                         top: 7px; 
-                        font-family: $bold; 
+                        font-family: $regular; 
                         font-size: 15px;
                         width: auto;
                         a.btnHediyeCekiKullan { 
@@ -1066,7 +1066,7 @@
                                 font-family: $regular;
                                 display: block;
                                 font-size: 14px;
-                                color: $nDark;
+                                color: $darkBlack;
                                 margin-top: 5px;
                             }
                             .adresTip2{display: none;}
@@ -1079,7 +1079,7 @@
                             margin-top: 10px;
                             max-height: 40px;
                             overflow: hidden;
-                            color: $nDark;
+                            color: $darkBlack;
                         }
     
                         .btnFatAdrSec {margin-top: 5px;}
@@ -1258,7 +1258,7 @@
                                         order: 1;
                                         font-size: 16px;
                                         font-family: $medium;
-                                        color: $nDark;
+                                        color: $darkBlack;
                                     }
                                     .kargoBilgi{
                                         margin-top: 10px;
@@ -1425,7 +1425,7 @@
                             span[id$="lbfTES_HEDIYEPAKET"]{
                                 display: block;
                                 font-size: 13px;
-                                color: $nDark;
+                                color: $darkBlack;
                             &:empty{display: none;}   
                             }
                         }
@@ -1491,7 +1491,7 @@
                                     a{
                                         font-family: $medium;
                                         font-size: 25px;
-                                        color: $gray3;
+                                        color: $dGray;
                                         padding:20px 15px;
                                         position: relative;
                                         &:after{
@@ -1635,7 +1635,7 @@
                             background:url(#{$baseHref + "/images/frontend/para-puan.svg"}) 90% 15px no-repeat #d1f5fa;
                             > span{
                                 font-size: 14px;
-                                color:$nDark;
+                                color:$darkBlack;
                             }   
                             span.checkbox, span.checkbox .sStylerMainWrp span.cStyler{
                                 width: 15px;
@@ -1692,7 +1692,7 @@
                             flex-grow: 1;
                             font-weight: normal;
                             font-size: 14px;
-                            color: $nDark;
+                            color: $darkBlack;
                             > span{
                                 display: block;
                             }
@@ -1890,14 +1890,14 @@
                                 td {
                                     font-family: $medium;
                                     padding: 10px 5px;
-                                    color: $gray3;
+                                    color: $dGray;
                                     vertical-align: top;
                                 }
                             }
                             .taksit_pesin td {
                                 font-family: $medium;
                                 font-size: 14px;
-                                color: $nDark;
+                                color: $darkBlack;
                             }
                         }
                     }
@@ -1977,7 +1977,7 @@
                                     float: left;
                                     width: 100%; 
                                     clear: both;
-                                    color: $nDark;
+                                    color: $darkBlack;
                                 }
                                 .hesapNo{font-size: 14px;}
                                 b{ 
@@ -1991,7 +1991,7 @@
                                     clear: both;
                                     font-size: 14px; 
                                     margin-top: 10px;
-                                    color: $nDark;
+                                    color: $darkBlack;
                                 }
                                 br {display: none;}
                             }
@@ -2003,7 +2003,7 @@
                                     padding: 10px 10px 10px 35px;
                                     text-align: left;
                                     span {
-                                        color: $nDark;
+                                        color: $darkBlack;
                                         font-size: 14px;
                                     } 
                                     &:before{
@@ -2091,7 +2091,7 @@
                                     span{
                                         font-size: 14px;
                                         font-family: $regular;
-                                        color: $nDark;
+                                        color: $darkBlack;
                                     }
                                 }
                                 .ems-delivery-address-obj{
@@ -2099,7 +2099,7 @@
                                         margin-top: 10px;
                                         display: block;
                                         font-family: $regular;
-                                        color: $nDark;
+                                        color: $darkBlack;
                                         font-size: 14px;
                                         line-height: 22px;
                                     }
@@ -2261,7 +2261,7 @@
                                 width: 3px;
                             }
                             ::-webkit-scrollbar-track {
-                                background: $eGray;
+                                background: $dGray;
                             }
                             ::-webkit-scrollbar-thumb {
                                 background: $lDark;
@@ -2365,7 +2365,7 @@
                 }
                 &.btnAnasayfaGit{
                     background: none;
-                    color: $nDark;
+                    color: $darkBlack;
                 }
             }
         }
