@@ -1,33 +1,37 @@
 .site-footer{
+    background:#db9caf;
+    background: linear-gradient(70deg, #d27fd4, #db9caf 34%, #9bbaf2 61%, #adff93);
     &-menu{
+        padding-bottom: 23px;
+        padding-top: 25px;
+        ul li a{
+            color: $White;
+            font-size: 14px;
+        }
         > ul{
             display: table;
-            table-layout: fixed;
             width: 100%;
+            max-width: 1060px;
             > li{
                 display: table-cell;
                 vertical-align: top;
+                > a{
+                    font-family: $bold;
+                    display: inline-block;
+                    padding: 5px 5px 5px 0;
+                    margin-bottom: 5px;
+                }
                 > ul{
                     > li{
                         a{
                             font-family: $regular;
-                            font-size: 16px;
                             display: inline-block;
-                            padding: 5px 21px 5px 0;
+                            padding: 8px 5px 8px 0;
+                            color: $White;
                         }
                     }
                 }
             }
-        }
-    }
-    &-center,
-    &-bottom{
-        .ems-container{ max-width: 1250px; }
-    }
-    &-center{
-        > .ems-container{
-            padding-top: 40px;
-            padding-bottom: 40px;
         }
     }
     &-social{
@@ -36,22 +40,26 @@
                 width: auto;
                 display: table;
                 margin-left: auto;
-                margin-right: auto;
+                margin-right: 0;
                 > li{
                     display: table-cell;
                     vertical-align: middle;
                     a{
                         display: inline-block;
-                        text-align: center;
+                        text-align: right;
+                        width: 30px;
+                        height: 30px;
                         i{
                             display: block;
-                            font-size: 24px;
-                            width: 24px;
-                            height: 24px;
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            font-size: 15px;
                             &:before{
-                                font-size: 24px;
-                                color: $lDark;
+                                color: $White;
+                                font-size: 15px;
                             }
+                            &.icon-ico_twitter, &.icon-ico_twitter:before{font-size: 16px;}
                         }
                     }
                 }
@@ -71,13 +79,25 @@
             margin-bottom: 0;
         }
     }
+    &-customer-service{
+        span, .icon-ico_phone{
+            display: inline-block;
+            vertical-align: middle;
+            color: $White;
+        }
+        span{font-size: 14px; font-family: $regular; }
+        i.icon-ico_phone{margin-right: 10px;}
+        i.icon-ico_phone, .icon-ico_phone:before{
+            color: $White;
+            font-size: 21px;
+        }
+    }
     &-corporate{
         p{
             > a{
                 display: inline-block;
                 &:first-child{
                     margin-right: 10px;
-                    border-right: 1.5px solid #aeb0b7;
                     padding-right: 10px;
                 }
             }
@@ -88,9 +108,6 @@
 /*Single Desktop*/
 @media screen and (min-width: $breakpointXSM){
     .site-footer{
-        border-top: 1px solid #e6e7e9;
-        padding-top: 40px;
-        padding-bottom: 30px;
         &-menu{
             > ul{
                 > li{
@@ -98,7 +115,6 @@
                         > li{
                             a{
                                 line-height: 15px;
-                                color: $darkBlack;
                                 &:hover{
                                     color: $btnColor;
                                 }
@@ -108,23 +124,42 @@
                 }
             }
         }
+        &-center,
+        &-bottom,
+        &-menu-grid{
+            .ems-container,
+            .site-footer-menu{ max-width: 1220px; }
+        }
+        &-menu-grid{
+            .site-footer-menu{
+                margin-left: auto;
+                margin-right: auto;
+                border-top: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+            }
+        }
+        &-top{
+            background:#fafafa;
+        }
         &-center{
             > .ems-container{
-                .ems-cell-1 {width:60%;}
-                .ems-cell-2 {width:40%;}
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+        }
+        &-center{
+            > .ems-container{
+                .ems-cell{ vertical-align: middle; }
+                .ems-cell-1 {width:25%;}
+                .ems-cell-2 {width:50%;}
+                .ems-cell-3 {width:25%;}
             }
         }
         &-social{
-            border-width:1px 0 1px 0;
-            border-color:$border;
-            border-style: solid; 
-            margin-top: 20px;
             &-inner{
                 > ul{
-                    padding-top: 35px;
-                    padding-bottom: 35px;
                     > li{
-                        padding-left: 80px;
+                        padding-left: 20px;
                         &:first-child{ padding-left: 0; }
                     }
                 }
@@ -137,7 +172,8 @@
         }
         &-copyright{
             p{
-                font-size: 14px;
+                font-size: 15px;
+                color: $White;
             }
         }
         &-corporate{
@@ -146,11 +182,13 @@
             }
         }
     }
+
     .kutuBulten{
         display: table;
         width: 100%;
-        max-width: 450px;
+        max-width: 455px;
         margin-left: auto;
+        margin-right: auto;
     }
 
     /*Cookie*/
@@ -172,14 +210,10 @@
 .kutuBulten{
    .mod-newsletter{
     &-header{
+        display: none;
         > span{
             display: block;
             padding-bottom: 20px;
-            span{
-                color: $darkBlack;
-                font-family: $medium;
-                font-size: 16px;
-            }
         }
     }
     &-body{
@@ -187,13 +221,13 @@
             .ems-field{
                 &.text{
                     input{
-                            height:50px;
-                            line-height: 40px;
+                            height:40px;
+                            line-height: 28px;
                             background: #fff;
                             border:1px solid $border;
-                            color: $lDark;
+                            color: #757575;
                             padding-left: 15px;
-                            padding-right: 55px;
+                            padding-right: 40px;
                         }
                     }
                     &.submit{
@@ -204,22 +238,23 @@
                         width: auto;
                         height: auto;
                         z-index: 1;
-                        margin-top: -22px;
+                        margin-top: -15px;
                         .btnBultenGonder{
                             background: none;
-                            padding: 13px;
+                            padding:5px;
                             span{
                                 font-size: inherit;
                                 i, i:before{
-                                    font-size: 17px;
+                                    font-size: 20px;
                                 }
                                 i:before{
-                                    color: $lDark;
+                                    color: $darkBlack;
                                 }
                             }
                         }
                     }
                     &.checkbox {
+                        display: none;
                         padding-top: 15px;
                         .data-Privacy{
                             display: inline-block;

@@ -18,6 +18,8 @@
                         display: inline-block;
                         font-weight: normal;
                         margin: 0;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
                         a{display: block;}
                     }
                 }
@@ -29,17 +31,36 @@
             &-top{
                 .ems-inline-table{
                     > .ems-col{
-                        vertical-align: middle;
-                        position: inherit;
-                        .ems-cell-3{
-                            @include flex();
-                            justify-content: flex-end;
-                        }
                         &.ems-col-1{
-                            width: 160px;
+                            float: left;
+                            width: 227px;
+                            display: table;
                         }
-                        &.ems-col-3{
-                            position: relative;
+                        &.ems-col-2{
+                            display: table;
+                            table-layout: fixed;
+                            width: calc(100% - 227px);
+                            > .ems-cell {
+                                float: left;
+                                display: table;
+                                table-layout: fixed;
+                                &-1{
+                                    width: 60%;
+                                    max-width: 595px;
+                                    padding-bottom: 10px;
+                                    padding-top: 10px;
+                                }
+                                &-2{
+                                    width: 40%;
+                                    padding-left: 40px;
+                                    > .ems-cell{
+                                        display: table-cell;
+                                        vertical-align: middle;
+                                        padding-top: 7px;
+                                        padding-bottom: 7px;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -48,6 +69,7 @@
     }
 
     .site-discount-banner{
+        background:#ef6bbb;
         background-image: linear-gradient(to right, #d27fd4, #db9caf 24%, #9bbaf2 52%, #adff93);
         &.show{
             
@@ -102,17 +124,24 @@
             }
             .banner-close{
                 position: absolute;
-                top: 0;
+                top: 50%;
                 right: 20px;
-                width: 19px;
-                height: 100%;
+                width: auto;
+                height: auto;
+                margin-top: -5px;
                 cursor: pointer;
                 z-index: 1;
+                > span{
+                    font-family:$mediumA;
+                    letter-spacing: $ltSpace;
+                    color: #f6fafd;
+                }
                 .hide{display: none;}
             }
         }
         &-alternate{
-            background-image: linear-gradient(to right, #5292dc, #ef6bbb);
+            background:#ef6bbb;
+            background: linear-gradient(to right, #5292dc, #ef6bbb);
             > div{
                 width: 100%;
                 max-width: 1210px;
@@ -161,6 +190,7 @@
                 &.single-color{
                     > a{
                         color: $red;
+                        span{ strong{font-family: $bold;} }
                     }
                 }
                 > ul.sub-nav{

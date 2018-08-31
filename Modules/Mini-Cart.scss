@@ -3,16 +3,17 @@
         &-header{
             .ems-cart-info{
                 cursor: pointer;
-                padding:15px;
+                padding:13px 5px;
                 text-align: center;
                 position: relative;
                 background: $red;
                 span{
-                    .icon-ico_mini-card, span{
+                    .icon-ico_basket, span{
                         display: inline-block;
-                        vertical-align: middle;
+                        vertical-align: bottom;
                     }
-                    .icon-ico_mini-card, .icon-ico_mini-card:before{
+                    .icon-ico_basket{margin-right: 5px;}
+                    .icon-ico_basket, .icon-ico_basket:before{
                         font-size:20px;
                         color: $White;
                     }
@@ -38,6 +39,16 @@
                     text-align: center;
                     display: none;
                     font-size: 11px;
+                }
+                &:before{
+                    content:'';
+                    display: block;
+                    width: 100%;
+                    height:10px;
+                    position: absolute;
+                    top: -10px;
+                    left: 0;
+                    background: $red;
                 }
             }
         }
