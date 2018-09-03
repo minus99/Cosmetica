@@ -101,23 +101,23 @@ body { overflow-x: hidden; }
 
 .ems-message{
 	&:empty{ display: none; }
+	padding: 15px;
+	font-family: $mediumA;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	color: #000;
+	font-size: 14px;
+	background:#fff;
+	text-align: left;
 	&-success{
-		background:#1edeac;
+		border-color:$green;
 	}
 	&-error{
-		background:#ff374a;
-		margin-bottom: 20px;
+		border: 2px solid #ff0000;
 	}
 	&-warning{
-		border:1px solid $red;
-		color: $lDark !important;
+		border: 2px solid #ff0000;
 	}
-}
-
-.ems-message {
-	padding: 15px;
-	color: #ffffff;
-	line-height: 18px;
 	b{ font-weight: normal; font-family: $regular; }
 }
 

@@ -24,25 +24,26 @@
             position: relative;
             > span[id$="lbhKUTU_HESABIM"]{
                 display: inline-block;
-                max-width: 70px;
+                width: 100%;
+                max-width: 100px;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
-                padding-top: 5px;
-                padding-left: 25px;
                 position: relative;
+                padding-left: 30px;
+                height: 20px;
+                padding-top: 4px;
                 &:before{
                     font-family: 'icomoon';
-                    content: '\e909';
-                    font-size: 19px;
+                    content: '\e92b';
+                    font-size: 20px;
                     display: inline-block;
                     vertical-align: middle;
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 19px;
-                    height: 19px;
-                    border-radius: 100%;
+                    width: 20px;
+                    height: 20px;
                     z-index: 1;
                 }
                 &:empty{display: none;}
@@ -62,30 +63,40 @@
         .ems-user-info{
             span[id$="lbfUYE_SAYIN"]{
                 display: block;
-                font-family:$medium;
-                font-size:15px;
-                padding:20px 40px;
-                border-bottom:1px solid $border;
+                font-family:$boldA;
+                font-size:14px;
+                padding:20px 30px;
                 text-align: left;
                 position: relative;
                 &:empty{display: none;}
                 > span{
                     display: block;
+                    letter-spacing: 1.6px;
+                    &:after{
+                        content:'';
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 100%;
+                        height: 2px;
+                        background: #e1e1e1;
+                        max-width: 150px;
+                        margin-left: 20px;
+                    }
                 }
                 .mini-login-close{
                     position: absolute;
                     top: 50%;
-                    left: 0;
-                    width: 24px;
-                    height: 24px;
-                    margin-top: -11px;
+                    right: 10px;
+                    width: 30px;
+                    height: 30px;
+                    margin-top: -15px;
                     z-index: 1;
                     text-align: center;
                     cursor: pointer;
-                    i{line-height: 24px;}
+                    i{line-height: 30px;}
                     i, i:before{
-                        font-size: 12px;
-                        color: $lDark;
+                        font-size: 13px;
+                        color: #000;
                     }
                 }
             }
@@ -128,19 +139,29 @@
                     > div {
                         a{
                             &:hover{
-                                color: $btnColor;
+                                
                             }
                             &.btnKutuLogout{
-                                padding-top: 18px;
-                                padding-bottom: 18px;
-                                margin-top: 20px;
-                                &:hover{
-                                    color: #fff;
-                                }
+                                
                             }
                         }
                     }               
                 }
+            }
+        }
+    }
+
+    .ems-login{
+        .vailLogin{
+            height: calc(100% - 60px);
+            top: 60px;
+        }
+        .mod-mini-login{
+            &-body{
+                position: fixed;
+                top: 60px;
+                right: 0;
+                height: auto;
             }
         }
     }
@@ -160,11 +181,10 @@
             }
         }
         .vailLogin{
-            opacity: .2;
+            opacity: .5;
             visibility: visible;
         }
     }
-
     .ems-login.mini-login-ready{
         .mod-mini-login{
             &-body{
@@ -180,7 +200,7 @@
             }
         }
         .vailLogin{
-            opacity: .2;
+            opacity: .5;
             visibility: visible;
         }
     }
@@ -192,11 +212,12 @@
         .sub {
             display: none;
             .ems-message{
-                display: table;
-                width: 100%;
+                display: block;
                 text-align: center;
                 margin-bottom: 0;
                 margin-top: 20px;
+                margin-left: 30px;
+                margin-right: 30px;
                 &:empty{
                     display: none;
                 }
@@ -317,17 +338,21 @@
                 display: none;
             }
             .ems-user-pages{
-                padding:15px 40px 30px 40px;
+                padding:0 30px 30px 30px;
                 > div {
                     a{
-                        display: inline-block;
+                        display:block;
                         padding:10px 0;
                         font-size: 16px;
-                        font-family: $medium;
+                        font-family: $regular;
                         &.btnKutuLogout{
-                            padding-top: 18px;
-                            padding-bottom: 18px;
-                            margin-top: 20px;
+                            border: none;
+                            padding:10px 0;
+                            display: block;
+                            width: auto;
+                            color: $red;
+                            text-align: left;
+                            span{font-size: 16px;}
                         }
                     }
                 }               

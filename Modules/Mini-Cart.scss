@@ -54,14 +54,12 @@
         }
         &-cargo-info{
             display: none;
-            padding-top: 5px;
-            span{ font-family: $regular; color: $btnColor; }
-            span{
-                display: inline-block;
-                vertical-align: middle;
-            }
+            background:#d27fd4;
+            background: linear-gradient(to right, #d27fd4, #db9caf 24%, #9bbaf2 52%, #adff93);
+            padding: 15px 5px;
+            span{ font-family: $bold; color: #fff; display: block; text-align: center; }
             i{display: none;}
-            i, i:before{color:$btnColor; font-size:20px;}
+            i, i:before{ color: #fff;; font-size: 20px; }
         }
         &-body{
             position: absolute;
@@ -74,17 +72,6 @@
             visibility: hidden;
             @include transition(all 0.3s ease);
             background: #fff;
-            &:before{
-                content:'';
-                position: absolute;
-                top: -12px;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                width: 20px;
-                height: 12px;
-                background:url(#{$baseHref + "/images/frontend/mini-cart-triangle.png"}) no-repeat;
-            }
             div.title{
                 display: block;
                 padding: 20px 40px;
