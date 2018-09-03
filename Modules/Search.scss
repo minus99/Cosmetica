@@ -4,9 +4,6 @@
         display: none;
     }
     .ems-form{
-        &-inner{
-            
-        }
         .ems-field{
             input{
                 text-align: left;
@@ -34,6 +31,7 @@
                     right: 0;
                     padding: 0;
                     background: none;
+                    border: none;
                     @include transition(opacity 333ms ease-in-out);
                     span{
                         display: block;

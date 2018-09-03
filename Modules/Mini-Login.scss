@@ -58,21 +58,6 @@
                 }
                 &:empty{display: none;}
             }
-            &:after{
-                content:'';
-                position: absolute;
-                bottom: -20px;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                width: 20px;
-                height: 12px;
-                background:url(#{$baseHref + "/images/frontend/mini-cart-triangle.png"}) no-repeat;
-                z-index: 16;
-                opacity: 0;
-                visibility: hidden;
-                @include transition(all 0.3s ease);
-            }
         }
         .ems-user-info{
             span[id$="lbfUYE_SAYIN"]{
@@ -106,18 +91,13 @@
             }
         }
         &-body{
-            position: absolute;
-            top: 100px;
+            position: fixed;
+            top: 0;
             right: 0;
-            left: 0;
             width: 100%;
-            max-width: 400px;
-            height:auto;
+            max-width: 380px;
+            height:100%;
             z-index: 16;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
             display: block;
             @include transition(all 0.3s ease);
             opacity: 0;
@@ -128,17 +108,17 @@
                         &-submit{
                             .btnKutuLogin{
                                 span{ @include transition(all 0.2s ease); }
-                                &:hover{ background: $btnColor; }
+                                //&:hover{ background: $btnColor; }
                             }
                         }
                         &-free{
                             span[id$="lbflnkUyeOlmak"]{
                                 a{
                                     span{ @include transition(all .2s ease); }
-                                    &:hover{
+                                    /*&:hover{
                                         border-color: $btnColor;
                                         span{color: $btnColor;}
-                                    }
+                                    }*/
                                 }
                             }
                         }
@@ -165,18 +145,6 @@
         }
     }
 
-    .mini-login-animate{
-        .mod-mini-login{
-            &-header{
-                &:after{
-                    bottom: 0;
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-        } 
-    }
-
     .ems-logoff.mini-login-ready{
         .mod-mini-login{
             &-body{
@@ -187,7 +155,6 @@
     .ems-logoff.mini-login-animate{
         .mod-mini-login{
             &-body{
-                top: 80px;
                 opacity: 1;
                 visibility: visible;
             }
@@ -208,7 +175,6 @@
     .ems-login.mini-login-animate{
         .mod-mini-login{
             &-body{
-                top: 80px;
                 opacity: 1;
                 visibility: visible;
             }
@@ -218,23 +184,7 @@
             visibility: visible;
         }
     }
-    .ems-logoff.mini-login-animate, .ems-login.mini-login-animate{
-        .mod-mini-login-body .sub {
-            .ems-form-inner{
-                opacity: 1;
-                @include setTransform(translateY(0));
-            }
-            .ems-user-pages{
-                opacity: 1;
-                @include setTransform(translateY(0));
-            }   
-        }
-    }
 }
-
-/*Languages*/
-.tr-TR .mod-mini-login-body .sub .ems-form-inner .ems-field .seperator span.tr{display: block;}
-.en-US .mod-mini-login-body .sub .ems-form-inner .ems-field .seperator span.en {display: block;}
 
 .mod-mini-login{
     &-body{
@@ -253,54 +203,75 @@
             }
             .sub-title{
                 display: block;
-                padding:20px 40px 20px 40px;
+                padding:20px 30px 20px 30px;
                 text-align: left;
                 position: relative;
                 span{
-                    display: inline-block;
-                    font-size: 18px;
+                    display: block;
+                    font-size: 14px;
                     color: $lDark;
-                    font-family: $medium;
-                    &:before{
-                        font-family: 'icomoon';
-                        content: '\e909';
-                        font-size: 20px;
+                    font-family: $boldA;
+                    letter-spacing: 1.6px;
+                    &:after{
+                        content:'';
                         display: inline-block;
-                        margin-right: 10px;
-                        display: none;
+                        vertical-align: middle;
+                        width: 100%;
+                        height: 2px;
+                        background: #e1e1e1;
+                        max-width: 188px;
+                        margin-left: 20px;
                     }
                 }
                 .mini-login-close{
                     position: absolute;
                     top: 50%;
-                    left: 0;
-                    width: 24px;
-                    height: 24px;
-                    margin-top: -11px;
+                    right: 25px;
+                    width: 30px;
+                    height: 30px;
+                    margin-top: -15px;
                     z-index: 1;
                     text-align: center;
                     cursor: pointer;
-                    i{line-height: 24px;}
+                    i{line-height: 30px;}
                     i, i:before{
-                        font-size: 12px;
-                        color: $lDark;
+                        font-size: 13px;
+                        color: $darkBlack;
                     }
                 }
             }
             .ems-form{
                 &-inner{
-                    padding:30px 20px;
-                    @media screen and (min-width: $breakpointXSM){
-                        @include transition(all 0.3s ease);
-                        opacity: 0;
-                        @include setTransform(translateY(20px));
+                    padding:15px 30px;
+                    .ems-field-flex{
+                        padding-top: 10px;
+                        @include flex();
+                        justify-content: space-between;
+                        margin-left: 35px;
+                        margin-right: 35px;
                     }
                     .ems-field{
                         .seperator {
                             span{
-                                font-size: 14px;
+                                font-style: italic;
+                                font-size: 13px;
                                 display: none;
-                                line-height: 22px;
+                                color: #757575;
+                                font-family: $mediumA;
+                                &.tr{display: inline-block;}
+                            }
+                        }
+                        &-multiple{
+                            .seperator,
+                            span[id$="lbflnkUyeOlmak"]{
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 13px;
+                                color: #757575;
+                                font-family: $mediumA;
+                                text-decoration: underline;
                             }
                         }
                         .ems-form-obj{
@@ -310,39 +281,34 @@
                         }
                         #lnkSifremiUnuttum{
                             display: inline-block;
+                            vertical-align: middle;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
                             span{
-                                text-decoration: underline;
-                                font-family: $medium; }
-                            &:hover{
-                                span{color: $btnColor;}
+                                font-size: 13px;
+                                color: #757575;
+                                font-family: $mediumA;
                             }
                         }
                         &-submit{
-                            @include flexDirection(column);
                             .btnKutuLogin{
-                                background: $lDark;
-                                color: #fff;
-                                margin-bottom: 20px;
-                                margin-top: 30px;
-                            }
-                            .pageLogin_btnFacebookLoginKutu{
-                                .btnFacebookLoginKutu{margin-top: 15px;}
+                                display: block;
+                                width: auto;
+                                margin-left: 35px;
+                                margin-right: 35px;
                             }
                         }
-                        &-free{
-                            span[id$="lbflnkUyeOlmak"]{
-                                width: 100%;
-                                display: block;
-                                margin-top: 20px;
-                                a{
-                                    color: $lDark;
-                                    font-size: 16px;
-                                    font-family: $medium;
-                                    display: block;
-                                    padding: 16px 10px 15px 10px;
-                                    border: 1px solid $lDark;
-                                }
-                            }
+                    }
+                    .pageLogin_btnFacebookLoginKutu{
+                        .btnFacebookLoginKutu{
+                            display: block;
+                            width: auto;
+                            margin-top: 10px;
+                            margin-left: 35px;
+                            margin-right: 35px;
+                            padding-top: 13px;
+                            padding-bottom: 13px;
+                            border: none;
                         }
                     }
                 }
@@ -352,11 +318,6 @@
             }
             .ems-user-pages{
                 padding:15px 40px 30px 40px;
-                @media screen and (min-width: $breakpointXSM){
-                    @include transition(all 0.3s ease);
-                    opacity: 0;
-                    @include setTransform(translateY(20px));
-                }
                 > div {
                     a{
                         display: inline-block;
@@ -423,7 +384,7 @@ body.ems-login.mini-login-ready{
 }
 
 @media only screen and (min-width: 850px) and ( max-width: 1200px) {
-    .mod-mini-login-header{padding-left: 10px; padding-right: 10px;}
+    
 }
 
 @media screen and (max-width: $breakpointXSM){

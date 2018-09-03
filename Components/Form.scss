@@ -1,14 +1,15 @@
 input[type="text"], input[type="password"], input[type="tel"], input[type="file"], select, textarea, .dropdown > span {
     outline: none;
-    padding:5px 10px;
+    padding:5px 15px;
     width: 100%;
-    height: 50px;
-    line-height: 40px;
+    height: 40px;
+    line-height: 28px;
     font-family: $regular;
     color: $darkBlack;
     font-size:14px;
     background: #fff;
     border:solid 1px $border;
+    border-radius: 2px;
     @include transition (all .5s ease);
 }
 
@@ -136,33 +137,23 @@ span.checkbox{
                 display: none;
             }
             .ems-form-label {
-                font-family: $regular;
+                font-family: $mediumA;
                 font-size: 14px;
-                color: $lDark;
-                position: absolute;
-                top: 16px;
-                left: 0;
-                height: 20px;
-                line-height: 20px;
-                padding-left: 15px;
-                pointer-events: none;
+                color: #6c6c6c;
+                height: auto;
+                display: block;
+                line-height: 1;
+                padding-bottom: 10px;
                 @include transition(all .2s ease);
                 &:empty {
                     display: none;
                 }
             }
-            &.is-active{
-                .ems-form-label {opacity: 0; visibility: hidden;}    
-            }
             &.ems-form-err{
-                .ems-form-label{
-                    color: $red;
-                }
                 .ems-form-obj{
                     input, textarea, .sStylerMainWrp.sStylerWrp_select .sStylerWrp{
-                        border-color: $red;
+                        border-color: #ff0000;
                     }
-                    .sStylerMainWrp.sStylerWrp_select .sStylerWrp{color: $red;}
                 }
             }
             .ems-form-obj {
