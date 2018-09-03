@@ -1,5 +1,7 @@
 .tabloTabBtnAdimSiparis {
-    td{
+    display: table;
+    width: auto;
+    td{ 
         display: table;
         table-layout: fixed;
     }
@@ -26,7 +28,7 @@
             }
             span {
                 display: block;
-                i {
+                i {  
                     position: relative;
                     z-index: 2;
                     display: block;
@@ -45,7 +47,7 @@
                     &:after{
                         content: '';
                         width: 24px;
-                        height: 1px;
+                        height: 1px; 
                         background: $lDark;
                         position: absolute;
                         bottom: 0;
@@ -62,13 +64,13 @@
                     display: block;
                     font-size: 14px;
                     font-weight: normal;
-                    font-family: $regular;
+                    font-family: $regularA;
                     padding-top: 10px;
                 }
             }
         }
         &.tabBtnSelectedDefault {
-            a:after{background: $lDark;}
+            a:after{background: $red;}
         }
     }
 }
@@ -180,7 +182,7 @@
         max-width: 1440px;
         margin: 0 auto;
         position: relative;
-        @include flex();
+        /*@include flex();*/
         &-colmn-1{
             border-right: 1px solid $border;
             min-height: 350px;
@@ -201,7 +203,7 @@
             width: 100%;
         }
         &-logo{
-            width: 115px;
+            width: 157px;
         }
         div[id$="pnlSiparisBaslik"]{width: calc(100% - 100px);}
 
@@ -229,7 +231,7 @@
             }
         }
         &.empty-layout{
-            .ems-page-cart-colmn-2, .ems-page-cart-colmn-1-top{display: none;}
+            .ems-page-cart-colmn-2, .ems-page-cart-colmn-1-top, .ems-page-cart-colmn-3 {display: none;}
             .ems-page-cart-colmn-1{
                 width: 100%;
                 float: none;
