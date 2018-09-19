@@ -1,6 +1,15 @@
 .ems-page {
     &-member{
         .ems-page-default{
+            &-address{
+                .page-top-title{
+                    > span {
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+            }
             &-info{
                 .ems-message{
                     margin-bottom: 20px;
@@ -16,9 +25,6 @@
                                     display: inline-block;
                                     vertical-align: top;
                                     width: 50%;
-                                }
-                                .ems-form-label{
-                                    padding-left: 25px;
                                 }
                                 .ems-form-obj{
                                     padding-bottom: 0;
@@ -60,23 +66,26 @@
                         display: none;
                         position: relative;
                         line-height: normal;
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 16px;
                         @media screen and (min-width: $breakpointXSM){
                             text-align: left;
-                            background: #d1f5fa;
-                            padding: 27px 90px;
-                            color: #5c606d;
+                            padding: 50px 0 0 100px;
+                            color: $red;
+                            font-size: 22px;
+                            font-weight: bold;
+                            padding-top: 60px;
+                            padding-left: 50px;
                             &:before{
                                 position: absolute;
-                                left: 20px;
-                                top: 50%;
+                                left: 0px;
+                                top: 80%;
                                 margin-top: -20px;
                             }
                         }
                         &:before{
                             font-family: 'icomoon';
-                            content:'\e901';
+                            /*content:'\e901';*/
                             display: inline-block;
                             vertical-align: middle;
                             font-size: 40px;
@@ -92,8 +101,8 @@
                     .add-new-address {
                         width: auto;
                         position: absolute;
-                        right: 0;
-                        top: -50px;
+                        left: 0;
+                        bottom: -60px;
                         z-index: 1;
                         .btnAdresEkle {
                             &:before, span{
@@ -109,26 +118,15 @@
                 .add-new-address {
                     .btnAdresEkle {
                         background: none;
-                        padding: 5px 0 5px 20px;
-                        width: auto;
+                        width: 250px;
                         position: relative;
+                        border: 1px solid black;
                         span {
                             font-family: $regular;
                             font-size: 14px;
                             @include transition(all 0.2s ease);
                             color: $lDark;
-                        }
-                        &:before{
-                            font-family:'icomoon';
-                            content:'\e910';
-                            position: absolute;
-                            top: 50%;
-                            left: 0;
-                            width:10px;
-                            height:10px;
-                            font-size:10px;
-                            margin-top: -5px;
-                            color: $lDark;
+                            font-weight: bold;
                         }
                     }
                 }
@@ -136,13 +134,12 @@
                 /*Adres form*/
                 .ems-page-new-address{
                     max-width: 700px;
-                    margin-left: auto;
                     margin-right: auto;
                     .page-top-title{
                         display: none;
                         span[id$="lbfUYA_ADRESEKLE"]{
                             display: block;
-                            font-family: $medium;
+                            font-family: $mediumA;
                             font-size: 36px;
                             color: $lDark;
                             text-align: center;
@@ -154,7 +151,7 @@
                         display: block;
                         /*padding-bottom: 10px;*/
                         padding-bottom: 30px;
-                        text-align: center;
+                        text-align: left;
                     }
 
                     .ems-form {
@@ -165,20 +162,22 @@
                                 border-radius: 2px;
                                 border: 1px solid rgba(255, 55, 74, .7);
                                 padding: 10px;
-                                margin-top: 10px;
+                                margin-bottom: 15px;
                                 &:empty{display: none;}
                                 .ems-message {
                                     background: none;
                                     margin-bottom: 0;
                                     color: $lDark;
                                     padding: 0;
+                                &-error {
+                                    border: none;
+                                }
                                 }
                             }
                         }
                         &-inner{
                             .ems-field {
                                 max-width: 300px;
-                                margin-left: auto;
                                 margin-right: auto;
                                 .ems-form-obj{
                                     padding-bottom: 0;
@@ -199,7 +198,7 @@
                                         padding-bottom: 0;
                                         margin-bottom: 30px;
                                         a{
-                                            font-family: $medium;
+                                            font-family: $mediumA;
                                             font-size: 25px;
                                             color: $dGray;
                                             padding:20px 15px;
@@ -269,23 +268,48 @@
         /*Adres bos ise*/
         &.empty-layout{
             .ems-page-default-address{
-                div[id$="plhAdresYokLabel1"] span{display: block;}
+                div[id$="plhAdresYokLabel1"] span{
+                    display: block;
+                    padding: 0;
+                    height: 130px; }
+                .ems-message-error {
+                    border: none;
+                    border-top: 1px solid $border;
+                    .yeniAdresEkle{
+                        margin: 0;
+                        img {
+                            display: none;
+                        }
+                        span{
+                            display: none;
+                        }
+                        b:before{
+                            content: '';
+                            background: url(http://cosmetica.proj-e.com/images/frontend/location.png);
+                            display: inline-block;
+                            width: 45px;
+                            height: 40px;
+                            position: relative;
+                            background-repeat: no-repeat;
+                            top: 13px; 
+                        }
+                    }
+                }
                 .add-new-address{
                     position: inherit;
                     top: inherit;
                     right: inherit;
                     text-align: center;
                     .btnAdresEkle{
-                        background: $lDark;
                         padding:18px 15px;
                         width: 100%;
                         display: block;
-                        margin-top: 30px;
+                        margin-top: 30px;  
+                        border: 1px solid black;
                         @media screen and (min-width: $breakpointXSM){
                             max-width: 330px;
                             margin-left: 0;
                         }
-                        span{color: #fff;}
                         &:before{
                             color: #fff;
                             position: relative;
@@ -307,35 +331,44 @@
         .ems-grid-address {
             &:empty{display: none;}
                 position: relative;
+                border-bottom: 1px solid $border;
                 .col {
                     flex: none;
                     max-width: none;
                 } 
+                .add-new-address{
+                    margin-top: 10px;
+                }
                 .ems-grid-row {
-                    padding: 0 25px;
                     display: table;
                     width: 100%;
-                    min-height: 140px;
-                    border-bottom: none;
-                    border-top: 1px solid $border;
-                    &:first-child{border-top: none;}
+                    min-height: 90px;
+                    border-bottom: 1px solid $border;
+                    padding-left: 0;
+                    padding-right: 0;
+                    &:first-child{
+                        border-top: 1px solid $border;
+                    }
                     > div {
                         display: table-cell;
                         padding: 10px 0;
                         vertical-align: middle;
                     }
-                    .col-1 { width:75%; }
-                    .col-2 {
-                        border-left: 1px solid $border;
-                        width:25%; 
-                        padding-left: 20px;
-                    }
+                    .col-1 { 
+                        padding-left: 0;
+                        width: 15px;
+                     }
+                    .col-2 { width: 85px;
+                        padding-left: 10px;
+                        border-left: none; }
                     .col-3 {display: none;}
+                    .col-4 { width: 10px; }
                     .ems-address-name {
-                        max-width: 350px;
+                        max-width: 20%;
                         margin-left: 0;
-                        font-family: $medium;
-                        font-size: 18px;
+                        font-family: $mediumA;
+                        font-size: 14px;
+                        float: left;
                         .adresTip1, .adresTip2 {
                             font-family: $regular;
                             display: block;
@@ -343,17 +376,20 @@
                             color: $darkBlack;
                             margin-top: 5px;
                         }
-                        .adresTip2 {display: none;}
+                        .adresTip2 {
+                            font-size: 14px;
+                            color: #6c6c6c;
+                        }
                     }
                     .ems-address {
                         font-size: 14px;
                         line-height: 18px;
-                        max-width: 350px;
-                        margin-left: 0;
-                        margin-top: 10px;
+                        max-width: 80%;
                         max-height: 40px;
                         overflow: hidden;
                         color: $darkBlack;
+                        padding-left: 40px;
+                        
                     }
 
                     .btnFatAdrSec {margin-top: 5px;}
@@ -474,8 +510,8 @@
                             width: 100%;
                             text-align: center;
                             padding: 18px 10px 18px 10px;
-                            background: $lDark;
-                            span{color: #fff;}
+                            background: #fff;
+                            span{color: black;}
                             &:before{
                                 position: relative;
                                 margin-top: inherit;
@@ -515,21 +551,52 @@
                 }
             }
 
+            &.empty-layout{
+                .ems-page-default-address{
+                    .ems-message-error {
+                        .yeniAdresEkle{
+                            border-bottom: 1px solid $border;
+                            b{
+                                margin: 50px 0 50px 0;
+                                font-size: 4vw;
+                            }
+                         }
+                    }
+                .ems-grid-address{
+                    .add-new-address{
+                        margin-top: 80px;
+                    }
+                }
+                
+                }
+            }
+
+
+
+
             .ems-grid-address {
                 .ems-grid-row {
-                    padding-left: 0;
-                    padding-right: 0;
+                    padding: 5px 0px;
+                    display: flex;
+                    flex-direction: row;
                     .col-1{
                         padding-left: 0;
-                        width: calc(100% - 50px);
+                        width: 30%;
                     }
                     .col-2{
-                        width: 50px;
-                        padding-left: 10px;
                         border-left: none;
+                        padding-left: 0px;
+                        width: 50%;
+                        display: flex;
                     }
                     .col-3{
                         display: none;
+                    }
+                    .col-4{
+                        display: flex;
+                        justify-content: flex-end;
+                        position: absolute;
+                        right: 0;
                     }
                     .ems-address-buttons{
                         @include flexDirection(column);
@@ -540,7 +607,11 @@
                     }
                     .ems-address {
                         max-width: 100%;
-                        margin-bottom: 15px;
+                        padding-left: 0px;
+                        min-height: 60px;
+                        max-height: fit-content;
+                        display: table-cell;
+                        vertical-align: middle;
                     }
                 }
             }

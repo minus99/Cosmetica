@@ -30,7 +30,7 @@
             text-align: left;
             @include setTransform(translateY(-50%));
             span{
-                font-family: $medium;
+                font-family: $mediumA;
                 font-size: 36px;
                 font-size: calc(17px + 1vw);
                 line-height: 44px;
@@ -80,7 +80,7 @@
                     }
                 }
                 .kbTitle{
-                    font-family: $medium;
+                    font-family: $mediumA;
                     font-size: 18px;
                     color: $lDark;
                 }
@@ -273,16 +273,14 @@
                 table-layout: fixed;
                 margin: 0 auto 0 0;
                 width: 100%;
-                max-width: 700px;
+                max-width: 775px;
                 padding: 0;
             }
             .ems-col {
                 &-left, &-full{float:left;}
                 &-left{
-                    background: #fff;
                     width: 290px;
                     padding: 20px;
-                    margin-top: 30px;
                 }
                 &-full{
                     display: table;
@@ -295,6 +293,82 @@
                     padding-bottom: 65px;
                     position: relative;
                     border-left: 1px solid $border;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            right: 100%;
+                            width: 2000px;
+                            height: calc(100% + 30px);
+                            top: -30px;
+                            background: #eee;
+                            z-index: 0; 
+                        }
+
+                    .aboutUs-container{
+                        font-size: 14px;
+                        font-family: "regular";
+                        color: #6c6c6c;
+                        width: 670px;
+
+                        .aboutUs-title{
+                            font-size: 16px;
+                            font-family: $regular;
+                            font-weight: bold;
+                            padding: 25px 0 0 0;
+                            color: black;
+                        }
+                        p{
+                            font-size: 30px;
+                            padding: 0px;
+                            margin: 30px 0px 5px 0px;   
+                            color: black;
+                            font-weight: bold;
+                        }
+
+                        .refundPolicy{
+                            p{
+                                font-size: 17px;
+                                margin: 30px 0px 15px 0px;
+                                font-weight: bold;
+                            }
+                        }
+                        .faq-wrapper {
+                            p{
+                                font-size: 14px;
+                                font-weight: normal;
+
+                            }
+                        }
+
+                        .ordercontract{
+                            p{
+                                color: inherit;
+                                font-size: inherit;
+                                font-weight: bold;
+
+                            }
+
+                            .contractQuote{
+                                font-style: italic;
+                                p{
+                                    font-weight: inherit;
+                                }
+                                .personalInformations{
+                                    li {
+                                        padding: 10px 0;
+                                    }
+                                }
+                            }
+                            
+                            ul.seller-buyer li:first-child{
+                                padding-top: 10px;
+                            }
+                            ul.seller-buyer li:nth-child(2n){
+                                padding-bottom: 20px;
+                            }
+
+                        }
+                    }
                 }
             }
         }
@@ -303,7 +377,8 @@
 
 .ems-login{
     .ems-page-member{
-        .ems-col-left{display: inline-block;}
+        .ems-col-left{display: inline-block;
+        z-index: 1;}
     }
 }
 
@@ -330,7 +405,6 @@
 .ems-page {
     &-member{
         &.empty-layout{
-            .page-top-title,
             .order-filter{display: none;}
         }
 
@@ -343,7 +417,7 @@
                     display: block;
                     padding-bottom: 30px;
                     font-size: 26px;
-                    font-family: $medium;
+                    font-family: $mediumA;
                 }
             }
             .ems-page-content-text{
@@ -357,7 +431,7 @@
                 }
                 > p strong{
                     font-weight: normal;
-                    font-family: $medium;
+                    font-family: $mediumA;
                     font-size: 14px;
                 }
             }
@@ -383,7 +457,7 @@
                         text-align: center;
                         margin: -12px auto 0 auto;
                         i, i:before{
-                            font-size: 12px;
+                            font-size: 12px; 
                             color: $lDark;
                             width: 12px;
                             height: 12px;
@@ -408,7 +482,7 @@
             &-template{
                 padding-top: 25px;
                 padding-bottom: 30px;
-                h1, h2{margin:0; font-family:$medium;}
+                h1, h2{margin:0; font-family:$mediumA;}
                 h1{font-size:18px;}
                 h2{font-size:14px;}
                 > ul > li, p{
@@ -418,7 +492,7 @@
                 p{
                     margin: 0;
                     strong{
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-weight: normal;
                     }
                 }
@@ -448,7 +522,7 @@
             .pageHeaderDefault {
                 span{
                     display: block;
-                    font-family: $medium;
+                    font-family: $mediumA;
                     font-size: 30px;
                     padding-bottom: 30px;
                 }
@@ -457,16 +531,24 @@
 
         .ems-page-default{
             .ems-page-default-empty{
+                padding: 50px 0;
+                border-bottom: 1px solid $border;
+                border-top: 1px solid $border;
                 .big-text{
-                    font-family: $medium;
-                    font-size: 26px;
-                    display: block;
-                    color: #5c606d;
+                    font-family: "regular";
+                    font-weight: bold;
+                    font-size: 22px;
+                    display: inline-block;
+                    color: $red;
+                    position: absolute;
+                    line-height: 42px;
+                    padding-left: 10px;
                 }
                 .order-ico-wrp{
                     padding:13px 10px;
                     background: #d1f5fa;
                     margin-top: 30px;
+                    display: none;
                 }
                 .order-ico{
                     width: 20%;
@@ -483,7 +565,7 @@
                     }
                     span{
                         display: block;
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 12px;
                         color: $lDark;
                         margin-top: 10px;
@@ -495,7 +577,7 @@
                     display: inline-block;
                     vertical-align: middle;
                     color: $lDark;
-                    font-family: $medium;
+                    font-family: $mediumA;
                     font-size: 16px;
                 }
                 .order-redirect-btn{
@@ -533,8 +615,19 @@
                 > span{
                     display: block;
                     padding-bottom: 30px;
-                    font-size: 26px;
-                    font-family: $medium;
+                    font-family: $avenir-bold;
+                    font-size: 16px;
+                    font-weight: bold;
+                    &:after{
+                        border-bottom: 1px solid $border;
+                        content: '';
+                        margin-left: 10px;
+                        top: 20%;
+                        display: inline-block;
+                        position: absolute;
+                        width: calc( 100% - 145px);
+                        right: 0;
+                    }
                 }
             }
             .page-top-desc {
@@ -543,13 +636,14 @@
             .ems-form{
                 &-inner{
                     .ems-field{
+                        width: 70%;
                         .ems-form-obj{
                             a.btnUyeBilgi{
                                 max-width: 240px;
                                 margin-top: 10px;
                             }
                             a.btnDefault{
-                                background: $lDark;
+                                border: 1px solid black;
                                 @media screen and (min-width: $breakpointXSM){
                                     &:hover{
                                         background: $btnColor;
@@ -612,7 +706,7 @@
                             }
                         }
                         &.button{
-                            margin-bottom: 0;
+                            margin-bottom: 10px;
                         }
                         &.bonus{
                             .ems-form-obj{
@@ -648,16 +742,24 @@
         .member-menu {
             .member-menu-title{
                 padding-bottom: 30px;
-                font-family: $medium;
+                font-family: $mediumA;
                 font-size: 36px;
+            }
+            &-wrapper {
+                .selectbox-plugin-active{
+                    span{
+                        display: none;
+                    }
+                }
             }
             > ul{
                 > li{
+                    line-height: 35px;
                     a{
                         display: block;
-                        font-size: 18px;
+                        font-size: 16px;
                         color: #5c606d;
-                        font-family: $medium;
+                        font-family: $mediumA;
                         padding: 6px 10px 6px 20px;
                         position: relative;
                         @media screen and (min-width: $breakpointXSM){
@@ -669,28 +771,30 @@
                     &.selected{
                         > a{
                             color: $lDark;
-                            &:before{
+                            font-size: 20px;
+                            line-height: 45px;
+                            &:after{
                                 content: '';
-                                width: 1px;
-                                height: 100%;
-                                background: $lDark;
+                                width: 3px;
+                                height: 70%;
+                                background: $red;
                                 position: absolute;
-                                left: 0;
-                                top: 0;
+                                right: 0;
+                                top: 15%;
                             }
                         }
                         div.lvl2{
                             ul{
                                 li.selected{
                                     a{
-                                        &:before{
+                                        &:after{
                                             content: '';
-                                            width: 1px;
-                                            height: 100%;
-                                            background: $lDark;
+                                            width: 3px;
+                                            height: 70%;
+                                            background: $red;
                                             position: absolute;
-                                            left: 0;
-                                            top: 0;
+                                            right: 0;
+                                            top: 15%;
                                         }
                                     }
                                 }
@@ -709,7 +813,7 @@
                                 display: block;
                                 font-size: 18px;
                                 color: #5c606d;
-                                font-family: $medium;
+                                font-family: $mediumA;
                                 padding: 6px 10px 6px 20px;
                             }
                         }
@@ -750,7 +854,7 @@
                                         display: inline-block;
                                         vertical-align: middle;
                                         color: $lDark;
-                                        font-family: $medium;
+                                        font-family: $mediumA;
                                         font-size: 14px;
                                         padding: 10px 0;
                                         width: 40px;
@@ -789,6 +893,20 @@
             }
         }
         .ems-page-member-password{
+            .ems-form-inner{
+                .ems-field{
+                        width: 100%;
+                    &.button{
+                        width: 50%;
+                        &:last-child{
+                            a {
+                                background: white;
+                                border: 1px solid black;
+                            }
+                        }
+                    }
+                }
+            }
             .page-top-desc{
                 display: block;
                 margin-top: 0; padding-bottom: 0;
@@ -840,16 +958,30 @@
         &.frmLeft, &.frmRight {
             display: inline-block;
             vertical-align: top;
-            width: 48%;
+            width: 65%;
         }
-        &.frmLeft{margin-right: 2%;}
-        &.frmRight{margin-left: 2%;}
         textarea{
-            width: 100% !important;
+            width: 65% !important;
             height: 100px;
             resize: none;
         }
         &.msgCaptcha{
+            width: 65% !important;
+            :last-child{
+                display: flex;
+                img{
+                    padding-right: 17px;
+                }
+                input{
+                    position: absolute;
+                    bottom : 0;
+                    right: 0;
+                }
+                a {
+                    position: absolute;
+                    margin-top: 10px;
+                }
+            }
             span[id$="lbfUYE_KONTROLKODU"]{
                 display: block;
                 margin-top: 15px;
@@ -860,8 +992,8 @@
             }
         }
         .ems-form-label{
-            padding-left: 15px !important;
             width: auto !important;
+            font-weight: bold;
         }
         .ems-form-obj{
             .geneltelefon{width: 100% !important;}
@@ -870,7 +1002,8 @@
         .btnMesajGonder{
             max-width: 240px;
             margin-top: 30px;
-            background: $lDark;
+            border: 1px solid black;
+            width: 205px;
             @media screen and (min-width: $breakpointXSM){
                 &:hover{
                     background: $btnColor;
@@ -985,7 +1118,7 @@
     }
     .pageDescDefault{
         margin-top: 0;
-        span b{font-family: $medium; font-size: 14px; font-weight: normal;}
+        span b{font-family: $mediumA; font-size: 14px; font-weight: normal;}
     }
     .tableSifremiUnuttum{
         max-width: 340px;
@@ -1107,7 +1240,7 @@
         max-width: 450px;
         .page-top-title {
             font-size: 26px;
-            font-family: "medium";
+            font-family: $mediumA;
             padding-bottom: 20px;
         }
         .ems-form-inner{
@@ -1155,7 +1288,7 @@
                     background: #fff;
                     padding: 25px 30px 20px 30px;
                     span{
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 18px;
                         letter-spacing: 2px;
                         display: block;
@@ -1170,7 +1303,7 @@
                     a{
                         display: inline-block;
                         padding: 10px 0;
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 14px;
                         letter-spacing: 2px;
                         margin-top: 15px;
@@ -1193,7 +1326,7 @@
                 width: 25%;
                 padding:15px 5px;
                 text-align: center;
-                font-family:$medium;
+                font-family:$mediumA;
                 font-size: 13px;
                 &:first-child{width: 15%;}
             }
@@ -1303,7 +1436,7 @@
                         }
                     }
                     span{
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 24px;
                         color: $lDark;
                     }
@@ -1764,7 +1897,7 @@
     &-text{
         padding: 15px;
         span{
-            font-family: $medium;
+            font-family: $mediumA;
             font-size: 24px;
             color: $lDark;
         }
@@ -1838,7 +1971,7 @@
             padding-left: 15px;
             padding-right: 15px; 
             span{
-                font-family: $medium;
+                font-family: $mediumA;
                 font-size: 24px;
                 color: #28354f;
                 display: block;
@@ -1875,6 +2008,67 @@
                     display: block;
                     padding: 0;
                     min-height: auto;
+
+                    .aboutUs-container{
+                        font-size: 15px;
+                        font-family: "regular";
+                        color: #6c6c6c;
+                        width: 670px;
+                        max-width: 100%;
+                        padding: 20px 5%;
+
+                        .aboutUs-title{
+                            font-size: 16px;
+                            font-family: $regular;
+                            font-weight: bold;
+                            padding: 25px 0 0 0;
+                            color: black;
+                        }
+                        p{
+                            font-size: 30px;
+                            padding: 0px;
+                            margin: 30px 0px 5px 0px;   
+                            color: black;
+                            font-weight: bold;
+                        }
+
+                        .refundPolicy{
+                            p{
+                                font-size: 14px;
+                                margin: 30px 0px 15px 0px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .ordercontract{
+                            p{
+                                color: inherit;
+                                font-size: inherit;
+                                font-weight: bold;
+
+                            }
+
+                            .contractQuote{
+                                font-style: italic;
+                                p{
+                                    font-weight: inherit;
+                                }
+                                .personalInformations{
+                                    li {
+                                        padding: 10px 0;
+                                    }
+                                }
+                            }
+                            
+                            ul.seller-buyer li:first-child{
+                                padding-top: 10px;
+                            }
+                            ul.seller-buyer li:nth-child(2n){
+                                padding-bottom: 20px;
+                            }
+
+                        }
+                    }
                 }
             }
             .member-menu-wrapper{
@@ -1889,7 +2083,7 @@
                     top: 7px;
                     left: 15px;
                     font-size: 12px;
-                    font-family: $medium;
+                    font-family: $mediumA;
                     color: $lDark;
                     z-index: 1;
                 }
@@ -1921,8 +2115,8 @@
                 padding: 20px;
                 position: relative;
                 .ems-page-default-empty{
-                    padding-top: 20px;
-                    .big-text{font-size: 20px; color: $lDark;}
+                    margin-bottom: 70px;
+                    .big-text{font-size: 5vw;}
                     .order-ico{margin-right: 0; width: 30%;}
                     .small-text{ font-size: 13px;padding-left: 20px; width: 70%;}
                 }
@@ -1933,6 +2127,7 @@
                         &-inner{
                             position: inherit;
                             .ems-field{
+                                width: 100% !important;
                                 .ems-form-label{
                                     font-size: 12px;
                                     width: 115px;
@@ -1958,6 +2153,22 @@
                                 }
                             }
                             input[id$="CEPTELEFONALAN"]{border-right: none;}
+                        }
+                    }
+                }
+                
+                .page-top-title{
+                    > span{
+                        margin-top: 20px;
+                        margin-bottom: 30px;
+                        &:after{
+                            border-bottom: 1px solid #d3d3d3;
+                            content: '';
+                            margin-left: 10px;
+                            top: 16%;
+                            display: inline-block;
+                            position: absolute;
+                            width: calc(100% - 140px);
                         }
                     }
                 }
@@ -2060,6 +2271,7 @@
                     &-inner{
                         .ems-field{
                             &.button{
+                                width: 100%;
                                 .ems-form-obj{
                                     margin-left: 0 !important;
                                     a.btnDefault {padding-top: 20px; padding-bottom: 20px;}
@@ -2125,11 +2337,28 @@
         .tableMesajGonder_aciklama{display: none;}
         .ems-form-inner{
             .ems-field {
+                textarea{
+                    width: 100% !important;
+                }
                 &.msgCaptcha{
                     margin-bottom: 0;
-                    div[id$="CaptchaImage1_divCaptcha"]{width: 100%;}
+                    div[id$="CaptchaImage1_divCaptcha"]{width: 45%;
+                    span{
+                        min-width: 130%;
+                        margin-top: 0;
+                    }
+                    &:last-child input {
+                        position: absolute;
+                        top: 20px;
+                        width: 55%;
+                    }
+                    &:last-child a{
+                        margin-top: 0;
+                    }
+                    }
                 }
-                .btnMesajGonder{max-width: 100%;}
+                .btnMesajGonder{min-width: 100%;
+                }
             }
         }
     }
@@ -2464,7 +2693,7 @@
         }
         &-text{
             span{
-                font-family: $medium;
+                font-family: $mediumA;
                 font-size: 24px;
                 color: $lDark;
             }

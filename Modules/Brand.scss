@@ -1,0 +1,314 @@
+/*/////////////////////////////////////////      BRAND PAGE      /////////////////////////////////////////*/
+
+.markaSayfaKapsayici {
+    max-width: 1280px;
+    padding: 0 20px;
+    margin: 10px auto;
+    min-height: 600px;
+  }
+  
+  .markaSayfasi { 
+    padding: 0 20px;
+    .col1 {
+      max-width: 130px !important;
+      float: left;
+      width: 100%;
+      margin: 0px 30px 0 0;
+      padding: 0; 
+      border: 0;
+      /*display: none;*/
+    }
+    a {
+        color: $lDark;
+    }
+    a:hover {
+      color: $red !important;
+    }
+    .markaAlfabeBaslik {
+        margin-bottom: 45px;
+        span {
+            font-family: $avenir-bold;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 30px;
+            line-height: 1.5;
+            margin-bottom: -10px;
+            background: #fff;
+            padding-right: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        &:after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            display: block;
+            background: #d3d3d3;
+            position: relative;
+            bottom: 5px;
+        }
+    }
+    .col0 {
+        width: 100%;
+    }
+    .col1 {
+      a {
+        font-size: 14px;
+        display: block;
+        padding: 0 10px 0 0px;
+        &.tumMarkalar {
+            line-height: 30px;
+            font-family: $bold;
+        }
+      }
+      .markaMenu {
+        a {
+          line-height: 30px;
+        }
+        li.select a {
+          color: $red;
+        }
+      }
+    }
+    .col2 {
+      /*margin-left: 130px !important;width: auto !important;*/
+      padding: 0 !important;
+      position: relative;
+      overflow: hidden;
+      float: none;
+      border: 0;
+      .markaAlfabe {
+        padding: 0 0 15px 0px;
+        margin-bottom: 20px;
+        width: 100%;
+        display: inline-block;
+        /*display: none;*/
+        ul {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+          li {
+            display: table-cell;
+            width: auto !important;
+            text-align: center;
+            a {
+              font-size: 18px;
+              color: $lDark;
+              display: inline-block;
+              padding: 12px 0 10px 0;
+              max-width: 40px;
+              width: 100%;
+              text-align: center;
+              border-radius: 3px;
+              &:hover {
+                  background: $red;
+                  color: #fff !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .markaLogolar {
+      display: inline-block;
+      width: 100%;
+      ul {
+        /*margin: 0 0 0 -15px;*/
+        padding: 0;
+      }
+      li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        padding: 0 0 0px 1.5%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        span {
+          width: 100%;
+          display: none;
+          padding: 10px 0;
+          background: #f5f5f5;
+          max-height: 35px;
+        }
+        a {
+          display: block;
+          border: 1px solid #ededed;
+          width: 100%;
+          @include transition(border 1s ease);
+          img {
+            margin: 20px 0;
+            height: 100px;
+            opacity: .6;
+            @include transition(opacity 0.2s ease);
+          }
+          &:hover {
+              border-color: $red;
+              img {
+                opacity: 1; 
+              }
+          }
+        }
+      }
+      &.selected li {
+        display: none;
+        &.selected {
+          display: block;
+        }
+      }
+    }
+    .col2 .markaAlfabe ul li.selected a {
+      background: #eee;
+    }
+    .markaYazi {
+        margin: 30px 0;
+       span {
+            font-size: 20px;
+            font-family: $mediumA;
+            i {
+                font-size: 25px;
+                position: relative;
+                top: 3px;
+            }
+       }
+       p {
+            line-height: 20px;
+       }
+    }
+  }
+  
+  /**/
+  
+  @media screen and (min-width: 500px) {
+    .markaSayfasi .col2 .markaAlfabe ul {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+  
+  /**/
+  
+  /* */
+  
+  .markaLinkKapsayici {
+    width: 100%;
+    padding: 45px 0;
+    .markaLink {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      width: 100%;
+      padding-bottom: 30px;
+      > ul {
+        display: inline-block;
+        width: 100%;
+      }
+      li.kolon {
+        float: left;
+        width: 25%;
+        padding: 0 8% 0 8%;
+        border-right: 1px solid #ddd;
+        &:last-child {
+          border: 0;
+          padding-right: 0;
+        }
+        h1 {
+          font-family: 'MavenProBold';
+          font-size: 15px;
+          color: #6d6d6d;
+          margin-bottom: 35px;
+          letter-spacing: -1px;
+          height: 20px;
+        }
+        a {
+          font-size: 14px;
+          color: #6d6d6d;
+          line-height: 20px;
+          &:hover {
+            color: #e14616;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: $breakpointXSM) {
+    .markaSayfasi {
+        padding: 0;
+        .markaLogolar {
+            li {
+                width:33.333%;
+            }
+        }
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    /*/////////////////////////////////////////      BRAND PAGE      /////////////////////////////////////////*/
+    .markaSayfasi {
+      .col1 {
+        max-width: none !important;
+        margin: 0;
+      }
+      .col2 {
+        width: 100%;
+        display: inline-block;
+        .markaAlfabe {
+          border: 0;
+          margin: 0;
+          ul li {
+            /*padding: 0 7px;*/
+            width: 100px !important;
+            a {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      .col1 a.tumMarkalar {
+        font-size: 18px;
+      }
+      .col2 {
+        margin-left: auto;
+        overflow: visible;
+      }
+      .markaAlfabeBaslik span {
+        font-size: 30px;
+        padding: 15px 0;
+      }
+      .markaLogolar {
+        padding: 0 !important;
+        ul {
+          margin: 0;
+        }
+        li {
+          width: 100%;
+          padding: 0;
+        }
+      }
+      .markaMenu {
+        width: 100%;
+        padding: 0 !important;
+        border-bottom: 1px solid #ededed;
+        display: inline-block;
+        ul li {
+          width: 50%;
+          float: left;
+          text-align: center;
+          a {
+            padding: 10px 0;
+            font-size: 14px;
+            font-family: $mediumA;
+          }
+          &::last-child {
+            border: 0;
+          }
+        }
+      }
+      .markaLogolar {
+        padding: 0 20px;
+        margin: 0;
+      }
+    }
+  }

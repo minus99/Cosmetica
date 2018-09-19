@@ -1,5 +1,16 @@
 .ems-page-default{
     &-member-order{
+        .ems-message-error{
+            border: none;
+        }
+        .page-top-title{
+            display: block;
+           font-family: $regularA;
+           > span {
+               margin-top: 0 !important;
+               margin-bottom: 0 !important;
+           }
+        }
         max-width: 750px !important;
         div[id$="plhSiparisYokLabel1"]{
             background: none;
@@ -7,17 +18,39 @@
             padding: 0;
             .ems-page-order-empty{
                 display: block;
-                text-align: left;
+                padding: 70px 0;
+                border-bottom: 1px solid #e1e1e1;
+                margin-bottom: 100px;
                 .big-text{
-                    font-family: $medium;
-                    font-size: 26px;
-                    display: block;
-                    color: #5c606d;
+                    &-order{
+                        font-family: $regular;
+                        font-size: 22px;
+                        color: $red;
+                        font-weight: bold;
+                        display: inline-block;
+                        position: absolute;
+                        line-height: 42px;
+                        padding-left: 10px;
+                    }
+                    &-icon{ 
+                        &-order {
+                            background: url(http://cosmetica.proj-e.com/images/frontend/shoppingCart.png) no-repeat center;
+                            display: inline-block;
+                            width: 42px;
+                            height: 42px;
+                            position: relative;
+                            background-size: 42px 42px;
+                        }
+                        &-favorite {
+                            display: none;
+                        }
+                    }
                 }
                 .order-ico-wrp{
                     padding:13px 10px;
                     background: #d1f5fa;
                     margin-top: 30px;
+                    display: none;
                 }
                 .order-ico{
                     width: 20%;
@@ -34,7 +67,7 @@
                     }
                     span{
                         display: block;
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 12px;
                         color: $lDark;
                         margin-top: 10px;
@@ -46,10 +79,11 @@
                     display: inline-block;
                     vertical-align: middle;
                     color: $lDark;
-                    font-family: $medium;
+                    font-family: $mediumA;
                     font-size: 16px;
                 }
                 .order-redirect-btn{
+                    display: none;
                     .btnDefault{
                         background: $lDark;
                         padding:18px 15px;
@@ -117,30 +151,23 @@
         .ems-grid-order{
             .ems-grid-header, .ems-grid-row{
                 > div{
-                    text-align: center;
-                    width: 25%;
-                    padding-left: 5px;
-                    padding-right: 5px;
+                    text-align: left;
+                    width: 16.6%;
+                    padding-left: 30px;
                     &:first-child{
                         padding-left: 0;
                         padding-right: 0;
                         text-align: left;
                     }
-                    &.ems-grid-date{
-                        width: 10%;
-                    }
-                    &.ems-grid-detail{
-                        width: 30%;
-                        padding-left: 0;
-                        padding-right: 0;
-                    }
                 }
             }
             .ems-grid-header{
-                padding:10px 20px;
+                padding: 15px 5px;
+                font-size: 13px;
                 &:first-child{
                     display: table;
                     width: 100%;
+                    border-bottom: 1px solid $border;
                 }
                 > div{
                     display: table-cell;
@@ -150,17 +177,24 @@
             .ems-grid-row{
                 background: #fff;
                 margin-bottom: 20px;
-                padding:15px 20px;
-                border: 1px solid $border;
+                padding:5px 5px;
+                border-bottom: 1px solid $border;
+                font-size: 14px;
                 > div{
                     > a{
                         padding:13px 0;
                         display: block;
                     }
+                    &.ems-grid-add-to-cart{
+                        text-align: right;
+                        font-weight: bold;
+                    }
+                    &.ems-grid-order-no{
+                        text-decoration: underline; 
+                    }
                     &.ems-grid-status{
                         > a{
                             display: inline-block;
-                            text-decoration: underline;
                             max-width: 150px;
                             text-overflow: ellipsis;
                             overflow: hidden;
@@ -197,15 +231,12 @@
                     max-width: 100% !important;
                     div[id$="plhSiparisYokLabel1"]{
                         .ems-page-order-empty{
-                            padding: 20px;
                             .big-text{font-size: 20px; color: $lDark;}
                             .order-ico{margin-right: 0; width: 30%;}
                             .small-text{ font-size: 13px;padding-left: 20px; width: 70%;}
 
                         }
                     }
-                    padding-left: 0;
-                    padding-right: 0;
                     .order-filter{
                         @include flex();
                         justify-content: space-between;
@@ -222,33 +253,26 @@
                     .ems-grid-order{
                         @include flex();
                         flex-wrap: wrap;
-                        padding-left: 20px;
-                        padding-right: 20px;
                         .ems-grid-header, .ems-grid-row{
+                            margin-bottom: 0;
                             @include flex();
                             @include flexDirection(column);
                             justify-content: space-around;
                             padding: 0;
-                            margin-bottom: 30px;
                             > div{
                                 width: 100%;
                                 padding: 10px;
-                                min-height: 55px;
-                                line-height: 40px;
-                                border-top: 1px solid $border;
                                 &:first-child{border-top: none;}
                             }
                         }
                         .ems-grid-header{
-                            border-width:1px 0 1px 1px;
-                            border-style: solid;
-                            border-color: $border; 
                             &:first-child{
                                 @include flex();
                             }
                             width: 40%;
                             flex-basis: 40%;
                             flex-grow: 1;
+                            border-bottom: 1px solid $border;
                             > div{
                                 text-align: left;
                             }

@@ -1,26 +1,50 @@
 .ems-page {
     &-member{
         .ems-grid-message{
+            .ems-grid-header {
+                display: flex;
+                border-bottom: 1px solid $border;
+                padding-bottom: 10px;
+                &:not(:first-of-type){
+                    display: none;
+                }
+                div {
+                    min-width: 20%;
+                    max-width: 20%;
+                    padding: 0;
+                    span{
+                        font-size: 13px;
+                        color: #b8b8b8;
+                    }
+                }
+                .col-1 {
+                    min-width: 30%;
+                    max-width: 30%;
+                }
+                .col-5 {
+                    min-width: 10%;
+                    max-width: 10%;
+                }
+            }
             .ems-grid-row{
+                display: flex;
                 background: #fff;
-                margin-bottom: 10px;
-                padding: 15px 25px;
-                border: 1px solid $border;
+                padding: 12px 0px;
                 > div{
-                    text-align: center;
-                    padding: 0 5px;
+                    min-width: 20%;
+                    max-width: 20%;
+                    text-align: left;
+                    padding: 0px 15px 0px 0px;
                     font-family: $regular;
                     font-size: 14px;
                 }
-                .col-1{width:20px; padding-left: 0; padding-right: 0;}
-                .col-2{width:15%;}
-                .col-3{width:60%;}
-                .col-4{width:15%;}
-                .col-4 a{text-decoration: underline;}
-                &.newMessage{
-                    > div{
-                        font-family: $regular;
-                    }
+                .col-1 {
+                    min-width: 30%;
+                    max-width: 30%;
+                }
+                .col-5 {
+                    min-width: 10%;
+                    max-width: 10%;
                 }
             }
         }
@@ -34,6 +58,19 @@
             padding: 0;
             color: $lDark;
             line-height: inherit;
+            border: none;
+            margin-bottom: 50px;
+            .big-text{
+                line-height: 18px !important;
+                &-icon{
+                    background: url(http://cosmetica.proj-e.com/images/frontend/messages.png) no-repeat center;
+                    display: inline-block;
+                    width: 23px;
+                    height: 17px;
+                    position: relative;
+                    background-size: 23px 17px;
+                }
+            }
         }
     }
     &-message-detail{
@@ -95,7 +132,7 @@
                 ul{
                     li{
                         border-bottom: 0;
-                        > span:first-child{font-size: 16px; font-family:$medium;}
+                        > span:first-child{font-size: 16px; font-family:$mediumA;}
                     }
                 }
             }
@@ -160,7 +197,7 @@
         .tableTitleMesajGonder{
             span{
                 font-size: 15px;
-                font-family: $medium;
+                font-family: $mediumA;
                 padding: 30px 0;
                 display: block;
             }
@@ -220,36 +257,46 @@
                     margin-bottom: 30px;
                     > div{
                         width: 100%;
-                        padding:15px 10px;
+                        padding: 10px 0px;
                         min-height: 30px;
                         line-height: 1;
-                        border-top: 1px solid $border;
                         flex: inherit;
                         max-width: inherit;
                         &:first-child{border-top: none;}
                     }
                 }
                 .ems-grid-header{
-                    border-width:1px 0 1px 1px;
-                    border-style: solid;
-                    border-color: $border; 
                     &:first-child{
                         @include flex();
                     }
-                    width: 40%;
-                    flex-basis: 40%;
+                    &:not(:first-of-type){
+                        display: block;
+                    }
+                    width: 50%;
+                    flex-basis: 50%;
                     flex-grow: 1;
+
                     > div{
                         text-align: left;
+                        max-height: 40px;
+                        min-height: 40px;
+                        span {
+                            color: black;
+                        }
+                    }
+                    .col-1, .col-5 {
+                        min-width: 100%;
                     }
                 }
                 .ems-grid-row{
-                    width: 60%;
-                    flex-basis: 60%;
+                    width: 50%;
+                    flex-basis: 50%;
                     flex-grow: 2;
                     table-layout: inherit;
                     position: relative;
+                    border-bottom: 1px solid $border;
                     .col-1{
+                        min-width: 100%;
                         margin-left: auto;
                         margin-right: auto;
                     }
@@ -262,12 +309,17 @@
                     }
 
                     .col-2, .col-3, .col-4{width:100%;}
+                    .col-5{min-width: 100%;}
                 }
             }
 
             .ems-page-default{
                 &-message{
                     padding:20px;
+                    .page-top-title{
+                        display: block;
+                        margin-bottom: 20px;
+                    }
                 }
                 &-message-detail{
                     .ems-page-default-info{

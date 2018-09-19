@@ -11,6 +11,8 @@ i {	font-style: normal; }
 a {outline:none;}    
 
 b {font-weight: 700;}
+.pb1{display: none;}
+.d{font-size: 14px;}
 
 strong{font-weight: normal;}
 
@@ -102,21 +104,25 @@ body { overflow-x: hidden; }
 .ems-message{
 	&:empty{ display: none; }
 	padding: 15px;
-	font-family: $mediumA;
+	font-family: $mediumAA;
 	border-radius: 2px;
 	margin-bottom: 20px;
 	color: #000;
 	font-size: 14px;
 	background:#fff;
 	text-align: left;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
 	&-success{
-		border-color:$green;
+		border-color:$lGreen;
+		color: #42df8f;
 	}
 	&-error{
-		border: 2px solid #ff0000;
+		border-color: $red;
+		color: $red;
 	}
 	&-warning{
-		border: 2px solid #ff0000;
+		border-color: $red;
 	}
 	b{ font-weight: normal; font-family: $regular; }
 }

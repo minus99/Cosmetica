@@ -28,115 +28,92 @@
             }
         }
     }
-    &-sss{
+    &-detail-page{
         .ems-tab-inner{
-            > .navigation-js{display:none;}
-
-            > ul.content-js > li{
-                margin-top: 10px;
-                &:first-child{margin-top: 0;}
-                > a{
-                    padding: 20px 40px 20px 30px;
-                    display: block;
-                    position: relative;
-                    text-align: left;
-                    background: #fff;
-                    span{
-                        font-size: 18px;
-                        font-family: $medium;
-                        color: #231f20;
-                    }
-                    &:after{
-                        font-family: 'icomoon';
-                        content:'\e91d';
-                        font-size: 10px;
-                        width: 10px;
-                        height: 10px;
-                        color: #87888e;
-                        position: absolute;
-                        top: 50%;
-                        margin-top: -5px;
-                        right: 30px;
-                    }
-                }
-                display: block;
-                &.selected{
-                    > a{
-                        &:after{
-                            content:'\e918';
+            > ul.navigation-js{
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+                > li{
+                    min-width: 50%;
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-bottom: 1px;
+                    a{
+                        display: block;
+                        font-family: $regular;
+                        font-size: 14px;
+                        letter-spacing: 0.5px;
+                        padding: 15px 5px;
+                        position: relative;
+                        margin-bottom: -2px;
+                        border-bottom: 2px solid $Gray;
+                        @media screen and (min-width: $breakpointXSM){
+                            &:hover{
+                                color: $red;
+                            }
                         }
                     }
-                    .content{
-                        display: block;
+                    &.selected{
+                        a{
+                            color: $red;
+                            border-bottom: 2px solid $red;
+                            &:before, &:after{
+                                bottom: -2px;
+                                left: 50%;
+                                border: solid transparent;
+                                content: " ";
+                                height: 0;
+                                width: 0;
+                                position: absolute;
+                                pointer-events: none;
+                            }
+                            &:before{
+                                border-color: rgba(194, 225, 245, 0);
+                                border-bottom-color: $red;
+                                border-width: 10px;
+                                margin-left: -10px;
+                            }
+                            &:after{
+                                border-color: rgba(136, 183, 213, 0);
+                                border-bottom-color: #fff;
+                                border-width: 8px;
+                                margin-left: -8px;
+                            }
+                        }
                     }
                 }
-                .content{
-                    display: none;
-                    text-align: left;
-                    padding:0 30px 30px 30px;
-                    font-size: 14px;
-                    font-size: 14px;    
-                    line-height: 22px;
-                    font-family: $regular;
-                    background: #fff;
-                    p{
-                        margin-top: 10px;
-                        font-size: 14px;
-                        line-height: 22px;
-                        &:first-child{margin-top: 0;}
-                        &.margin10{ margin-top: 10px; }
+            }
+            > ul.content-js{
+                > li{
+                    .content{
+                        padding: 30px;
+                        .yorumListe_main{
+                            display: block;
+                        }
+                    }
+                }
+                > li[rel="tab-2"]{
+                    .content{
+                        padding:15px 0;
                     }
                 }
             }
         }
     }
 }
-
+@media screen and (min-width: $breakpointXSM){
+    .ems-tab {
+        &-detail-page{
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 65px;
+        }
+    }
+}
 @media screen and (max-width: $breakpointXSM){
     .ems-tab {
-        &-categories{
-            width: 100%;
-            float: none;
-            padding: 0;
-            .ems-tab-inner{
-                > .navigation-js{
-                    top: 17px;
-                }
-                > ul.content-js{
-                    > li{
-                        .content{
-                            .mod-cat-cover{
-                                img{ opacity: 0; visibility: hidden; }
-                            }
-                            .mod-cat-icon{ width: 80px; }
-                        }
-                    }
-                }
-            }
-        }
-        &-detail{
-            .ems-tab-inner{
-                margin-top: 0;
-                border-top: 0;
-                padding-top: 25px;
-                padding-bottom: 0;
-                > ul.content-js{
-                    > li{
-                        > a{
-                            padding-left: 20px;
-                        }
-                        &:first-child{
-                            > a{
-                                border-top: 1px solid #ecedee;
-                            }
-                        }
-                        .content-detail{
-                            padding-left: 20px;
-                            padding-right: 20px;
-                        }
-                    }
-                }
-            }
-        }
+        
     }
 }

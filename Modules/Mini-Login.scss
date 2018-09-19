@@ -3,15 +3,21 @@
         > a{
             display: block;
             padding:13px 5px; 
-        }
-        text-align: center;
-        i{margin-right: 5px;}
-        i, span{
-            display: inline-block;
-            vertical-align: middle;
-        }
-        i, i:before{
-            font-size: 20px;
+            text-align: center;
+            i{margin-right: 5px;}
+            span, i:before{
+                @include transition(all .2s ease);
+            }
+            i, span{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            i, i:before{
+                font-size: 20px;
+            }
+            &:hover{
+                span, i:before{color: $red;}
+            }
         }
     }
 
@@ -19,10 +25,10 @@
         &-header{
             cursor: pointer;
             padding:13px 5px;
-            @include transition(all 333ms ease);
             text-align: center;
             position: relative;
             > span[id$="lbhKUTU_HESABIM"]{
+                @include transition(all .2s ease);
                 display: inline-block;
                 width: 100%;
                 max-width: 100px;
@@ -45,10 +51,20 @@
                     width: 20px;
                     height: 20px;
                     z-index: 1;
+                    @include transition(all .2s ease);
                 }
                 &:empty{display: none;}
+                &:hover{
+                    color: $red;
+                    &:before{
+                        color: $red;    
+                    }
+                }
             }
             > span[id$="lbfkutuUyeGiris1"]{
+                span, i:before{
+                    @include transition(all .2s ease);
+                }
                 span, .icon-ico_user{
                     display: inline-block;
                     vertical-align: middle;
@@ -58,12 +74,15 @@
                     font-size: 20px;
                 }
                 &:empty{display: none;}
+                &:hover{
+                    span, i:before{color: $red;}
+                }
             }
         }
         .ems-user-info{
             span[id$="lbfUYE_SAYIN"]{
                 display: block;
-                font-family:$boldA;
+                font-family:$avenir-bold;
                 font-size:14px;
                 padding:20px 30px;
                 text-align: left;
@@ -119,17 +138,12 @@
                         &-submit{
                             .btnKutuLogin{
                                 span{ @include transition(all 0.2s ease); }
-                                //&:hover{ background: $btnColor; }
                             }
                         }
                         &-free{
                             span[id$="lbflnkUyeOlmak"]{
                                 a{
                                     span{ @include transition(all .2s ease); }
-                                    /*&:hover{
-                                        border-color: $btnColor;
-                                        span{color: $btnColor;}
-                                    }*/
                                 }
                             }
                         }
@@ -158,7 +172,7 @@
         }
         .mod-mini-login{
             &-body{
-                position: fixed;
+                position: absolute;
                 top: 60px;
                 right: 0;
                 height: auto;
@@ -231,7 +245,7 @@
                     display: block;
                     font-size: 14px;
                     color: $lDark;
-                    font-family: $boldA;
+                    font-family: $avenir-bold;
                     letter-spacing: 1.6px;
                     &:after{
                         content:'';
@@ -278,7 +292,7 @@
                                 font-size: 13px;
                                 display: none;
                                 color: #757575;
-                                font-family: $mediumA;
+                                font-family: $mediumAA;
                                 &.tr{display: inline-block;}
                             }
                         }
@@ -291,7 +305,7 @@
                                 vertical-align: middle;
                                 font-size: 13px;
                                 color: #757575;
-                                font-family: $mediumA;
+                                font-family: $mediumAA;
                                 text-decoration: underline;
                             }
                         }
@@ -308,7 +322,7 @@
                             span{
                                 font-size: 13px;
                                 color: #757575;
-                                font-family: $mediumA;
+                                font-family: $mediumAA;
                             }
                         }
                         &-submit{
@@ -317,6 +331,7 @@
                                 width: auto;
                                 margin-left: 35px;
                                 margin-right: 35px;
+                                border: 1px solid #000;
                             }
                         }
                     }
@@ -479,7 +494,7 @@ body.ems-login.mini-login-ready{
                         text-align: center;
                         span{
                             font-size: 18px;
-                            font-family: $medium;
+                            font-family: $mediumA;
                             display: block;
                             max-width: 95%;
                             margin-left: auto;

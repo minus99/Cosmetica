@@ -2,6 +2,14 @@
     &-member{
         .ems-page-default{
             &-follow-list{
+                .page-top-title{
+                    display: block !important;
+                    > span{
+                        &:after{
+                            width: 82%;
+                        }
+                    }
+                }
                 .ems-grid-follow-price,
                 .inner-title{display:none;}
                 .price-report{
@@ -14,9 +22,21 @@
                     .inner-title{
                         display:block;
                         span{
-                            font-family: $medium;
+                            font-family: $mediumA;
                             font-size: 14px;
                         }
+                    }
+                }
+            }
+            &-empty {
+                .big-text{
+                    &-icon{
+                        background: url(http://cosmetica.proj-e.com/images/frontend/shoppingCart.png) no-repeat center;
+                        display: inline-block;
+                        width: 42px;
+                        height: 42px;
+                        position: relative;
+                        background-size: 42px 42px;
                     }
                 }
             }
@@ -37,7 +57,7 @@
                 }
                 .ems-grid-name, .ems-name{order: 2; margin-top: 5px; }
                 .ems-grid-name a, .ems-name a{width: 75%;}
-                .ems-grid-price, .ems-price{order: 1; font-family: $medium; font-size: 16px; }
+                .ems-grid-price, .ems-price{order: 1; font-family: $mediumA; font-size: 16px; }
                 .ems-grid-code{order: 3; margin-top: 10px;}
                 .col-1{
                     padding-left: 0;
@@ -125,10 +145,21 @@
         &-member{
             .ems-page-default{
                 &-follow-list{
+                    .page-top-title{
+                        display: block !important;
+                        > span{
+                            &:after{
+                                width: calc(100% - 140px);
+                            }
+                        }
+                    }
                     padding: 0 20px;
                     .report-holder{
                         .inner-title{display:none;}
                     }
+                }
+                &-empty {
+                    padding: 80px 0 !important;
                 }
             }
             .ems-grid-default-stock{

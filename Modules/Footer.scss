@@ -93,6 +93,7 @@
         }
     }
     &-corporate{
+        display: none;
         p{
             > a{
                 display: inline-block;
@@ -102,6 +103,21 @@
                 }
             }
         }
+    }
+    &-brands-link{
+        &-inner{
+            span{
+                display: inline-block;
+                vertical-align: middle;
+                color: #fff;
+                i,i:before{font-size: 37px;}
+                &:last-child{font-size: 18px; margin-left: 15px;}
+            }
+        }
+    }
+    &-brands-link-inner{
+        display: inline-block;
+        > a{display: block;}
     }
 }
 
@@ -116,7 +132,7 @@
                             a{
                                 line-height: 15px;
                                 &:hover{
-                                    color: $btnColor;
+                                    text-decoration: underline;
                                 }
                             }
                         }
@@ -166,7 +182,8 @@
             }
         }
         &-copyright,
-        &-corporate{
+        &-corporate,
+        &-brands-link{
             padding-top: 30px;
             padding-bottom: 30px;
         }
@@ -176,10 +193,9 @@
                 color: $White;
             }
         }
-        &-corporate{
-            p{
-                text-align: right;
-            }
+        &-corporate,
+        &-brands-link{
+            text-align: right;
         }
     }
 
@@ -381,21 +397,6 @@
         &-corporate{
             text-align: center;
         }
-        &-corporate{
-            p{
-                display: inline-block;
-                &:before{
-                    content: '';
-                    width: 70px;
-                    height:2px;
-                    background: #e6e7e9;
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-bottom: 20px;
-                }
-            }
-        }
         &-copyright{
             p{
                 line-height: 16px;
@@ -415,7 +416,7 @@
                     padding-left: 25px;
                     padding-right: 25px;
                     span{
-                        font-family: $medium;
+                        font-family: $mediumA;
                         font-size: 14px;
                         line-height: 18px;
                         color: #000;

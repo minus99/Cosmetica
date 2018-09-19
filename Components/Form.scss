@@ -61,7 +61,7 @@ span.checkbox{
             @include transition (all .2s ease-in-out);
             &:after{
                 font-family: 'icomoon';
-                content: "\e904";
+                content: "\e900";
                 line-height: 1;
                 width: 24px;
                 height: 24px;
@@ -110,7 +110,7 @@ span.checkbox{
         }
         &.subTitle.b1{
             span{
-                font-family: $medium;
+                font-family: $mediumAA;
                 font-size: 18px;
                 padding-bottom: 30px;
             }
@@ -137,7 +137,7 @@ span.checkbox{
                 display: none;
             }
             .ems-form-label {
-                font-family: $mediumA;
+                font-family: $mediumAA;
                 font-size: 14px;
                 color: #6c6c6c;
                 height: auto;
@@ -195,7 +195,7 @@ span.checkbox{
                 color: $lDark;
                 b{
                     font-weight: normal;
-                    font-family: $medium;
+                    font-family: $mediumA;
                 }
                 &:empty {
                     display: none;
@@ -314,7 +314,7 @@ span.checkbox{
                         font-size: 12px;
                         line-height: 15px;
                         > a{
-                            font-family: $medium;
+                            font-family: $mediumA;
                             color: $lDark;
                             text-decoration: underline;
                         }

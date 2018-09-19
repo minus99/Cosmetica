@@ -4,6 +4,73 @@
             .ems-page-favorites-empty,
             .ems-page-order-empty{display: none;}
             &-favorites{
+                .favorite-report{
+                    .ems-message-error{
+                       border: none;
+                    }
+
+                    .borderMask{
+                        width: 33%;
+                        position: relative;
+                        border-bottom: 1px solid $Gray;
+                        &-selected{
+                            width: 33%;
+                            position: relative;
+                        .borderMaskLeft{
+                            height: 1px;
+                            width: 46.5%;
+                            position: absolute;
+                            display: inline-block;
+                            background-color: $red;
+                            &::after{
+                                content: '';
+                                display: block;
+                                width: 9%;
+                                height: 0.5px;
+                                background: $red;
+                                -webkit-transform: rotate(-24deg);
+                                -moz-transform: rotate(-24deg);
+                                -ms-transform: rotate(-24deg);
+                                transform: rotate(-24deg);
+                                position: absolute;
+                                left: 98.5%;
+                                bottom: 3px;
+                            }
+                        }
+
+                        .borderMaskRight{
+                            height: 1px;
+                            position: absolute;
+                            width: 46.5%;
+                            right: 0;
+                            display: inline-block;
+                            background-color: $red; 
+                            &::before{
+                                content:'';
+                                display: block;
+                                width: 9%;
+                                height: 0.5px;
+                                background: $red;
+                                -webkit-transform: rotate(24deg);
+                                -moz-transform: rotate(24deg);
+                                -ms-transform: rotate(24deg);
+                                transform: rotate(24deg);
+                                position: absolute;
+                                right: 98.5%;
+                                bottom: 3px;
+                            }
+                        }
+                    }
+                    }
+                }
+                .page-top-title{
+                    > span{
+                        &:after{
+                            width: calc( 100% - 130px);
+                            left: unset;
+                        }
+                    }
+                }
                 div[id$="plhFavoriKayitYok1"]{
                     background: none;
                     padding: 0;
@@ -16,14 +83,41 @@
                         &:empty{display: none;}
                         display: block;
                         text-align: left;
+                        margin-top: 20px;
                         .ems-page-favorites-empty{
+                            padding: 78px 0px;
+                            border-top: 1px solid $border;
+                            border-bottom: 1px solid $border;
                             .big-text{
-                                font-family: $medium;
-                                font-size: 26px;
-                                display: block;
-                                color: #5c606d;
+                                &-favorite{
+                                font-family: $regular;
+                                font-size: 22px;
+                                color: $red;
+                                font-weight: bold;
+                                display: inline-block;
+                                position: absolute;
+                                line-height: 42px;
+                                padding-left: 10px;
+                                }
+                                &-order {
+                                    display: none;
+                                }
+                                &-icon{
+                                    &-favorite {
+                                    background: url(http://cosmetica.proj-e.com/images/frontend/arrow.png) no-repeat center;
+                                    display: inline-block;
+                                    width: 42px;
+                                    height: 42px;
+                                    position: relative;
+                                    background-size: 42px 42px;
+                                    }
+                                    &-order {
+                                        display: none;
+                                    }
+                                }
                             }
                             .order-ico-wrp{
+                                display: none;
                                 padding:13px 10px;
                                 background: #d1f5fa;
                                 margin-top: 30px;
@@ -43,7 +137,7 @@
                                 }
                                 span{
                                     display: block;
-                                    font-family: $medium;
+                                    font-family: $mediumA;
                                     font-size: 12px;
                                     color: $lDark;
                                     margin-top: 10px;
@@ -55,10 +149,11 @@
                                 display: inline-block;
                                 vertical-align: middle;
                                 color: $lDark;
-                                font-family: $medium;
+                                font-family: $mediumA;
                                 font-size: 16px;
                             }
                             .order-redirect-btn{
+                                display: none;
                                 .btnDefault{
                                     background: $lDark;
                                     padding:18px 15px;
@@ -110,7 +205,7 @@
                 }
                 .ems-name{order: 2; margin-top: 5px; }
                 .ems-name a{width: 70%; display: block;}
-                .ems-price{order: 1; font-family: $medium; font-size: 16px; }
+                .ems-price{order: 1; font-family: $mediumA; font-size: 16px; }
                 .ems-grid-option{order: 3;}
                 .ems-grid-piece{order: 4; }
                 .col-1{
@@ -249,12 +344,49 @@
         &-member{
             .ems-page-default{
                 &-favorites{
+
+                    .borderMask{
+                        height: 65px;
+                        &-selected{
+                            height: 65px; 
+
+                            .borderMaskLeft{
+                                bottom: 0;
+                                width: 41% !important;
+                                &::after{
+                                    width: 23.5% !important;
+                                    -webkit-transform: rotate(-22deg) !important;
+                                    -moz-transform: rotate(-22deg) !important;
+                                    -ms-transform: rotate(-22deg) !important;
+                                    transform: rotate(-22deg) !important;
+                                }
+                            }
+
+                            .borderMaskRight{
+                                bottom: 0;
+                                width: 41% !important;
+                                &::before{
+                                    width: 23.5% !important;
+                                    -webkit-transform: rotate(22deg) !important;
+                                    -moz-transform: rotate(22deg) !important;
+                                    -ms-transform: rotate(22deg) !important;
+                                    transform: rotate(22deg) !important;
+                                }
+                            }
+                        }
+
+                    }
+
                     padding: 0 20px;
+                    .page-top-title{
+                        display: block;
+                    }
                     div[id$="plhFavoriKayitYok1"]{
                         > span {
+                            margin-bottom: 100px;
                             .ems-page-favorites-empty{
-                                padding: 20px 0;
-                                .big-text{font-size: 20px; color: $lDark;}
+                                padding: 70px 0;
+                                .big-text{font-size: 5vw;}
                                 .order-ico{margin-right: 0; width: 30%;}
                                 .small-text{ font-size: 13px;padding-left: 20px; width: 70%;}
                             }
