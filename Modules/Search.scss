@@ -268,41 +268,51 @@
 
 @media screen and (max-width: $breakpointXSM){
     .mobile-element-search-wrap{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 20;
-        left: 0;
-        bottom: -100%;
-        background: #fff;
-        @include transition(bottom 333ms ease-in-out);
-        will-change: bottom;
-        .mod-mini-search{display: block;}
+        .mod-mini-search{
+            display: block;
+            padding: 10px;
+            background: $Gray;
+        }
     }
     
     .mod-mini-search{
         display: none;
         &-header{
-            display: none;
+            display: block;
             .ems-desktop-case-visible{
                 > a{
                     display: block;
-                    padding-top: 13px;
-                    padding-bottom: 13px;
-                    text-align: center;
+                    padding: 5px 40px 5px 20px; 
+                    height: 40px;
+                    line-height: 30px;
+                    border: none;
+                    border-radius: 1px;
+                    text-align: left;
+                    background: #fff;
+                    position: relative;
                     i.icon-ico_search{
-                        margin-right: 5px;
+                        position: absolute;
+                        top: 50%;
+                        right: 5px;
+                        width: 30px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        margin-top: -15px;
                     }
                     i.icon-ico_search, i.icon-ico_search:before{
-                        font-size: 15px;
+                        font-size: 20px;
+                        color: #000;
                     }
                     span{
-                        font-size: 12px;
-                        letter-spacing: 1px;
+                        font-size:14px;
+                        font-family: $mediumAA;
+                        color: #757575;
                     }
                 }
             }
         }
+        &-body{display: none;}
         .ems-form{
             max-width: 100%;
             &-inner{
@@ -313,7 +323,6 @@
                 &.text{
                     width: 100%;
                     display: block;
-                    padding-top: 20px;
                     &:before{
                         letter-spacing: 2px;
                         font-size: 12px;
@@ -321,14 +330,15 @@
                 }
                 input{
                     max-width: 100%;
-                    padding-right: 50px;
-                    padding: 5px 50px 5px 50px; 
-                    height: 50px;
-                    line-height: 40px;
-                    font-size:24px;
-                    font-family: $mediumA;
-                    color: #171d2f;
-                    border-bottom: 1px solid $border;
+                    padding: 5px 40px 5px 20px; 
+                    height: 40px;
+                    line-height: 30px;
+                    font-size:14px;
+                    font-family: $avenir-medium;
+                    color: #757575;
+                    border: none;
+                    border-radius: 1px;
+                    text-align: left;
                 }
                 &.submit{
                     top:14px;

@@ -218,6 +218,9 @@
             visibility: visible;
         }
     }
+    body.mini-login-ready{
+        overflow: hidden;
+    }
 }
 
 .mod-mini-login{
@@ -379,26 +382,17 @@
 
 .vailLogin{z-index:15;}
 
-//////////////////////////////////
-body.mini-login-ready{
-    overflow: hidden;
-}
-
 body.ems-logoff{
     .mod-mini-login{
         &-body{
-            .sub.logoff{
-                display: block;
-            }
+            .sub.logoff{ display: block; }
         }
     }
 }
 body.ems-login{
     .mod-mini-login{
         &-body{
-            .sub.login{
-                display: block;
-            }
+            .sub.login{ display: block; }
         }
     }
 }
@@ -407,62 +401,116 @@ body.ems-login{
 body.ems-logoff.mini-login-ready{
     .mod-mini-login{
         &-body{
-            .sub.logoff{
-                display: block;
-            }
+            .sub.logoff{ display: block; }
         }
     }
 }
 body.ems-login.mini-login-ready{
     .mod-mini-login{
         &-body{
-            .sub.login{
-                display: block;
-            }
+            .sub.login{ display: block; }
         }
     }
-}
-
-@media only screen and (min-width: 850px) and ( max-width: 1200px) {
-    
 }
 
 @media screen and (max-width: $breakpointXSM){
     .mod-mini-login{
         &-header{
-            text-align: center;
-            padding:9px 10px;
+            height: 60px;
             > span[id$="lbhKUTU_HESABIM"]{
                 &:empty{display: none;}
-                color: #fff;
+                position: fixed;
+                top: 0;
+                left: 0;
+                color: #000;
                 display: block;
-                max-width: 70px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                position: relative;
+                padding:24px 50px 21px 50px;
+                font-size: 14px;
+                width: 100%;
+                background:#fbfbfb;
+                z-index: 1;
+                &:before{
+                    font-family: 'icomoon';
+                    content:'\e92b';
+                    font-size: 20px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    left: 15px;
+                }
+                &:after{
+                    font-family: 'icomoon';
+                    content:'\e900';
+                    font-size: 11px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    right: 15px;
+                    @include setTransform(rotate(180deg));
+                }
             }
             > span[id$="lbfkutuUyeGiris1"]{
-                .mobile-element{position: relative; top: -2px; color: #fff; margin-left: 10px;}
-                .icon-ico_member, .icon-ico_member:before{
-                    font-size: 18px;
+                .icon-ico_user{display: none;}
+                &:empty{display: none;}
+                position: fixed;
+                top: 0;
+                left: 0;
+                color: #000;
+                display: block;
+                padding:24px 50px 21px 50px;
+                font-size: 14px;
+                width: 100%;
+                background:#fbfbfb;
+                z-index: 1;
+                &:before{
+                    font-family: 'icomoon';
+                    content:'\e92b';
+                    font-size: 20px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    left: 15px;
                 }
-                .icon-ico_member:before{color:#fff;}
+                &:after{
+                    font-family: 'icomoon';
+                    content:'\e900';
+                    font-size: 11px;
+                    color: #000;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    right: 15px;
+                    @include setTransform(rotate(180deg));
+                }
             }
         }
         &-body{
-           position: fixed;
-           top: 0;
-           left: 0;
-           z-index: 10;
-           width: 100%;
-           height: 100%;
-           @include setTransform(translateX(-100%));
-           @include transition(transform 333ms ease-in-out);
-           will-change: transform;
-           opacity: 0;
-           visibility: hidden;
-           overflow-y: auto;
+            background:#fbfbfb;
             .sub{
                 .ems-message{margin-top: 0;}
                 .sub-title{
@@ -485,70 +533,56 @@ body.ems-login.mini-login-ready{
                         top: 21px;
                         height: 30px;
                     }
-                    span[id$="lbfUYE_SAYIN"]{
-                        display: block;
-                        position: relative;
-                        padding: 20px 40px;
-                        color: $lDark;
-                        border-bottom: 1px solid $border;
-                        text-align: center;
-                        span{
-                            font-size: 18px;
-                            font-family: $mediumA;
-                            display: block;
-                            max-width: 95%;
-                            margin-left: auto;
-                            margin-right: auto;
-                            overflow: hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                        }
-                        .mini-login-close{
-                            position: absolute;
-                            top: 50%;
-                            left: 20px;
-                            width: 24px;
-                            height: 24px;
-                            margin-top: -12px;
-                            text-align: center;
-                            i{line-height: 24px;}
-                            i, i:before{
-                                font-size: 12px;
-                                color: $lDark;
-                            }
-                        }
-                    }
+                    span[id$="lbfUYE_SAYIN"]{display: none; }
                 }
                 .ems-user-pages{
-                    padding-left: 20px;
-                    padding-right: 20px;
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    padding-bottom: 15px;
                     > div a{
-                        padding-left: 5px;
-                        padding-right: 5px;
+                        padding: 10px;
+                        font-size: 14px;
+                        &.btnKutuLogout{
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            color: #000;
+                            span{font-size: 14px;}
+                        }
                     }
                 }
             }
         }
     }
-
-    .mini-login-ready{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+    body.ems-login{
         .mod-mini-login-body{
-            opacity: 1;
-            visibility: visible;
+            .sub.login{ display: none; }
+        }
+        .mod-mini-login.opened{
+            .mod-mini-login-header{
+                > span[id$="lbhKUTU_HESABIM"]:after{
+                    @include setTransform(rotate(0));
+                }
+            }
+            .mod-mini-login-body{
+                .sub.login{ display: block; }
+            }
         }
     }
-    .mini-login-animate{
-        .site-header .ems-container-full .mobi-close-btn{opacity: 0;}
+    body.ems-logoff{
         .mod-mini-login-body{
-            @include setTransform(translateX(0));
+            .sub.logoff{ display: none; }
+            .sub .sub-title{display: none;}
+            .ems-form-inner{padding: 10px;}
+        }
+        .mod-mini-login.opened{
+            .mod-mini-login-header{
+                > span[id$="lbfkutuUyeGiris1"]:after{
+                    @include setTransform(rotate(0));
+                }
+            }
+            .mod-mini-login-body{
+                .sub.logoff{ display: block; }
+            }
         }
     }
 }

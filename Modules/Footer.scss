@@ -327,101 +327,90 @@
 
 @media screen and (max-width: $breakpointXSM){
     .site-footer{
-        border-top: 1px solid $border;
-        padding-top: 20px;
-        padding-bottom: 60px;
+        background: #fafafa;
+        @include flex();
+        @include flexDirection(column);
         .ems-inline-table{
             table-layout: inherit;
             @include flex();
             @include flexDirection(column);
         }
         &-social{
+            background: #ffffff;
             &-inner{
                 > ul{
                     width: 100%;
-                    max-width: 320px;
-                    text-align: center;
-                    padding-top: 30px;
-                    padding-bottom: 20px;
-                }
-            }
-        }
-        &-center{
-            .ems-inline-table{
-                background: #f6f7f9;
-                .ems-cell-1{order: 2;}
-                .ems-cell-2{order: 1;}
-                padding: 30px 0 0 0;
-            }
-        }
-        &-menu{
-            margin-top: 20px;
-            > ul{
-                > li{
-                    display: block;
-                    > ul{
-                        > li{
-                            border-bottom: 1px solid $border;
-                            &:first-child{
-                                border-top: 1px solid $border;
+                    margin-left: auto;
+                    padding: 25px 5px;
+                    > li{
+                        text-align: center;
+                        width: 25%;
+                        a{
+                            text-align: center;
+                            i,i:before{
+                                color: #000;
+                                font-size: 22px;
                             }
-                            > a{
-                                display: block;
-                                padding: 11px 20px;
-                                font-size: 14px;
-                                color: #28354f;
-                                position: relative;
-                                &:after{
-                                    font-family: 'icomoon';
-                                    content: '\e90c';
-                                    position: absolute;
-                                    top: 50%;
-                                    right: 10px;
-                                    width: 24px;
-                                    height: 24px;
-                                    font-size: 12px;
-                                    line-height: 24px;
-                                    text-align: center;
-                                    margin-top: -12px;
-                                }
-                            }
-                            > ul{
-                                display: none;
+                            i.icon-ico_twitter, i.icon-ico_twitter:before{
+                                font-size: 22px;
                             }
                         }
                     }
                 }
             }
         }
+        &-customer-service{
+            text-align: center;
+        }
+        &-center{
+            .ems-inline-table{
+                background: #d27fd4;
+                background: linear-gradient(to right, #d27fd4, #db9caf 24%, #9bbaf2 52%, #adff93);
+                .ems-cell-1{
+                    order: 1;
+                    padding: 25px 40px 10px 40px;
+                    &:after{
+                        content: '';
+                        width: 100%;
+                        max-width: 210px;
+                        background: #fff;
+                        display: block;
+                        height: 2px;
+                        margin: 25px auto 0 auto;
+                    }
+                }
+                .ems-cell-2{order: 2;}
+                .ems-cell-3{order: 3;}
+            }
+        }
+        &-menu,
+        &-copyright,
+        &-brands-link{display: none;}
+
         &-copyright,
         &-corporate{
             text-align: center;
         }
-        &-copyright{
-            p{
-                line-height: 16px;
-                font-size: 13px;
-                padding: 40px 20px 60px 20px;
-            }
-        }
     }
 
     .kutuBulten{
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 10px 20px 20px 20px;
         .mod-newsletter{
             &-header{
+                display: block;
                 > span{
                     text-align: center;
-                    padding-left: 25px;
-                    padding-right: 25px;
+                    padding-bottom: 15px;
                     span{
                         font-family: $mediumA;
                         font-size: 14px;
                         line-height: 18px;
-                        color: #000;
+                        color: #fff;
                     }
                 }
+            }
+            &-body{
+                .ems-form .ems-field.text input{border-color:$Gray;}
             }
         }
     }

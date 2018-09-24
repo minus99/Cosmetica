@@ -983,6 +983,7 @@ ul.emosInfinite {
             position: absolute;
             left: 0;
             bottom: 0;
+            z-index: 1;
             &-view,
             &-inner{
                 display: table-cell;
@@ -996,10 +997,16 @@ ul.emosInfinite {
                     padding: 6px 5px 4px 5px;
                     display: block;
                     font-family: $avenir-medium;
-                    font-size: 14px;
-                    min-height: 30px;
-                    line-height: 20px;
-                    background: #dedede;
+                    font-size: 12px;
+                    min-height: 35px;
+                    line-height: 25px;
+                    background: #f4f4f4;
+                    span{font-size: 12px;}
+                    @media screen and (min-width: $breakpointXSM){
+                        &:hover{
+                            background: #d0d0d0;
+                        }
+                    }
                 }
             }
             .urunListe_sepetGrup{
@@ -1023,9 +1030,16 @@ ul.emosInfinite {
                     color: #fff;
                     text-align: center;
                     font-family: $avenir-medium;
-                    font-size: 14px;
-                    min-height: 30px;
-                    line-height: 20px;
+                    font-size: 12px;
+                    min-height: 35px;
+                    line-height: 25px;
+                    letter-spacing: 0.2px;
+                    span{font-size: 12px;}
+                    @media screen and (min-width: $breakpointXSM){
+                        &:hover{
+                            background: #390ebf;
+                        }
+                    }
                 }
             }
         }
@@ -1401,10 +1415,9 @@ ul.emosInfinite {
 
     ul.emosInfinite{
         .ems-prd{
-            padding:0 5px;
             width: 50%;
-            &-content{
-                padding: 5px 0 0 0;
+            &-inner{
+                padding: 5px;
             }
             &-price{
                 &-first{

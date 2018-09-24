@@ -42,8 +42,10 @@
         &.margin-40{margin-top: 40px;}
     }
     ul.emosInfinite{
+        @media screen and (min-width: $breakpointXSM){
+            .ems-prd{width: 25%;}    
+        }
         .ems-prd{
-            width: 25%;
             &-color-info, &-group{display: none;}
         }
     }
@@ -53,7 +55,6 @@
             display: inline-block;
             padding: 10px;
             width: auto;
-            margin-top: 20px;
             font-family: $bold;
             font-size: 15px;
             span, i{display: inline-block; vertical-align: middle;}
@@ -65,6 +66,7 @@
                 font-size: 11px; 
             }
             @media screen and (min-width: $breakpointXSM){
+                margin-top: 20px;
                 &:hover{
                     span, i:before{color: $red;}
                 }
@@ -154,7 +156,6 @@
         }
         .ems-tab-footer{
             text-align: center;
-
         }
         .ems-tab-inner{
             > .navigation-js{
@@ -280,27 +281,30 @@
 }
 
 @media screen and (max-width: $breakpointXSM){
+    .swiper-title-2{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: relative;
+        text-align: center;
+        span{
+            font-size: 14px;
+            letter-spacing: 1.6px;
+            padding-left: 30px;
+        }
+        .line{height: 1px; margin-top: -1px;}
+        &.margin-20{margin-top: 30px;}
+        &.margin-30{margin-top: 30px;}
+        &.margin-40{margin-top: 30px;}
+    }
+    .widget-middle{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .widget{
-        overflow: hidden;
-        .swiper-title{
-            span{
-                font-size: 30px;
-                margin-top: 20px;
-                padding-top: 40px;
-                padding-bottom: 10px;
-                border-top: solid 1px #ecedee;
-            }
-        }
-        .swiper-inner{
-            overflow: visible;
-        }
+        .swiper-inner{overflow: visible; }
         ul.emosInfinite{
             .ems-prd{
-                width: 50%;
-                padding:0 5px;
-                &-content{
-                    width: 100%;
-                }
+                width: 215px !important;
             }
         }
         .swiper-button-next,
@@ -308,9 +312,28 @@
             display: none;
         }
     }
+    .widget, .swiper-container, .ems-tab-widget{
+        .swiper-title{
+            text-align: center;
+            span{
+                padding-left: 30px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 14px;
+                letter-spacing: 1.6px;
+                text-align: center;
+            }
+            .line{
+                margin-top: -1px;
+                height: 1px;
+            }
+        }
+        .all-view-button > a{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+    }
     .widget-pagecart{display: none;}
-}
-
-@media screen and (max-width: 480px){
-    .widget .emosInfinite .ems-prd{width:135px !important;}
 }

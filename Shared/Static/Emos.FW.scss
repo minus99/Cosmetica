@@ -95,9 +95,11 @@ a {
 		display: table;
 		table-layout: fixed;
 		width: 100%;
-		> * {
-			display: table-cell;
-			vertical-align: top;
+		@media screen and (min-width: $breakpointXSM){
+			> * {
+				display: table-cell;
+				vertical-align: top;
+			}
 		}
 		&-center {
 			margin-left: auto;

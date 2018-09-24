@@ -1367,7 +1367,8 @@
                 line-height: 1.1;
             }
         }
-        &-code{
+        
+        &-detail-btn,&-code{
             display: none;
         }
         &-brand{
@@ -1561,41 +1562,6 @@
             height: 56px;
             z-index: 1;
             display: none;
-        }
-        &-size{
-            .dropdown-trigger{ display:none; }
-            .dropdown-trigger > span{
-                font-size: 14px;
-            }
-            .urunSecenek_baslik1 { display:none; }
-            .dropdown-options{
-                display:block !important;
-                margin-top: 30px;
-                > a{
-                    min-width: 47px;
-                    border: 1px solid $border;
-                    display: inline-block;
-                    vertical-align: middle;
-                    text-align: center;
-                    padding: 9px 5px;
-                    margin-right: 5px;
-                    margin-top: 10px;
-                    &.selectedOption{
-                        border-color: $lDark; 
-                        color: #fff;
-                        background: $lDark;
-                    }
-                    &.stokYok{
-                        border-color: $red; 
-                        background: none;
-                        color: $red;
-                        text-decoration: line-through;
-                        &.selectedOption{
-                            opacity: .4;
-                        }
-                    }
-                }
-            }
         }
         &-discount{
             .urunDetay_KazancOran{
@@ -1938,22 +1904,6 @@
                         background: #565656;
                     }
                 }
-            }
-            .urunDetay_btnSepeteAt > table,
-            .urunDetay_btnStokHaberci > table{
-                box-sizing: border-box;
-                display: -webkit-flex !important;
-                display: -ms-flexbox !important;
-                display: flex !important;
-            }
-            .urunDetay_btnSepeteAt > table > tbody > tr,
-            .urunDetay_btnStokHaberci > table > tbody > tr,
-            .urunDetay_btnSepeteAt > table > tbody > tr > th,
-            .urunDetay_btnStokHaberci > table > tbody > tr > th{
-                width: 100%;
-                display: -webkit-flex !important;
-                display: -ms-flexbox !important;
-                display: flex !important;
             }
         }
     }
@@ -2437,76 +2387,6 @@
             &-desc{
                 padding-left: 15px;
                 padding-right: 15px; 
-            }
-            &-size{
-                position: fixed;
-                right: 0;
-                top: 50px;
-                width: 100%;
-                height: calc(100% - 100px);
-                z-index: 19;
-                background: $Gray;
-                @include flex();
-                flex-wrap: wrap; 
-                align-content: flex-start;
-                opacity: 0;
-                @include setTransform(translateX(100%));
-                @include transition(transform 333ms ease-in-out);
-                will-change: transform;
-                .urunDetay_urunSecenek{
-                    .sStylerMainWrp.sStylerWrp_select{ display: none; }
-                }
-                .dropdown-options{
-                    display: block !important;
-                    height: calc(100% - 40px);
-                    width: 100%;
-                    overflow-x: hidden;
-                    position: absolute;
-                    left: 0;
-                    top: 40px;
-                    padding: 5px 15px;
-                    margin-top: 0;
-                    a{
-                        min-width: auto;
-                        display: block;
-                        font-family: $regular;
-                        color: $darkBlack;
-                        font-size: 14px;
-                        padding-top: 13px;
-                        padding-bottom: 13px;
-                        padding-right: 35px;
-                        position: relative;
-                        margin-right: 0;
-                        margin-top: 10px;
-                        .dropdownrow img{display: none;}
-                    }
-                }
-                &-left{
-                    flex-grow: 2;
-                    flex-shrink: 2;
-                    flex-basis: 100%;
-                    order: 3;
-                }
-                .mobile-element-brand-stock{
-                    flex-grow: 1;
-                    flex-shrink: 1;
-                    flex-basis: auto;
-                    background: $lDark;
-                    display: none;
-                    .ems-prd-detail-brandlink{
-                        a{
-                            display: block;
-                            text-align: center;
-                            i{display: none;}
-                            color: #fff;
-                            font-family: $regular;
-                            font-size: 14px;
-                            padding: 12px 5px;
-                            border-right: 1px solid $dGray;
-                        }
-                    }   
-                    &.show{display: block;}
-                }
             }
             &-add-to-cart{
                 display: none;
