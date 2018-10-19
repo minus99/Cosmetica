@@ -30,13 +30,13 @@
                                     padding-bottom: 0;
                                     .sStylerMainWrp.sStylerWrp_select,
                                     input{
-                                        margin-bottom: 20px;
+                                        margin-bottom: 15px;
                                     }
                                 }
                                 &.bulletin {
                                     .ems-form-obj{
                                         margin-top: 10px;
-                                        margin-bottom: 20px;
+                                        margin-bottom: 10px;
                                     }
                                 }
                                 &.sms{
@@ -52,7 +52,6 @@
             }
             &-address{
                 position: relative;
-
                 .same-address, .ems-brand-delivery{
                     display: none;
                 }
@@ -70,12 +69,10 @@
                         font-size: 16px;
                         @media screen and (min-width: $breakpointXSM){
                             text-align: left;
-                            padding: 50px 0 0 100px;
+                            padding: 50px 0 0 40px;
                             color: $red;
                             font-size: 22px;
                             font-weight: bold;
-                            padding-top: 60px;
-                            padding-left: 50px;
                             &:before{
                                 position: absolute;
                                 left: 0px;
@@ -96,45 +93,23 @@
                         }
                     }
                 }
-                /*Yeni ader ekle*/
-                @media screen and (min-width: $breakpointXSM){
-                    .add-new-address {
-                        width: auto;
-                        position: absolute;
-                        left: 0;
-                        bottom: -60px;
-                        z-index: 1;
-                        .btnAdresEkle {
-                            &:before, span{
-                                @include transition(all 0.2s ease);
-                            }
-                            &:hover {
-                                span { color: $btnColor; }
-                                &:before{ color: $btnColor; }
-                            }
-                        }
-                    }
-                }
                 .add-new-address {
                     .btnAdresEkle {
                         background: none;
-                        width: 250px;
+                        max-width: 250px;
                         position: relative;
                         border: 1px solid black;
-                        span {
-                            font-family: $regular;
-                            font-size: 14px;
-                            @include transition(all 0.2s ease);
-                            color: $lDark;
-                            font-weight: bold;
+                        @media screen and (min-width: $breakpointXSM){
+                            &:hover{
+                                background: $lDark;
+                                span{color: $White;}
+                            }
                         }
                     }
                 }
                 
                 /*Adres form*/
                 .ems-page-new-address{
-                    max-width: 700px;
-                    margin-right: auto;
                     .page-top-title{
                         display: none;
                         span[id$="lbfUYA_ADRESEKLE"]{
@@ -149,7 +124,6 @@
                     .page-top-desc{
                         margin-top: 0;
                         display: block;
-                        /*padding-bottom: 10px;*/
                         padding-bottom: 30px;
                         text-align: left;
                     }
@@ -177,15 +151,11 @@
                         }
                         &-inner{
                             .ems-field {
-                                max-width: 300px;
-                                margin-right: auto;
                                 .ems-form-obj{
                                     padding-bottom: 0;
                                     input,
                                     .sStylerMainWrp.sStylerWrp_select,
-                                    textarea{
-                                        margin-bottom: 10px;
-                                    }
+                                    textarea{ margin-bottom: 15px; }
                                 }
                                 &.adresTip{
                                     max-width: 100%;
@@ -222,18 +192,6 @@
                                         }
                                     }
                                 }
-                                &.button{
-                                    .ems-form-obj{
-                                        @media screen and (min-width: $breakpointXSM){
-                                            .btnDefault{
-                                                background: $lDark;
-                                                &:hover{
-                                                    background: $btnColor;                                                
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
                                 &.tcCheck-2 {
                                     margin-top: 10px;
                                     .ems-form-label{
@@ -254,6 +212,9 @@
                                 &.button{
                                     .btnDefault{
                                         margin-top: 15px;
+                                        @media screen and (min-width: $breakpointXSM){
+                                            max-width: 250px;
+                                        }
                                     }
                                 }
                             }
@@ -271,45 +232,32 @@
                 div[id$="plhAdresYokLabel1"] span{
                     display: block;
                     padding: 0;
-                    height: 130px; }
+                }
                 .ems-message-error {
                     border: none;
-                    border-top: 1px solid $border;
                     .yeniAdresEkle{
                         margin: 0;
-                        img {
-                            display: none;
-                        }
-                        span{
-                            display: none;
-                        }
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        border-top: 1px solid $border;
+                        border-bottom: 1px solid $border;
+                        height: auto;
+                        max-width: 100%;
+                        b{margin: 0;}
+                        img { display: none; }
+                        span{ display: none; }
                         b:before{
                             content: '';
-                            background: url(http://cosmetica.proj-e.com/images/frontend/location.png);
-                            display: inline-block;
+                            background:url(#{$baseHref + "/images/frontend/location.png"}) no-repeat;
                             width: 45px;
                             height: 40px;
-                            position: relative;
-                            background-repeat: no-repeat;
-                            top: 13px; 
+                            display: inline-block;
+                            vertical-align: middle;
                         }
                     }
                 }
                 .add-new-address{
-                    position: inherit;
-                    top: inherit;
-                    right: inherit;
-                    text-align: center;
                     .btnAdresEkle{
-                        padding:18px 15px;
-                        width: 100%;
-                        display: block;
-                        margin-top: 30px;  
-                        border: 1px solid black;
-                        @media screen and (min-width: $breakpointXSM){
-                            max-width: 330px;
-                            margin-left: 0;
-                        }
                         &:before{
                             color: #fff;
                             position: relative;
@@ -321,6 +269,9 @@
                         @media screen and (min-width: $breakpointXSM){
                             &:hover{
                                 background: $btnColor;
+                                span{
+                                    color: white;
+                                }
                             }
                         }
                     }
@@ -330,150 +281,148 @@
         /*Adres grid*/
         .ems-grid-address {
             &:empty{display: none;}
-                position: relative;
+            position: relative;
+            max-width: 770px;
+            .col {
+                flex: none;
+                max-width: none;
+            } 
+            .add-new-address{
+                margin-top: 20px;
+            }
+            .ems-grid-row {
+                display: table;
+                width: 100%;
+                min-height: 90px;
                 border-bottom: 1px solid $border;
-                .col {
-                    flex: none;
-                    max-width: none;
-                } 
-                .add-new-address{
-                    margin-top: 10px;
+                padding-left: 0;
+                padding-right: 0;
+                &:first-child{
+                    border-top: 1px solid $border;
                 }
-                .ems-grid-row {
-                    display: table;
-                    width: 100%;
-                    min-height: 90px;
-                    border-bottom: 1px solid $border;
+                > div {
+                    display: table-cell;
+                    padding: 10px 0;
+                    vertical-align: middle;
+                }
+                .col-1 { 
                     padding-left: 0;
-                    padding-right: 0;
-                    &:first-child{
-                        border-top: 1px solid $border;
+                    width: 15px;
                     }
-                    > div {
-                        display: table-cell;
-                        padding: 10px 0;
-                        vertical-align: middle;
-                    }
-                    .col-1 { 
-                        padding-left: 0;
-                        width: 15px;
-                     }
-                    .col-2 { width: 85px;
-                        padding-left: 10px;
-                        border-left: none; }
-                    .col-3 {display: none;}
-                    .col-4 { width: 10px; }
-                    .ems-address-name {
-                        max-width: 20%;
-                        margin-left: 0;
-                        font-family: $mediumA;
-                        font-size: 14px;
-                        float: left;
-                        .adresTip1, .adresTip2 {
-                            font-family: $regular;
-                            display: block;
-                            font-size: 14px;
-                            color: $darkBlack;
-                            margin-top: 5px;
-                        }
-                        .adresTip2 {
-                            font-size: 14px;
-                            color: #6c6c6c;
-                        }
-                    }
-                    .ems-address {
-                        font-size: 14px;
-                        line-height: 18px;
-                        max-width: 80%;
-                        max-height: 40px;
-                        overflow: hidden;
-                        color: $darkBlack;
-                        padding-left: 40px;
-                        
-                    }
-
-                    .btnFatAdrSec {margin-top: 5px;}
-                    .ems-address-buttons{
-                        @include flex();
-                        @include flexDirection();
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .ems-address-buttons-1{
-                        @include flexDirection(column);
-                        align-items: flex-start;
-                    }
-                    .btnTesAdrSec, .btnFatAdrSec {
+                .col-2 { width: 85px;
+                    padding-left: 10px;
+                    border-left: none; }
+                .col-3 {display: none;}
+                .col-4 { width: 10px; }
+                .ems-address-name {
+                    max-width: 20%;
+                    margin-left: 0;
+                    font-family: $mediumA;
+                    font-size: 14px;
+                    float: left;
+                    .adresTip1, .adresTip2 {
                         font-family: $regular;
-                        background: none;
-                        padding: 5px 0 5px 30px;
-                        width: 100%;
-                        display: inline-block;
-                        text-align: left;
-                        position: relative;
-                        text-transform: inherit;
-                        span {
-                            display: inline-block;
-                            vertical-align: middle;
-                            font-size: 14px;
-                            font-weight: normal;
-                            color: $lDark;
-                        }
-                        &:before{
-                            font-family:'icomoon';
-                            content:'';
-                            width: 18px;
-                            height: 18px;
-                            line-height: 20px;
-                            text-align: center;
-                            background: #ffffff;
-                            border: solid 1px $lDark;
-                            border-radius: 100%;
-                            display: inline-block;
-                            position: absolute;
-                            top: 50%;
-                            left: 0;
-                            margin-top: -9px;
-                            color: #fff;
-                            font-size: 9px;
-                        }
-                        &.emos_selected { 
-                            &:before{
-                                content: '\e918';
-                                border-color: $lDark;
-                                background: $lDark;
-                            }
-                        }
-                        &:hover{
-                            span{
-                                color: #3f434f;
-                            }
-                        }
-                    }
-                    .btnAdresListeGuncelle,
-                    .btnAdresListeSil{
                         display: block;
-                        width: inherit;
-                        width: 24px;
-                        height: 24px;
+                        font-size: 14px;
+                        color: $darkBlack;
+                        margin-top: 5px;
+                    }
+                    .adresTip2 {
+                        font-size: 14px;
+                        color: #6c6c6c;
+                    }
+                }
+                .ems-address {
+                    font-size: 14px;
+                    line-height: 18px;
+                    max-width: 80%;
+                    max-height: 40px;
+                    overflow: hidden;
+                    color: $darkBlack;
+                    padding-left: 40px;   
+                }
+                .btnFatAdrSec {margin-top: 5px;}
+                .ems-address-buttons{
+                    @include flex();
+                    @include flexDirection();
+                    align-items: center;
+                    justify-content: center;
+                }
+                .ems-address-buttons-1{
+                    @include flexDirection(column);
+                    align-items: flex-start;
+                }
+                .btnTesAdrSec, .btnFatAdrSec {
+                    font-family: $regular;
+                    background: none;
+                    padding: 5px 0 5px 30px;
+                    width: 100%;
+                    display: inline-block;
+                    text-align: left;
+                    position: relative;
+                    text-transform: inherit;
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: 14px;
+                        font-weight: normal;
                         color: $lDark;
-                        i{ line-height: 24px; }
                     }
-                    .btnAdresListeGuncelle{
-                        margin-right: 20px;
-                        i, i:before{
-                            color: $lDark;
-                            font-size: 15px;
+                    &:before{
+                        font-family:'icomoon';
+                        content:'';
+                        width: 18px;
+                        height: 18px;
+                        line-height: 20px;
+                        text-align: center;
+                        background: #ffffff;
+                        border: solid 1px $lDark;
+                        border-radius: 100%;
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        margin-top: -9px;
+                        color: #fff;
+                        font-size: 9px;
+                    }
+                    &.emos_selected { 
+                        &:before{
+                            content: '\e918';
+                            border-color: $lDark;
+                            background: $lDark;
                         }
                     }
-                    .btnAdresListeSil {
-                        i, i:before{
-                            color: $lDark;
-                            font-size: 14px;
+                    &:hover{
+                        span{
+                            color: #3f434f;
                         }
+                    }
+                }
+                .btnAdresListeGuncelle,
+                .btnAdresListeSil{
+                    display: block;
+                    width: inherit;
+                    width: 24px;
+                    height: 24px;
+                    color: $lDark;
+                    i{ line-height: 24px; }
+                }
+                .btnAdresListeGuncelle{
+                    margin-right: 20px;
+                    i, i:before{
+                        color: $lDark;
+                        font-size: 15px;
+                    }
+                }
+                .btnAdresListeSil {
+                    i, i:before{
+                        color: $lDark;
+                        font-size: 14px;
                     }
                 }
             }
+        }
     }
 }
 
@@ -482,7 +431,12 @@
     .ems-page {
         &-member{
             .ems-page-default{
+                &-address,
+                &-info{
+                    .page-top-title{display: block;}
+                }
                 &-address{
+
                     div[id$="plhAdresYokLabel1"]{
                         background: none;
                         padding: 0;
@@ -507,19 +461,7 @@
                     }
                     .add-new-address{
                         .btnAdresEkle{
-                            width: 100%;
-                            text-align: center;
-                            padding: 18px 10px 18px 10px;
-                            background: #fff;
-                            span{color: black;}
-                            &:before{
-                                position: relative;
-                                margin-top: inherit;
-                                left: inherit;
-                                top: inherit;
-                                margin-right: 10px;
-                                color: #fff;
-                            }
+                            max-width: 100%;
                         }
                     }
                     .ems-page-new-address{
@@ -528,12 +470,14 @@
                         .ems-form{
                             &-inner{
                                 .ems-field{
+                                    width: 100%;
                                     &-double{width: 100%;}
                                     &.adresTip{
                                         .ems-form-obj{
                                             a{ font-size: 18px;}
                                         }
                                     }
+                                    &.text{ max-width: 100%;}
                                     .ems-form-obj{
                                         input, textarea, .sStylerMainWrp .sStylerWrp_select{
                                             margin-bottom: 20px;
@@ -570,9 +514,6 @@
                 
                 }
             }
-
-
-
 
             .ems-grid-address {
                 .ems-grid-row {

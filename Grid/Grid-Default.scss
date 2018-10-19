@@ -45,21 +45,18 @@
                     }
                 }
                 .ems-grid-piece {
-                    width: 25%;
-                    text-align: center;
-                    border-top: none;
-                    border-bottom: none;
-                    border-left: 1px solid $darkBlack;
-                    border-right: 1px solid $darkBlack;
                     input {
                         width: 100% !important;
+                        max-width: 50px;
+                        padding: 5px;
                         text-align: center;
-                        position: relative;
-                        height: 25px;
-                        line-height: 10px;
-                        color: $darkBlack;
+                        font-family: "avenir-medium";
+                        font-size: 18px;
+                        color: #000;
+                        height: 55px;
+                        line-height: 45px;
                         border: none;
-                        padding-left: 50%;
+                        background: #F6F6F6;
                     }
                     a {
                         border: 1px solid $inputborder;
@@ -93,22 +90,24 @@
                 .kdvDahil{display: none;}
             }
         }
-        
-        a.btnTakipListeStokTumSil, a.btnFavoriListeTumSil{
-            padding: 10px 20px;
+        a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil{
+            padding: 10px;
             margin: 20px 0 0 0;
-            width: auto;
-            display: none;
-            span {
-                letter-spacing: 0;
-                font-size: 13px;
-                color: $darkBlack;
-            }
-            &:hover {
-                background: $lDark;
-                span {
-                    color: #fff;
+            width: 100%;
+            border: 1px solid $lDark;
+            @media screen and (min-width: $breakpointXSM){
+                max-width: 190px;
+                &:hover {
+                    background: $lDark;
+                    span {
+                        color: #fff;
+                    }
                 }
+            }
+        }
+        @media screen and (min-width: $breakpointXSM){
+            a.btnTakipListeFiyTumSil{
+                margin-bottom: 20px;
             }
         }
         /*iadelerim*/

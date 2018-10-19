@@ -8,11 +8,17 @@
                     .ems-message-error{
                        border: none;
                     }
-
+                    .select-cfg.ems-inline{
+                        display: none;
+                    }
+                    @media screen and (min-width: $breakpointXSM){
+                        .favorite-report{
+                            text-align: right;
+                        }
+                    }
                     .borderMask{
                         width: 33%;
                         position: relative;
-                        border-bottom: 1px solid $Gray;
                         &-selected{
                             width: 33%;
                             position: relative;
@@ -63,6 +69,20 @@
                     }
                     }
                 }
+                .btnFavoriListeTumSil{
+                    margin-top: 20px;
+                    width: 100%;
+                    border: 1px solid $lDark;
+                    @media screen and (min-width: $breakpointXSM){
+                        max-width: 190px;
+                        &:hover {
+                            background: $lDark;
+                            span {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
                 .page-top-title{
                     > span{
                         &:after{
@@ -85,7 +105,7 @@
                         text-align: left;
                         margin-top: 20px;
                         .ems-page-favorites-empty{
-                            padding: 78px 0px;
+                            padding: 50px 0px;
                             border-top: 1px solid $border;
                             border-bottom: 1px solid $border;
                             .big-text{
@@ -104,7 +124,7 @@
                                 }
                                 &-icon{
                                     &-favorite {
-                                    background: url(http://cosmetica.proj-e.com/images/frontend/arrow.png) no-repeat center;
+                                    background:url(#{$baseHref + "/images/frontend/arrow.png"}) no-repeat;
                                     display: inline-block;
                                     width: 42px;
                                     height: 42px;
@@ -191,148 +211,59 @@
 
         .ems-grid-favorites{
             .ems-grid-row{
-                margin-bottom: 10px;
+                margin-bottom: -1px;
                 padding-top: 20px;
                 padding-bottom: 20px;
-                border-bottom: 1px solid $border;
+                border-bottom: 1px solid $Gray;
+                border-top: 1px solid $Gray;
                 > div{
                     display: table-cell;
                     vertical-align: middle;
+                    padding-left: 5px;
+                    padding-right: 5px;
                 }
                 .ems-grid-img{
                     max-width: 80px;
                     flex: inherit;        
                 }
-                .ems-name{order: 2; margin-top: 5px; }
-                .ems-name a{width: 70%; display: block;}
-                .ems-price{order: 1; font-family: $mediumA; font-size: 16px; }
-                .ems-grid-option{order: 3;}
-                .ems-grid-piece{order: 4; }
+                .ems-name a{display: block;}
                 .col-1{
                     padding-left: 0;
                     padding-right: 0;
                 }
-                .ems-grid-content{
-                    width: 90%;
-                    padding-left: 20px;
-                    &-wrap{
-                        @include flex();
-                        @include flexDirection(column);
-                        flex: 65%;
-                        flex-basis: 65%;
-                        flex-grow: 2;
-                        > div{
-                            padding-left: 0;
-                            padding-right: 0;
-                            flex: inherit;
-                            max-width: inherit;
+                .ems-grid-piece{
+                    text-align: center;
+                }
+                .ems-price{
+                    text-align: center;
+                    font-family: $bold;
+                    font-size: 14px;
+                    &:before{
+                        font-family: $tl;
+                        content:'t';
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+                .ems-grid-report{
+                    a.btnDefault{
+                        padding: 6px 5px 4px 5px;
+                        background: #7b58f5;
+                        color: #fff;
+                        text-align: center;
+                        font-family: $avenir-medium;
+                        font-size: 12px;
+                        min-height: 35px;
+                        line-height: 25px;
+                        letter-spacing: 0.2px;
+                        span{font-size: 12px;}
+                        &:hover{
+                            background: #390ebf;
                         }
                     }
-                    &-inner{
-                        @include flex();
-                        @include flexDirection();
-                        align-items: center;
-                        width: 100%;
-                        .col-6{
-                            @include flex();
-                            flex: 35%;
-                            flex-basis: 35%;
-                            flex-grow: 1;
-                            max-width: inherit;
-                            padding-left: 0;
-                            padding-right: 0;
-                            .ems-grid-report-inner{
-                                width: 100%;
-                                @include flex();
-                                @include flexDirection();
-                                justify-content: space-between;
-                                a.btnDefault{
-                                    font-size: 16px;
-                                    span{ color: $lDark;font-size: 16px; }
-                                }
-                                a.btnFavoriListeSil{
-                                    width: 24px;
-                                    height: 24px;
-                                    span{
-                                        i{line-height: 24px;}
-                                        i, i:before{
-                                            font-size: 12px;
-                                            color: #a2a5ac;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .ems-grid-piece{
-                            margin-top: 5px;
-                            > div{
-                                position: relative;
-                                &:before{
-                                    content:'Adet';
-                                    font-family: $regular;
-                                    font-size: 14px;
-                                    color: $darkBlack;
-                                    display: inline-block;
-                                    position: absolute;
-                                    left: 10px;
-                                    top: 50%;
-                                    margin-top: -6px;
-                                    line-height: 12px;
-                                    z-index: 1;
-                                }
-                            }
-                        }
-                        .ems-grid-option{
-                            .sStylerMainWrp.sStylerWrp_select{
-                                width: auto;
-                                min-width: 110px;
-                                margin-top: 5px;
-                                select{padding: 5px;}
-                                .sStylerWrp{
-                                    padding: 5px 0;
-                                    height: 25px;
-                                    line-height: 10px;
-                                    text-align: center;
-                                    border: none;
-                                    color: #a2a5ac;
-                                    font-size: 14px;
-                                    text-align: left;
-                                    .sStyleHolder{
-                                        display: inline-block;
-                                        vertical-align: middle;
-                                    }
-                                    &:before{
-                                        content: 'Beden:';
-                                        font-family: "regular";
-                                        font-size: 14px;
-                                        color: #a2a5ac;
-                                        display: inline-block;
-                                        position: relative;
-                                        margin-right: 10px;
-                                        vertical-align: middle;
-                                    }
-                                    &:after{
-                                        width: 10px;
-                                        height: 10px;
-                                        font-size: 10px;
-                                        position: relative;
-                                        top: inherit;
-                                        right: inherit;
-                                        margin-top: inherit;
-                                        text-align: center;
-                                        display: inline-block;
-                                        vertical-align: middle;
-                                        line-height: 12px;
-                                        margin-left: 10px;
-                                    }
-                                }
-                            }
-                            div.urunListe_secenek1 {
-                                display: none;
-                                .dropdown-trigger{display: none;}
-                            }
-                        }
-                    }
+                }
+                .ems-grid-remove{
+                    width: 50px;
                 }
             } 
         }
@@ -344,12 +275,11 @@
         &-member{
             .ems-page-default{
                 &-favorites{
-
+                    .page-top-title{ display: block; }
                     .borderMask{
                         height: 65px;
                         &-selected{
                             height: 65px; 
-
                             .borderMaskLeft{
                                 bottom: 0;
                                 width: 41% !important;
@@ -361,11 +291,10 @@
                                     transform: rotate(-22deg) !important;
                                 }
                             }
-
                             .borderMaskRight{
                                 bottom: 0;
                                 width: 41% !important;
-                                &::before{
+                                &:before{
                                     width: 23.5% !important;
                                     -webkit-transform: rotate(22deg) !important;
                                     -moz-transform: rotate(22deg) !important;
@@ -375,11 +304,6 @@
                             }
                         }
 
-                    }
-
-                    padding: 0 20px;
-                    .page-top-title{
-                        display: block;
                     }
                     div[id$="plhFavoriKayitYok1"]{
                         > span {
@@ -392,33 +316,45 @@
                             }
                         }
                     }
-                }
-            }
-            .ems-grid-favorites{
-                .ems-grid-header, .ems-grid-row{
-                    > div{
-                        vertical-align: top;
-                    }
-                }
-                .ems-grid-row{
-                    .ems-grid-content{
-                        padding-right: 20px;
-                        &-inner{
-                            @include flexDirection(column);
-                            align-items: flex-start;
-                            .col-6{
-                                flex: 100%;
-                                flex-basis: 100%;
-                                margin-top: 20px;
-                            }
+                    .ems-grid-row{
+                        padding-left: 160px;
+                        > div{
+                            padding: 0;
                         }
-                        &-wrap{
-                            flex: 100%;
-                            flex-basis: 100%;
+                        .ems-grid-img{
+                            position: absolute;
+                            top: 50%;
+                            left: 60px;
+                            margin-top: -40px;
                         }
+                        .ems-grid-remove{
+                            padding: 0;
+                            position: absolute;
+                            top: 50%;
+                            left: 20px;
+                            margin-top: -7px;
+                            width: 14px;
+                            height: 14px;
+                            text-align: center;
+                            z-index: 1;
+                        }
+                        .ems-name{
+                            margin-bottom: 10px;
+                        }
+                        .ems-grid-piece,
+                        .ems-price{
+                            display: inline-block;
+                        }
+                        .ems-grid-piece{width: auto;}
+                        .ems-price{width: 50%; text-align: left; padding-left: 20px;}
+                        .ems-name,
+                        .ems-grid-report{   
+                            display: block;
+                            vertical-align: top;
+                            text-align: left;
+                        }
+                        .ems-grid-report{margin-top: 20px;}
                     }
-                    .ems-name a{width: 100%;}
-                    .ems-grid-piece{width: 70%;}
                 }
             }
         }

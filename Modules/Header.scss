@@ -73,7 +73,6 @@
     .nav-main {
         width: 100%;
         max-width: 1220px;
-        padding: 0 10px;
         margin: 0 auto;
         > ul{
             width: 100%;
@@ -88,7 +87,7 @@
                     font-size: 14px;
                     display: block;
                     text-align: center;
-                    padding:18px 10px 17px 10px;
+                    padding:18px 9px 17px 9px;
                     position: relative;
                     overflow: hidden;
                     &:hover{
@@ -239,15 +238,6 @@
                     &:hover{
                         > a{
                             font-family: $bold;
-                            &:after{
-                                content:'';
-                                width: 3px;
-                                height: 100%;
-                                position: absolute;
-                                top: 0;
-                                right: 0;
-                                background: $red;
-                            }
                         }
                     }
                     &.sub-menu.selected{
@@ -262,6 +252,10 @@
                                 right: 0;
                                 background: $red;
                             }
+                        }
+                        > ul{
+                            opacity: 1;
+                            visibility: visible;
                         }
                     }
                     > ul{
@@ -278,6 +272,10 @@
                         left: 0;
                         background: #fff;
                         z-index: 1;
+                        opacity: 0;
+                        visibility: hidden;
+                        @include transition(all .3s ease-in-out);
+                        transition-delay: .3s;
                         > li{
                             @include flex();
                             justify-content: space-between;
@@ -311,9 +309,7 @@
 .site-discount-banner{
         background:#ef6bbb;
         background-image: linear-gradient(to right, #d27fd4, #db9caf 24%, #9bbaf2 52%, #adff93);
-        &.show{
-            
-        }
+        min-height: 40px;
         > div{
             display: table;
             margin: 0 auto;
@@ -382,12 +378,25 @@
         &-alternate{
             background:#ef6bbb;
             background: linear-gradient(to right, #5292dc, #ef6bbb);
+            min-height: 120px;
             > div{
                 width: 100%;
                 max-width: 1210px;
                 position: relative;
-                padding-top: 0;
-                padding-bottom: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                .img img { height: 100px; }
+                .text-multiple{
+                    .title-1{
+                        font-family: $regular;
+                    }
+                    .title-2{
+                        font-family: $avenir-medium;
+                    }
+                }
+            }
+            .text-multiple{
+                padding-left: 20px;
             }
         }
     }
@@ -462,7 +471,9 @@
                 }
             }
         }
-        &.mbSearch{display: none;}
+        &.mbSearch{
+            width: 45px;
+        }
         &.mbBrand{
             width: 45px;
             > a{
@@ -559,15 +570,9 @@ body.ems-login{
         }
     }
 }
-
-.ems-product-detail-layout{
-    .mbHeader{
-        > div{
-            &.mBurger { display: none; }
-            &.mbLogo{ a{ display: none; } }
-            &.mBackBtn{ display: table-cell; }
-        }
-    }
+/*Ana Sayfa*/
+.ems-home-page-layout{
+    .mbHeader > div.mbSearch{display: none;}
 }
 
 .mobile-size-animate{
@@ -579,8 +584,29 @@ body.ems-login{
     }   
 }
 
-@media only screen and (min-width: 850px) and ( max-width: 1200px) {
-    
+@media only screen and (min-width: 850px) and ( max-width: 1280px) {
+    .site-header .ems-container{
+        &-full-top{
+            .ems-inline-table {
+                > .ems-col{
+                    &.ems-col-1{width: 145px;}
+                    &.ems-col-2{
+                        width: calc(100% - 145px);
+                        > .ems-cell{
+                            &-1{
+                                width: 50%;
+                                max-width: 50%;
+                            }
+                            &-2{
+                                width: 50%;
+                                padding-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $breakpointXSM){
@@ -590,7 +616,7 @@ body.ems-login{
     .site-discount-banner > div .text{margin-right: 0; }
 
     .site-header{
-        min-height: 130px;
+        min-height: 110px;
         .ems-container-full{
             .ems-inline-table{
                 display: block;
@@ -611,6 +637,7 @@ body.ems-login{
                 z-index: 20;
                 background: #fff;
                 display: none;
+                @include transition(all 333ms ease-in-out);
                 i{line-height: 30px;}
                 i, i:before{
                     font-size: 13px;
@@ -628,8 +655,16 @@ body.ems-login{
             z-index: 20;
             background: #fff;
             padding-bottom: 30px;
-            @include transition(transform .3s cubic-bezier(0.230, 1.000, 0.320, 1.000));
+            will-change: transform;
+            @include transition(transform 333ms ease-in-out);
             @include setTransform(translateX(-100%));
+            display: none;
+        }
+    }
+    /*Ana sayfa özel*/
+    .ems-home-page-layout{
+        .site-header{
+            min-height: 170px;
         }
     }
 
@@ -904,10 +939,12 @@ body.ems-login{
         left: 0;
         right: 0;
         bottom: 0;
-        .site-header-mobile-wrapper{
-            @include setTransform(translateX(0));
-        }
-        .site-header .ems-container-full .mobi-close-btn{animation: opacityVail .3s cubic-bezier(0.230, 1.000, 0.320, 1.000); display: block;}
+        .site-header-mobile-wrapper,
+        .site-header .ems-container-full .mobi-close-btn{display: block;}
+    }
+    .mobi-menu-animate{
+        .site-header-mobile-wrapper{@include setTransform(translateX(0));}
+        .site-header .ems-container-full .mobi-close-btn{opacity: 1; visibility: visible;}        
         .vailMenu{opacity:1; visibility: visible;}
     }
 

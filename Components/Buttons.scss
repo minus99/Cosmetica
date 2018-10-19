@@ -53,17 +53,21 @@ a.btnDefault, .ems-col.ems-col-link a{
             }
         }
     }
-    &.btnDefaultBlack{
-        background: #000;
-        max-width: 225px;
+    &.btnDefaultBlack,&.btnDefaultAlternate{
+        border:1px solid #000;
+        max-width: 250px;
         margin: 0 auto;
         width: 100%;
         display: block; 
-    }
-    &.btnDefaultAlternate{
-        background: $btnAlternateColor;
-        &:hover {
-            background: $btnColor;
+        font-family: $bold;
+        font-size: 14px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        @media screen and (min-width: $breakpointXSM){
+            &:hover {
+                background: $lDark;
+                span{color: $White;}
+            }
         }
     }
 } 

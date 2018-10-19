@@ -23,27 +23,22 @@
             display: table-cell;
             vertical-align: middle;
             width: 25%;
-            a{
-                display: block;
-                padding: 5px 10px;
-                cursor: default;
-                .step {
-                    text-align: left;
-                    > div{
-                        width: 30px;
-                        height: 30px;
-                        text-align: center;
-                        display: inline-block;
-                        vertical-align: middle;
-                    }
-                    i{line-height: 30px;}
-                    i, i:before{
-                        font-size: 20px;
-                    }
-                    p{
-                        margin-top: 0;
-                        margin-bottom: 0;
-                    }
+            .step {
+                text-align: left;
+                > div{
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                i{line-height: 30px;}
+                i, i:before{
+                    font-size: 20px;
+                }
+                p{
+                    margin-top: 0;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -74,11 +69,14 @@
         max-width: 350px;
         height: auto;
         z-index: 1;
+        @media screen and (min-width: $breakpointXSM){
+            @include transition(all .2s ease);
+        }
         > span{
             display: block;
             color: #fff;
             &:nth-child(1){font-family: $avenir-medium; font-size:30px;}
-            &:nth-child(2){font-family: $regular;font-size:14px; margin-top: 10px;}
+            &:nth-child(2){font-family: $regular;font-size:14px; margin-top: 10px; line-height: 21px;}
         }
         .btnAlternate{ margin-top: 20px; max-width: 210px; }
     }
@@ -90,6 +88,7 @@
         left: 0;
         right: 0;
         margin: -45px auto 0 auto;
+        @include transition(all .2s ease);
         a{
             width: 90px;
             height: 90px;
@@ -99,11 +98,200 @@
             position: relative;
             background:url(#{$baseHref + "/UPLOAD/BANNERS/home-page/video/video-triangle.png"}) 36px 25px no-repeat #fff;
             span{display: none;}
+            transition: none;
         }
     }
     video{
         width: 100%;
         height: auto;
+        max-height: 550px;
+    }
+    &.is-play{
+        @media screen and (min-width: $breakpointXSM){
+            .site-video-player-player{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .site-video-player-text{
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        .site-video-player-player{
+            a{background:url(#{$baseHref + "/UPLOAD/BANNERS/home-page/video/video-pause-triangle.png"}) no-repeat #fff;}
+        }
+        &:hover{
+            @media screen and (min-width: $breakpointXSM){
+                .site-video-player-player{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+/*Kampanyalar*/
+.ems-page-grid-layout{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    @include flex();
+    @include flexDirection(column);
+    .ems-page-grid-navigation{
+        order: 2;
+        ul{
+            display: table;
+            border-bottom: 1px solid $Gray;
+            width: 100%;
+            li{
+                display: inline-block;
+                vertical-align: middle;
+                text-align: left;
+                margin-left: 3%;
+                &:first-child{margin-left: 0;}
+                a{
+                    display: inline-block;
+                    padding: 10px 20px 10px 20px;
+                    text-align: center;
+                    position: relative;
+                    font-size: 14px;
+                    font-family: $avenir-medium;
+                    letter-spacing: 1px;
+                    &:hover{
+                        color: $red;
+                    }
+                }
+                &.selected{
+                    a{
+                        border-bottom: 1px solid $red;
+                    margin-bottom: -1px;
+                    }
+                }
+            }
+        }
+    }
+    &-title{
+        position: relative;
+        padding-top:10px;
+        padding-bottom:10px;
+        order: 1;
+        span{
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            font-family: $avenir-bold;
+            color: #000;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            background: #fff;
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            top: 50%;
+            margin-top: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e1e1e1;
+            z-index: 1;
+        }
+    }
+    > ul{
+        order: 3;
+        margin-top: 20px;
+        li{
+            .inner{
+                padding: 10px 10px 0 10px;
+                position: relative;
+                overflow: hidden;
+                .cover{
+                    position: relative;
+                    background-size: cover !important;
+                    a {display: block;}
+                    img{opacity: 0; visibility: hidden;}
+                    .discount-icon,
+                    .last-day,
+                    .new-icon{
+                        position: absolute;
+                        width: auto;
+                        height: auto;
+                        z-index: 1;
+                    }
+                    .new-icon,
+                    .discount-icon{
+                        top: 10px;
+                    }
+                    .new-icon{
+                        left: 10px;
+                        background: #fff;
+                        color: #30de86;
+                        font-family: $bold;
+                        text-align: center;
+                        padding: 5px;
+                        min-width: 42px;
+                    }
+                    .discount-icon{
+                        background: $red;
+                        right: 10px;
+                        font-family: $bold;
+                        text-align: center;
+                        color: #fff;
+                        padding: 10px 3px;
+                        min-width: 35px;
+                    }
+                    .last-day{
+                        bottom: 10px;
+                        right: -8px;
+                        background: #000;
+                        color: #fff;
+                        text-align: center;
+                        min-width: 95px;
+                        padding: 7px 2px 8px 2px;
+                        &:after{
+                            content:'';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            background:url(#{$baseHref + "/images/frontend/son-gun-icon.png"}) top right no-repeat;
+                            display: inline-block;
+                            width: 8px;
+                            height: 39px;
+                        }
+                    }
+                }
+                .title,
+                .sub-title{display: block;}
+                .title{font-family: $avenir-medium; font-size: 20px;}
+                .sub-title{font-family: $regular; font-size: 14px; margin-top: 5px; max-height: 40px; line-height: 20px; overflow: hidden;}
+                .buton-link{
+                    .btnAlternate{
+                        max-width: 100%;
+                    }
+                }
+                @media screen and (min-width: $breakpointXSM){
+                    .buton-link{
+                        @include transition(all .2s ease);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 40px;
+                        z-index: 1;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        @include setTransform(translateY(40px))
+                    }
+                    &:hover{
+                        .buton-link{
+                            @include setTransform(translateY(0))
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -111,9 +299,58 @@
     .ems-container{
         padding: 0 10px;
     }
+
+    /*Kampanyalar*/
+    .ems-page-grid-layout{
+        .ems-page-grid-navigation{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &-title{
+            margin-left: 10px;
+            margin-right: 10px;
+            position: relative;
+            padding-top:10px;
+            padding-bottom:10px;
+            margin-bottom: 10px;
+            span{
+                font-size: 18px;
+                text-align: left;
+                padding-right: 30px;
+            }
+            &:after{
+                content:'';
+                position: absolute;
+                top: 50%;
+                margin-top: -2px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #e1e1e1;
+                z-index: 1;
+            }
+        }
+        > ul{
+            li{
+                width: 25%;
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 30px;
+                .inner{ 
+                    .text-line{
+                        margin-top: 10px;
+                        overflow: hidden;
+                        max-height: 67px;
+                    }
+                }
+            }
+        }
+    }
+
     .ems-page{
         width: 100%;
         &-home{
+            padding-top: 30px;
             padding-bottom: 50px;
             .order-gray{
                 padding-top: 40px;
@@ -179,6 +416,11 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 50px;
+        .widget{
+            .swiper-inner{
+                padding-top: 20px;
+            }
+        }
     }
 
     .ems-pay-info {
@@ -189,18 +431,16 @@
             max-width: 1000px;
             margin: 0 auto;
             li{
-                a {
-                    .step{
-                        display: table;
-                        width: 100%;
-                        table-layout: fixed;
-                        max-width: 165px;
-                        > div, p{
-                            display: table-cell;
-                            vertical-align: middle;
-                        }
-                        p{padding-left: 5px; padding-right: 5px;}
+                .step{
+                    display: table;
+                    width: 100%;
+                    table-layout: fixed;
+                    max-width: 165px;
+                    > div, p{
+                        display: table-cell;
+                        vertical-align: middle;
                     }
+                    p{padding-left: 5px; padding-right: 5px;}
                 }
             }
         }
@@ -208,6 +448,57 @@
 }
 
 @media screen and (max-width: $breakpointXSM){
+    .ems-page{
+        overflow-x: hidden;
+        &-home{
+            padding-bottom: 35px;
+        }
+    }
+
+    /*Kampanyalar*/
+    .ems-page-grid-layout{
+        padding-bottom: 30px;
+        .ems-page-grid-navigation{
+            ul{
+                margin-top: 10px;
+            }
+        }
+        &-title{
+            text-align: center;
+            span{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+        > ul{
+            padding-left: 35px;
+            padding-right: 35px;
+            li{
+                margin-bottom: 20px;
+                .inner{
+                    .cover{
+                        height: 285px;
+                    }
+                    .text-line{
+                        padding-top: 15px;
+                    }
+                    .buton-link{
+                        .btnAlternate{
+                            border: none;
+                            text-align: left;
+                            padding-left: 0;
+                            span{
+                                font-family: $regular;
+                                font-size: 14px;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .ems-pay-info {
         padding-top: 25px;
         padding-bottom: 25px;
@@ -221,8 +512,7 @@
                 &:nth-child(2){
                     margin-bottom: 20px;
                 }
-                a{padding-top: 0; padding-bottom: 0;}
-                a .step{
+                .step{
                     text-align: center;
                     p{display: block;}
                 }
@@ -243,5 +533,62 @@
             }
         }
         &-text{display: none;}
+    }
+    .ems-mobile-banners{
+        ul{
+            margin-top: 30px;
+            li{
+                &:first-child{margin-top: 0;}
+                margin-top: 10px;
+                > a{
+                    position: relative;
+                    display: block;
+                    .cover{
+                        height: 180px;
+                        background-size: cover !important;
+                        background-position: top left !important;
+                    }
+                    .text{
+                        position: absolute;
+                        bottom: 20px;
+                        left: 20px;
+                        z-index: 1;
+                        width: 50%;
+                        div{
+                            .new{
+                                display: inline-block;
+                                background: #fff;
+                                font-family: $bold;
+                                color: #30de86;
+                                font-size: 14px;
+                                min-width: 45px;
+                                height: 26px;
+                                line-height: 26px;
+                                text-align: center;
+                            }
+                        }
+                        .tt1{
+                            span{
+                                font-size: 25px;
+                                font-family: $avenir-bold;
+                                color: #fff;
+                                display: inline-block;
+                                margin-top: 10px;
+                            }
+                        }
+                        .btn{
+                            span{
+                                font-family: $mediumA;
+                                font-size: 16px;
+                                color: #fff;
+                                display: inline-block;
+                                text-decoration: underline;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

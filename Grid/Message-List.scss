@@ -29,7 +29,8 @@
             .ems-grid-row{
                 display: flex;
                 background: #fff;
-                padding: 12px 0px;
+                padding:0px;
+                padding-top: 25px;
                 > div{
                     min-width: 20%;
                     max-width: 20%;
@@ -63,7 +64,8 @@
             .big-text{
                 line-height: 18px !important;
                 &-icon{
-                    background: url(http://cosmetica.proj-e.com/images/frontend/messages.png) no-repeat center;
+                    background:url(#{$baseHref + "/images/frontend/messages.png"}) no-repeat;
+                    vertical-align: middle;
                     display: inline-block;
                     width: 23px;
                     height: 17px;
@@ -249,6 +251,7 @@
             .ems-grid-message{
                 @include flex();
                 flex-wrap: wrap;
+                border-top: 1px solid $border;
                 .ems-grid-header, .ems-grid-row{
                     @include flex();
                     @include flexDirection(column);
@@ -318,7 +321,6 @@
                     padding:20px;
                     .page-top-title{
                         display: block;
-                        margin-bottom: 20px;
                     }
                 }
                 &-message-detail{

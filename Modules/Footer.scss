@@ -145,6 +145,7 @@
         &-menu-grid{
             .ems-container,
             .site-footer-menu{ max-width: 1220px; }
+            .site-footer-menu{ padding-left: 10px; padding-right: 10px; }
         }
         &-menu-grid{
             .site-footer-menu{
@@ -320,7 +321,12 @@
             }
         }
         &-footer{
-            .ems-message {margin-top:10px; margin-bottom: 0;}
+            .ems-message {
+                margin-top:10px;
+                margin-bottom: 0;
+                color: #757575;
+                padding: 10px 5px;
+            }
         }
    }
 }

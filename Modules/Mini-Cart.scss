@@ -273,6 +273,8 @@
                             vertical-align: super;
                             font-family: $avenir-bold;
                             font-size: 12px;
+                            position: relative;
+                            top: 2px;
                         }
                         &:empty{display: none;}
                     }
@@ -336,6 +338,14 @@
                     text-align: right;
                     font-size: 20px;
                     font-family: $bold;
+                    &:before{
+                        font-family: "tl";
+                        content: 't';
+                        color: #000;
+                        font-size: 16px;
+                        display: inline-block;
+                        padding-right: 1px;
+                    }
                 }
             }
             .mod-mini-cart-col-link{
@@ -350,6 +360,11 @@
                         font-family: $avenir-bold;
                         font-size: 14px;
                         color: #fff;
+                    }
+                    @media screen and (min-width: $breakpointXSM){
+                        &:hover{
+                            background: $btnHover;
+                        }
                     }
                 }
             }

@@ -13,7 +13,7 @@
             }
             input::placeholder{
                 font-family: $regular;
-                color: #0e3d6d;
+                color: rgba(0,0,0,1);
             }
             &.submit{
                 position: absolute;
@@ -107,6 +107,11 @@
                         display: inline-block;
                         padding-top: 7px;
                         padding-bottom: 7px;
+                        @media screen and (min-width: 850px){
+                            &:hover{
+                                color: $red;
+                            }
+                        }
                     }
                 }
             }
@@ -199,6 +204,11 @@
         .btnArama{
             max-width: 300px;
             margin: 0 auto;
+            @media screen and (min-width: $breakpointXSM){
+                &:hover{
+                    color: $red;
+                }
+            }
         }
     }
     .search-result-suggest{
@@ -223,6 +233,8 @@
 
 @media screen and (min-width: 850px){
     .searchSuggestDiv{
+        display: none;
+        opacity: 0;
         .prd{
             flex-basis: 50%;
             max-width: 500px;
@@ -264,21 +276,22 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .search-keyup{
+        .searchSuggestDiv{
+            @include animation(opacityVail .2s ease-in-out);
+            display: block;
+            opacity: 1;
+        }
+        .vailSearch{opacity: 1; visibility: visible;}
+    }
 }
 
 @media screen and (max-width: $breakpointXSM){
-    .mobile-element-search-wrap{
-        .mod-mini-search{
-            display: block;
-            padding: 10px;
-            background: $Gray;
-        }
-    }
-    
+    .vailSearch{display: none !important; }
+
     .mod-mini-search{
-        display: none;
         &-header{
-            display: block;
+            display: none;
             .ems-desktop-case-visible{
                 > a{
                     display: block;
@@ -312,7 +325,17 @@
                 }
             }
         }
-        &-body{display: none;}
+        &-body{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            background: #fff;
+            @include transition(transform 333ms ease-in-out);
+            @include setTransform(translateX(-100%));
+        }
         .ems-form{
             max-width: 100%;
             &-inner{
@@ -323,51 +346,72 @@
                 &.text{
                     width: 100%;
                     display: block;
-                    &:before{
-                        letter-spacing: 2px;
-                        font-size: 12px;
-                    }
                 }
                 input{
                     max-width: 100%;
-                    padding: 5px 40px 5px 20px; 
-                    height: 40px;
-                    line-height: 30px;
-                    font-size:14px;
-                    font-family: $avenir-medium;
-                    color: #757575;
+                    padding: 5px 65px 5px 65px; 
+                    height: 60px;
+                    line-height: 50px;
+                    font-size:25px;
+                    font-family: $regular;
+                    color: #000000;
                     border: none;
-                    border-radius: 1px;
+                    border-radius: 0;
                     text-align: left;
+                    background: #fbfbfb;
+                    &::-webkit-input-placeholder{ color: transparent;}
+                    &:-moz-placeholder{ color: transparent;}
+                    &::-moz-placeholder{ color: transparent;}
+                    &:-ms-input-placeholder{ color: transparent;}
                 }
                 &.submit{
-                    top:14px;
-                    right: 20px;
-                    width: 24px;
-                    height: 24px;
-                    margin-top: 0;
-                    transition: none;
-                    opacity:1;
                     a.btnDefault{
-                        height: 24px;
+                        position: fixed;
+                        top:15px;
+                        left: 20px;
+                        width: 30px;
+                        height: 30px;
+                        transition: none;
+                        text-align: center;
+                        z-index: 1;
                         span{
                             i.icon-ico_search, i.icon-ico_search:before{
-                                font-size: 12px;
+                                font-size: 20px;
                                 color: $lDark;
                             }
                         }
                     }
                 }
                 span[id$="lbfkutuArama1"] {
-                    width: 24px;
-                    height: 24px;
+                    position: fixed;
+                    top:15px;
+                    right:20px;
+                    width: 30px;
+                    height: 30px;
+                    transition: none;
+                    text-align: center;
+                    z-index: 1;
+                    display: block;
                     .ems-mb-search-close{
-                        .icon-ico_close{line-height: 24px;}
-                        .icon-ico_close, .icon-ico_close:before{
-                            font-size: 12px;
+                        .icon-ico_crossed{line-height: 30px;}
+                        .icon-ico_crossed, .icon-ico_crossed:before{
+                            font-size: 15px;
                             color: $lDark;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    /*Ana sayfa özel*/
+    .ems-home-page-layout{
+        .mobile-element-search-wrap{
+            .mod-mini-search{
+                &-header{
+                    display: block;
+                    padding: 10px;
+                    background: $Gray;
                 }
             }
         }
@@ -380,16 +424,17 @@
         left: 0 !important;
         background:#fff;
         margin: 0 auto;
-        width: 100%;
-        max-width: 100%;
-        height: calc(100% - 95px);
+        width: 97%;
+        max-width: 97%;
+        height: calc(100% - 80px);
         z-index:25 !important;
+        padding: 10px 15px 20px 20px;
         @include animation(suggestMb 333ms ease-in-out);
         ::-webkit-scrollbar {
-            width: 2px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
-            background: $dGray;
+            background: $Gray;
         }
         ::-webkit-scrollbar-thumb {
             background: $lDark;
@@ -399,27 +444,37 @@
         }
         .searchSuggestDivHolder{
             position: absolute;
-            top: 0;
-            height: calc(100% - 30px);
+            bottom: 80px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 80px);
             overflow-x: hidden;
             @include flexDirection(column);
+            padding-left: 20px;
+            padding-right: 15px;
             .dvTumunuGoster.emos_invisible {
                 width: 100%;
+                max-width: 100%;
                 position: fixed;
-                bottom: -50px;
+                bottom: 20px;
                 left: 0;
-                @include transition(all .5s ease-in-out);
-                transition-delay: .2s;
-                a.btnArama{
-                    &:hover{
-                        background: $gold;
-                    }
+                padding-top: 0;
+                padding-bottom: 0;
+                .btnArama{
+                    border: 1px solid #000;
                 }
             }
+            .search-result-suggest{
+                order: 2;
+                ul,
+                h3{padding-top: 0; padding-left: 0; padding-right: 0;}
+            }
             .prd, .cat{
-                padding-left: 20px;
-                padding-right: 20px;
-                h3{padding-top:20px;}
+                h3{
+                    padding-top:20px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
                 .sHolder{
                     padding-right: 0;
                     max-height: inherit;
@@ -427,13 +482,20 @@
                 }
             }
             .prd{
+                order: 1;
+                padding-top: 10px;
+                h3{display: none;}
                 .sHolder{
                     .suggest_link, .suggest_link_over{
+                        padding-left: 0;
+                        border-top: 0;
+                        border-bottom: 2px solid $Gray;
                         table{
                             tbody{
                                 tr{
                                     th{
-                                        img{ max-width:50px; width: 100%; }
+                                        width: 80px;
+                                        img{ max-width:80px; width: 100%; }
                                     }
                                     td{
                                         > span, > span b{
@@ -449,15 +511,20 @@
                                 }
                             }
                         }
-                        &:first-child{
-                            border: none;
-                        }
                     }
                 }
             }
             .cat{
+                order: 3;
                 margin-top: 20px;
-                border-top: 1px solid $border;
+                padding-top: 0;
+                border-top: 2px solid $Gray;
+                .sHolder{
+                    .suggest_link{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
             }
         }
     }
@@ -471,19 +538,14 @@
         width: 100%;
         height: 100%;
     }
-
-    .search-fixed-ready{
-        .mobile-element-search-wrap{bottom: 0;}
-    }
-    
-    .search-keyup{
-        .searchSuggestDiv{
-            bottom: 0;
-            .searchSuggestDivHolder{
-                .dvTumunuGoster{bottom: 0;}
-            }
+    .search-ready, .search-fixed-ready{
+        .mod-mini-search-body{
+            @include setTransform(translateX(0));
         }
     }
-    .search-keyup .vailSearch{ display: none !important; }
-
+    .search-keyup {
+        .searchSuggestDiv{
+            bottom: 0;
+        }
+    }    
 }

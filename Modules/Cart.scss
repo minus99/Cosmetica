@@ -730,6 +730,15 @@
                     text-align: center;
                     a {display: inline-block;}
                 }
+                .ems-grid-brandName{
+                    > div{
+                        &:empty{display: none;}
+                        padding-bottom: 5px;
+                        font-family: $regular;
+                        font-size: 14px;
+                        color: #6c6c6c;
+                    }
+                }
                 .ems-grid-name {
                     order: 2;
                     > span, > br{

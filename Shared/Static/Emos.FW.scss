@@ -56,7 +56,9 @@ a {
 	}
 	&-container {
 		width: 100%;
-		max-width: $siteContainerWidth;
+		@media screen and (min-width: $breakpointXSM){
+			max-width: $siteContainerWidth;
+		}
 		margin: 0 auto;
 		&-full {
 			max-width: $siteContainerWidthFull;

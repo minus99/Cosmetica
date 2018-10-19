@@ -129,7 +129,7 @@
             height:100%;
             z-index: 16;
             display: block;
-            @include transition(all 0.3s ease);
+            @include transition(all 0.3s ease-in-out);
             opacity: 0;
             visibility: hidden;
             .sub{
@@ -195,7 +195,7 @@
             }
         }
         .vailLogin{
-            opacity: .5;
+            opacity: 1;
             visibility: visible;
         }
     }
@@ -285,8 +285,11 @@
                         padding-top: 10px;
                         @include flex();
                         justify-content: space-between;
-                        margin-left: 35px;
-                        margin-right: 35px;
+                        align-items: center;
+                        @media screen and (min-width: $breakpointXSM){
+                            margin-left: 35px;
+                            margin-right: 35px;
+                        }
                     }
                     .ems-field{
                         .seperator {
@@ -302,14 +305,22 @@
                         &-multiple{
                             .seperator,
                             span[id$="lbflnkUyeOlmak"]{
-                                padding-top: 10px;
-                                padding-bottom: 10px;
                                 display: inline-block;
                                 vertical-align: middle;
-                                font-size: 13px;
-                                color: #757575;
-                                font-family: $mediumAA;
-                                text-decoration: underline;
+                                .lnkUyeOlmak{
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    font-size: 13px;
+                                    color: #757575;
+                                    font-family: $mediumAA;
+                                    text-decoration: underline;
+                                    @include transition(all .2s ease);
+                                    @media screen and (min-width: $breakpointXSM){
+                                        &:hover{
+                                            color: $red;
+                                        }
+                                    }
+                                }
                             }
                         }
                         .ems-form-obj{
@@ -327,14 +338,28 @@
                                 color: #757575;
                                 font-family: $mediumAA;
                             }
+                            @media screen and (min-width: $breakpointXSM){
+                                span{@include transition(all .2s ease);}
+                                &:hover{
+                                    span{color: $red;}
+                                }
+                            }
                         }
                         &-submit{
                             .btnKutuLogin{
                                 display: block;
                                 width: auto;
-                                margin-left: 35px;
-                                margin-right: 35px;
                                 border: 1px solid #000;
+                                padding-top: 12px;
+                                padding-bottom: 12px;
+                                @media screen and (min-width: $breakpointXSM){
+                                    margin-left: 35px;
+                                    margin-right: 35px;
+                                    &:hover{
+                                        background: $lDark;
+                                        span{color: $White;}
+                                    }
+                                }
                             }
                         }
                     }
@@ -343,11 +368,13 @@
                             display: block;
                             width: auto;
                             margin-top: 10px;
-                            margin-left: 35px;
-                            margin-right: 35px;
                             padding-top: 13px;
                             padding-bottom: 13px;
                             border: none;
+                            @media screen and (min-width: $breakpointXSM){
+                                margin-left: 35px;
+                                margin-right: 35px;
+                            }
                         }
                     }
                 }
@@ -371,6 +398,11 @@
                             color: $red;
                             text-align: left;
                             span{font-size: 16px;}
+                        }
+                        @media screen and (min-width: $breakpointXSM){
+                            &:hover{
+                                color: $red;
+                            }
                         }
                     }
                 }               
@@ -459,7 +491,7 @@ body.ems-login.mini-login-ready{
                     top: 50%;
                     margin-top: -15px;
                     right: 15px;
-                    @include setTransform(rotate(180deg));
+                    @include setTransform(rotate(0));
                 }
             }
             > span[id$="lbfkutuUyeGiris1"]{
@@ -536,9 +568,9 @@ body.ems-login.mini-login-ready{
                     span[id$="lbfUYE_SAYIN"]{display: none; }
                 }
                 .ems-user-pages{
-                    padding-left: 40px;
-                    padding-right: 40px;
-                    padding-bottom: 15px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 0;
                     > div a{
                         padding: 10px;
                         font-size: 14px;
@@ -560,7 +592,7 @@ body.ems-login.mini-login-ready{
         .mod-mini-login.opened{
             .mod-mini-login-header{
                 > span[id$="lbhKUTU_HESABIM"]:after{
-                    @include setTransform(rotate(0));
+                    @include setTransform(rotate(180deg));
                 }
             }
             .mod-mini-login-body{

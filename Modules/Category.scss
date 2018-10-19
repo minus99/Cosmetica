@@ -11,6 +11,9 @@
             padding: 18px 20px 17px 0;
             position: relative;
             cursor: pointer;
+            @media screen and (min-width: $breakpointXSM){
+                text-transform: uppercase;
+            }
             &:after{
                 font-family: 'icomoon';
                 content: "\e900";
@@ -75,8 +78,38 @@
             }
         }
         > li{
+            @media screen and (min-width: 850px){
+                ::-webkit-scrollbar {
+                    width: 3px;
+                }
+                ::-webkit-scrollbar-track {
+                    background: $Gray;
+                }
+                ::-webkit-scrollbar-thumb {
+                    background: $lDark;
+                }
+                ::-webkit-scrollbar-thumb:window-inactive {
+                    background: $lDark;
+                }
+                > ul{
+                    overflow-x: hidden;
+                    max-height: 175px;
+                }
+            }
              > ul{
                 padding-left: 15px;
+                > li{
+                    > ul{
+                        display: none;
+                    }
+                    /*&.s2{display: none;}*/
+                    &.sel.s2.act{
+                        display: block;
+                        > ul{
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }
@@ -109,33 +142,31 @@
                     display: table;
                     width: 100%;
                     > li{
-                        text-align: left;
-                        position: relative;
+                        line-height: 30px;
                         a{
                             display: block;
-                            font-size: 18px;
-                            color: #5c606d;
+                            font-size: 16px;
+                            color: #000000;
                             font-family: $regular;
-                            padding: 6px 10px 6px 20px;
+                            padding: 5px 0px;
                             position: relative;
                             @media screen and (min-width: $breakpointXSM){
                                 &:hover{
-                                    color: $lDark;
+                                    color: $red;
                                 }
                             }
                         }
                         &.act{
                             a{
-                                font-family: $mediumA;
-                                color: $lDark;
-                                &:before{
+                                font-family: $bold;
+                                &:after{
                                     content: '';
-                                    width: 1px;
-                                    height: 100%;
-                                    background: $lDark;
+                                    width: 3px;
+                                    height: 70%;
+                                    background: #ee0676;
                                     position: absolute;
-                                    left: 0;
-                                    top: 0;
+                                    right: 0;
+                                    top: 15%;
                                 }
                             }
                         }
@@ -148,73 +179,84 @@
 
 @media screen and (max-width: $breakpointXSM){
     .kutuKategori{
-        ul.menuKategori{
-            width: 100%;
-            > li{
-                display: block;
-                margin-top: 10px;
-                &:first-child{margin-top: 0;}
-                > b{height: 60px;}
-                > a{
+        .kutuHeaderKategori{
+            > span{
+                .btnCatShow{
+                    transition: none;
+                    font-family: $regular;
+                    font-size: 14px;
+                    border-bottom: 1px solid $Gray;
+                    padding-top: 23px;
+                    padding-bottom: 22px;
+                    padding-right: 50px;
+                    padding-left: 15px;
+                    width: auto;
                     display: block;
-                    background: $Gray;
-                    padding: 23px 35px 22px 15px;
-                    font-family: $mediumA;
-                    &:before{ display: none; }
-                    &:after{
-                        position: absolute;
-                        top: 50%;
-                        right: 15px;
-                        width: 24px;
-                        height: 24px;
-                        font-size: 12px;
-                        text-align: center;
-                        line-height: 25px;
-                        margin-top: -12px;
-                        margin-left: 0;
-                    }
-                }
-                &.activeted{
-                    > a{
-                        &:after{ content: '\e905'; }
-                    }
-                }
-                > ul{
-                    position: relative;
-                    top: inherit;
-                    left: inherit;
-                    width: 100%;
-                    padding: 10px 15px;
-                    background: #fff;
-                    li{
-                        display: block;
-                        vertical-align: top;
-                        width: 100%;
-                        a{
-                            display: block;
-                            padding-top: 10px;
-                            padding-bottom: 10px;
-                            &:before{background: #fff;}
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    > span{
+                        &.mobile-element {
+                            float: right;
+                            color: #6c6c6c;
+                            letter-spacing: 0;
                         }
+                    }
+                    &:after{
+                        content: '\e903';
+                        transform: none;
+                        width: 30px;
+                        font-size: 15px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        right: 5px;
+                        margin-top: -15px;
                     }
                 }
             }
         }
+        ul.menuKategori{
+            padding: 10px 25px;
+            > li > ul{padding-left: 0;}
+        }
     }
     .kutuSolMenuTree{
         .kutuBodySolMenuTree {display: none;}
-        .sStylerMainWrp.sStylerWrp_select{
-            display: block;
-            position: fixed;
-            top: 49px;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-            background: #fff;
+        .sStylerMainWrp.sStylerWrp_select{display: block;}
+        .sStylerMainWrp.kutu-body-sol-menu-selecbox{
             .sStylerWrp{
-                line-height: 35px;
-                height: 45px;
-                &:after{right: 10px;}
+                background: #f6f6f6;
+                border-bottom: 1px solid $Gray;
+                font-family: $mediumA;
+                color: #6c6c6c;
+                font-size: 14px;
+                padding: 10px 20px 10px 20px;
+                height: 50px;
+                line-height: 30px;
+                display: block;
+                &:after{
+                    right: 20px;
+                }
+                select{padding: 10px;}
+            }
+        }
+    }
+    body.mobiOpened {
+        .kutuKategori .kutuHeaderKategori > span .btnCatShow{
+            border-bottom: none;
+            text-align: right;
+            background: #fbfbfb;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 50px;
+            padding-right: 15px;
+            > span{
+                &.mobile-element{display: none;}
+            }
+            &:after{
+                right: inherit;
+                left: 15px;
+                @include setTransform(rotate(180deg));
             }
         }
     }
