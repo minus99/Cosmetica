@@ -7,6 +7,7 @@
                     width: calc(100% - 50%);
                     padding-top: 50px;
                     padding-bottom: 50px;
+                    padding-left: 20px;
                 }
                 .ems-login-cover{
                     position: absolute;
@@ -276,10 +277,11 @@
         }
         .ems-form-inner{
             [id$="plhLoginSifreUnut1"]{
-                text-align: center;
+                text-align: right;
                 a{
-                    padding: 13px 10px;
+                    padding: 5px;
                     text-align: center;
+                    color: #757575;
                 }
             }
             .ems-field{
@@ -313,9 +315,12 @@
                             }
                         }
                     }
-                    .btnYeniUyeKaydet,
-                    .kutuUyeGirisFacebookConnect{
+                    .btnYeniUyeKaydet{
                         margin-top: 30px;
+                    }
+                    .btnLogin,
+                    .kutuUyeGirisFacebookConnect{
+                        margin-top: 10px;
                     }
                 }
                 .ems-form-obj-captcha{
@@ -413,7 +418,7 @@
                 }
                 &-checkbox-special{
                     .ems-form-obj-alternate{
-                        padding-top: 80px;
+                        padding-top: 40px;
                         padding-left: 0 !important;
                         .title-bold{
                             span{

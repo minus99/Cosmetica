@@ -3,11 +3,14 @@
         .mini-cart-cargo-info{
             display: none;
             background:#d27fd4;
-            background: linear-gradient(to right, #d27fd4, #db9caf 24%, #9bbaf2 52%, #adff93);
+            background-image: linear-gradient(to right, #00e2fb, #4fa8ff 33%, #8476ff 61%, #e900ff);
             padding: 15px 5px;
             text-align: center;
-            strong{font-weight: normal;}
-            strong, span{ font-family: $bold; color: #fff; display: block; text-align: center; display: inline-block; vertical-align: middle; }
+            font-family: $bold;
+            color: #fff; 
+            max-height: 45px;
+            strong{font-weight: normal; padding-right: 3px;}
+            strong, span{ display: block; text-align: center; display: inline-block; vertical-align: middle; }
         }
         &-header{
             .ems-cart-info{
@@ -58,6 +61,7 @@
                     top: -10px;
                     left: 0;
                     background: $red;
+                    display: none;
                 }
             }
         }
@@ -77,6 +81,7 @@
                 padding: 20px 25px;
                 text-align: left;
                 position: relative;
+                max-height: 70px;
                 span{
                     font-family: $avenir-bold;
                     font-size: 14px;
@@ -141,13 +146,6 @@
                     }
                 }
             }
-            &.show{
-                .kutuSepet_icerik_wrapper{
-                    height: calc(100% - 260px);
-                    top: 115px;
-                }
-                .mod-mini-cart-cargo-info{display: block;}
-            }
         }
         .kutuSepet_icerik_wrapper{
             display: none;
@@ -171,7 +169,7 @@
             }
         }
         .kutuSepet_icerik_wrapper{
-            height: calc(100% - 217px);
+            height: calc(100% - 215px);
             overflow-x: auto;
             transition: all 0.3s ease;
             -webkit-transition: all 0.3s ease;
@@ -258,23 +256,56 @@
                     .cart-prd-quantity{
                         margin-top: 10px;
                     }
+                    .cart-prd-proname{
+                        font-family: $regular;
+                        font-size: 12px;
+                        color: #ff5f73;
+                        padding-top: 5px;
+                        &:empty{display: none;}
+                    }
                     .cart-prd-price{
                         text-align: right;
-                        font-family: $avenir-bold;
-                        font-size: 20px;
-                        &:before{
-                            font-family: $tl;
-                            content:'t';
-                            color: #000;
-                            font-size: 16px;
-                        }
-                        .d{ 
+                        > div{
                             display: inline-block;
-                            vertical-align: super;
-                            font-family: $avenir-bold;
-                            font-size: 12px;
+                            vertical-align: middle;
+                            &:before{
+                                font-family: $tl;
+                                content:'t';
+                            }
+                            &:empty{display: none;}
+                        }
+                        .first{
+                            &:before{
+                                color: #000;
+                                font-size: 16px;
+                            }
+                            text-align: right;
+                            font-family: $bold;
+                            font-size: 19px;
+                        }
+                        .last{
+                            text-align: right;
+                            font-family: $regular;
+                            font-size: 18px;
+                            color: #6c6c6c;
+                            margin-left: 10px;
                             position: relative;
-                            top: 2px;
+                            &:before{
+                                color: #6c6c6c;
+                                font-size: 15px;
+                            }
+                            &:after{
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 1px;
+                                left: 0;
+                                top: 50%;
+                                margin-top: -1px;
+                                height: 1px;
+                                background: #6c6c6c;
+                                display: block;
+                            }
                         }
                         &:empty{display: none;}
                     }
@@ -320,7 +351,7 @@
             left: 0;
             width: 100%;
             display: table;
-            padding: 20px 40px 40px 40px;
+            padding: 20px 40px 38px 40px;
             .mod-mini-cart-col-label{
             width: 100%;
             display: table;
@@ -369,9 +400,14 @@
                 }
             }
         }
-        &-footer{
-            display: none;
+        &.show{
+            .kutuSepet_icerik_wrapper{
+                height: calc(100% - 260px);
+                top: 115px;
+            }
+            .mini-cart-cargo-info{display: block;}
         }
+        &-footer{ display: none; }
     }   
     .mini-cart-ready{
         overflow: hidden;
@@ -396,7 +432,7 @@
 
 .basket-empty{ 
     .mod-mini-cart .mod-mini-cart-col-total,
-    .mod-mini-cart-cargo-info{display: none;}
+    .mod-mini-cart.show .mini-cart-cargo-info, .mini-cart-cargo-info{display: none;}
     .mod-mini-cart-body div.title{border-bottom: 0;}
 }
 

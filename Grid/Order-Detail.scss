@@ -193,21 +193,24 @@
             display: block;
         }
     }
+
     .ems-grid-order-products{
-        max-height: 280px;
-        overflow-y: auto;
-        &::-webkit-scrollbar {
-            width: 5px;
-        }
-        &::-webkit-scrollbar-track {
-            background: #e1e1e1; 
-        }
-        &::-webkit-scrollbar-thumb {
-            background: black; 
-            border-radius: 0px;
-        }
-        &::-webkit-scrollbar-thumb:hover {
-            background: #e1e1e1; 
+        @media screen and (min-width: $breakpointXSM){
+            max-height: 280px;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #e1e1e1; 
+            }
+            &::-webkit-scrollbar-thumb {
+                background: black; 
+                border-radius: 0px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: #e1e1e1; 
+            }
         }
         .ems-grid-row{
             background:#fff;
@@ -562,8 +565,6 @@
             }
         }
         .bottom-step{
-            padding-left: 20px;
-            padding-right: 20px;
             padding-bottom: 30px;
             a{
                 max-width:100%;
@@ -610,10 +611,10 @@
                     border-top: 0;
                     .ems-grid-img{
                         width: 100%;
-                        min-height: 130px;
-                        max-height: 130px;
+                        min-height: 100px;
+                        max-height: 100px;
                         img{
-                            max-height: 90px;
+                            max-height: 80px;
                         }
                     }
                     .ems-grid-name{
@@ -627,8 +628,8 @@
                     }
                     .ems-grid-piece0{
                         width: 100%;
-                        min-height: 140px;
-                        max-height: 140px;
+                        min-height: auto;
+                        max-height: inherit;
                     }
                 }
             }

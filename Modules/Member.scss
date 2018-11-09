@@ -301,72 +301,21 @@
                         }
                     .aboutUs-container{
                         font-size: 14px;
-                        font-family: "regular";
-                        color: #6c6c6c;
-                        width: 670px;
+                        font-family: $regularA;
+                        color: #000;
                         .aboutUs-title{
                             font-size: 16px;
-                            font-family: $regular;
-                            font-weight: bold;
-                            padding: 25px 0 0 0;
-                            color: black;
+                            font-family: $avenir-bold;
+                            padding: 25px 0 10px 0;
+                            color: #000;
                         }
-                        p{
-                            font-size: 30px;
-                            padding: 0px;
-                            margin: 30px 0px 5px 0px;   
-                            color: black;
-                            font-weight: bold;
-                        }
-
-                        .refundPolicy{
-                            p{
-                                font-size: 17px;
-                                margin: 30px 0px 15px 0px;
-                                font-weight: bold;
-                            }
-                        }
-                        .faq-wrapper {
-                            p{
-                                font-size: 14px;
-                                font-weight: normal;
-
-                            }
-                        }
-
-                        .ordercontract{
-                            p{
-                                color: inherit;
-                                font-size: inherit;
-                                font-weight: bold;
-
-                            }
-
-                            .contractQuote{
-                                font-style: italic;
-                                p{
-                                    font-weight: inherit;
-                                }
-                                .personalInformations{
-                                    li {
-                                        padding: 10px 0;
-                                    }
-                                }
-                            }
-                            
-                            ul.seller-buyer li:first-child{
-                                padding-top: 10px;
-                            }
-                            ul.seller-buyer li:nth-child(2n){
-                                padding-bottom: 20px;
-                            }
-
-                        }
+                        p{line-height: 22px;}
+                        p strong{font-family: $avenir-medium;}
                     }
                 }
             }
         }
-    }
+    }   
 }
 
 .ems-login{
@@ -389,6 +338,18 @@
 .ems-page-member-creating.ems-login{
     .ems-page-member .ems-col-left{display: none;}
     .ems-page-member .ems-col-full{width: 100%; min-height: auto; max-width: 700px; padding-left: 0; padding-right: 0; margin-left:auto; margin-right:auto; float:none; border-left:none; }
+}
+
+body.member-layout{
+    .site-discount-banner{display: none;}
+}
+
+@media screen and (min-width: 850px){
+    .member-layout.ems-logoff{
+        .ems-page-member .ems-col-left{display: none;}
+        .ems-page-member .ems-col-full{width: 100%; margin: 0 auto; float: none; padding-left: 0;}
+        .ems-page-member .ems-col-full:before{display: none;}
+    }
 }
 
 .ems-page {
@@ -426,84 +387,6 @@
             }
         }
 
-        .ems-human-resources{
-            max-width: 700px;
-            &-inline{
-                display: table;
-                width: 100%;
-                position: relative;
-                padding:17px 40px 16px 15px;
-                cursor: pointer;
-                border: 1px solid $border;
-                > .column {
-                    &.column-4{
-                        position: absolute;
-                        top: 50%;
-                        right: 10px;
-                        width: 24px;
-                        height: 24px;
-                        line-height: 24px;
-                        text-align: center;
-                        margin: -12px auto 0 auto;
-                        i, i:before{
-                            font-size: 12px; 
-                            color: $lDark;
-                            width: 12px;
-                            height: 12px;
-                        }
-                        i:before{
-                            font-family: 'icomoon';
-                            content:'\e90c';
-                        }
-                    }
-                    span{
-                        font-family: $regular;
-                        font-size: 14px;
-                        color: $lDark;
-                    }
-                }
-            }
-            &-accordion{
-                &:empty{display: none;}
-                display: none;
-                padding: 0 30px;
-            }
-            &-template{
-                padding-top: 25px;
-                padding-bottom: 30px;
-                h1, h2{margin:0; font-family:$mediumA;}
-                h1{font-size:18px;}
-                h2{font-size:14px;}
-                > ul > li, p{
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-                p{
-                    margin: 0;
-                    strong{
-                        font-family: $mediumA;
-                        font-weight: normal;
-                    }
-                }
-                &:empty{display: none;}
-            }
-            &-body{
-                > ul{
-                    > li{
-                        margin-top: 10px;
-                        background: #fff;
-                        &:first-child{margin-top: 0;}
-                        &.selected{
-                            .ems-human-resources-accordion{display: block;}
-                            .ems-human-resources-inline > .column.column-4 i:before{
-                                content:'\e904';
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         .pageDefault {
             display: table;
             margin: 0 auto 0 0;
@@ -511,8 +394,8 @@
             .pageHeaderDefault {
                 span{
                     display: block;
-                    font-family: $mediumA;
-                    font-size: 30px;
+                    font-family: $avenir-bold;
+                    font-size: 16px;
                     padding-bottom: 30px;
                 }
             }
@@ -777,7 +660,7 @@
                     line-height: 30px;
                     a{
                         display: block;
-                        font-size: 16px;
+                        font-size: 15px;
                         color: #000000;
                         font-family: $regular;
                         padding: 5px 0px;
@@ -906,12 +789,12 @@
                 }
             }
         }
-        .ems-page-member-password{
+        .ems-page-default-password{
             .ems-form-inner{
                 .ems-field{
                         width: 100%;
                     &.button{
-                        width: 50%;
+                        max-width: 250px;
                         &:last-child{
                             a {
                                 background: white;
@@ -972,35 +855,22 @@
     }
     .ems-form-inner .ems-field{
         textarea{
-            width: 65% !important;
+            width: 100% !important;
             height: 100px;
             resize: none;
         }
         &.msgCaptcha{
             width: 65% !important;
-            :last-child{
-                display: flex;
-                img{
-                    padding-right: 17px;
-                }
-                input{
-                    position: absolute;
-                    bottom : 0;
-                    right: 0;
-                }
-                a {
-                    position: absolute;
-                    margin-top: 10px;
-                }
+            div[id$="divCaptcha"]{
+                @include flex();
+                @include flexDirection(column);
             }
             span[id$="lbfUYE_KONTROLKODU"]{
                 display: block;
-                margin-top: 15px;
+                margin-top: 10px;
             }
-            img{margin-top: 20px;}
-            input{
-                max-width: 240px;
-            }
+            img{margin-top: 20px; max-width: 200px;}
+            input{ max-width: 240px; }
         }
         .ems-form-label{
             width: auto !important;
@@ -1011,9 +881,14 @@
         }
         .btnMesajGonder{
             max-width: 240px;
-            margin-top: 30px;
+            margin-top: 20px;
             border: 1px solid black;
-            width: 205px;
+            @media screen and (min-width: $breakpointXSM){
+                &:hover{
+                    background: $lDark;
+                    span{color: #fff;}
+                }
+            }
         }
         &.button{
             .mesajGonderiliyor{
@@ -1120,30 +995,14 @@
     }
     .tableSifremiUnuttum{
         max-width: 340px;
-        margin: 0 auto;
-
-        tr:nth-child(2) {
-            td {
-                div:nth-child(3){
-                    position: relative;
-
-                    a{
-                        display: block;
-                        position: absolute;
-                        top: 15%;
-                        right: 75px;    
-                    }
-                }
-            }
-        } 
+        margin: 0 auto; 
         
         tr:nth-child(3){
             td{
                 .btnDefault.btnUyeSifreGonder{
                     max-width: 100%;
                 }
-            }
-            
+            }    
         }
         
         > tbody{
@@ -1379,37 +1238,6 @@
     .ems-page-member{
         .ems-col-full{
             padding-left: 20px;
-        }
-    }
-}
-
-/*Neden Aker*/
-.ems-page-member.ems-page-content-single{
-    .ems-col-full{
-        float: none;
-        width: 100%;
-        border-left: none;
-        padding: 0;
-    }
-    .ems-page-cover-text{
-        @media screen and (min-width: $breakpointXSM){
-            max-width: 390px;
-            right: inherit;
-            padding-right: 0;
-        }
-    }
-    .icerikTemplateListeContainer{
-        max-width: 1300px;
-        margin: 30px auto;
-        display: block;
-        .icerikTemplateListeItem{
-            @media screen and (min-width: $breakpointXSM){
-                width: 50%;
-                display: inline-block;
-                vertical-align: top;
-            }
-            margin-top: 0;
-            padding: 20px;
         }
     }
 }
@@ -1922,6 +1750,8 @@
             font-size: 0;
             overflow: hidden;
         }
+        .site-header{min-height: 70px;}
+        .site-header-banner {display: none;}
     }
 
     .ems-page-cover{
@@ -1966,63 +1796,16 @@
                     display: block;
                     padding: 0;
                     .aboutUs-container{
-                        font-size: 15px;
-                        font-family: "regular";
-                        color: #6c6c6c;
-                        width: 670px;
+                        font-size: 14px;
+                        font-family: $regularA;
+                        color: #000;
                         max-width: 100%;
-                        padding: 20px 5%;
-
+                        padding: 20px;
                         .aboutUs-title{
                             font-size: 16px;
-                            font-family: $regular;
-                            font-weight: bold;
+                            font-family: $avenir-bold;
                             padding: 25px 0 0 0;
-                            color: black;
-                        }
-                        p{
-                            font-size: 30px;
-                            padding: 0px;
-                            margin: 30px 0px 5px 0px;   
-                            color: black;
-                            font-weight: bold;
-                        }
-
-                        .refundPolicy{
-                            p{
-                                font-size: 14px;
-                                margin: 30px 0px 15px 0px;
-                                font-weight: bold;
-                            }
-                        }
-
-                        .ordercontract{
-                            p{
-                                color: inherit;
-                                font-size: inherit;
-                                font-weight: bold;
-
-                            }
-
-                            .contractQuote{
-                                font-style: italic;
-                                p{
-                                    font-weight: inherit;
-                                }
-                                .personalInformations{
-                                    li {
-                                        padding: 10px 0;
-                                    }
-                                }
-                            }
-                            
-                            ul.seller-buyer li:first-child{
-                                padding-top: 10px;
-                            }
-                            ul.seller-buyer li:nth-child(2n){
-                                padding-bottom: 20px;
-                            }
-
+                            color: #000;
                         }
                     }
                 }
@@ -2147,6 +1930,9 @@
                         }
                     }
                 }
+                &-password{
+                    .page-top-title{display: block;}
+                }
                 &-message-detail{
                     .ems-message-detail-form{
                         .ems-form-inner{
@@ -2203,12 +1989,12 @@
                 }
             }
             
-            .ems-page-member-password{
+            .ems-page-default-password{
                 .ems-form{
                     &-inner{
                         .ems-field{
                             &.button{
-                                width: 100%;
+                                max-width: 100%;
                             }
                         }
                     }
@@ -2220,16 +2006,6 @@
             }
             .ems-page-content-text{
                 padding: 20px;
-            }
-            .ems-human-resources{
-                max-width: 100%;
-                padding:20px 20px;
-                &-accordion{
-                    padding: 0 20px;
-                }
-                &-template{
-                    h1{font-size:16px;}
-                }
             }
             .pageSifremiUnuttum{
                 .tableSifremiUnuttum{max-width: 100%;}
@@ -2325,25 +2101,6 @@
         }
         .ems-contact-list{
             margin-bottom: 30px;
-        }
-    }
-
-    /*Neden Aker*/
-    .ems-page-member.ems-page-content-single{
-        .ems-page-cover{padding: 50px; background: #f6f7f9;}
-        .ems-page-cover-text{padding-left: 0; padding-right: 0;}
-        .ems-page-cover-text span{padding-top: 0;}
-        .icerikTemplateListeContainer{
-            max-width: 100%;
-            margin-top: 0;
-            .icerikTemplateListeItem{
-                padding-left: 15px;
-                padding-right: 15px;
-                .boxes-wrp{
-                    .icons{margin-left: auto; margin-right: auto; margin-bottom: 10px;}
-                    .text{ text-align: center;}
-                }
-            }
         }
     }
 
@@ -2677,31 +2434,5 @@
     .ems-page-content-pressWrap{ position: relative; z-index: 2; }
     .ems-popup-room-open{
         overflow: hidden;
-    }
-    .ems-press-room ul li {
-        .ems-press-room-detail{
-            width: 100%;
-            height: calc(100% - 50px);
-            top: 50px;
-            overflow-x: hidden;
-            padding: 20px 15px;
-            &-date {
-                margin-top: 20px;
-                span{font-size:12px;}
-            }
-            &-title{
-                span{font-size:24px;}
-            }
-            .ems-press-room-close { background:#fff; top:20px; right:15px; }
-        }
-    }
-}
-
-
-@media screen and (max-width: 480px){
-    .ems-press-room{
-        &-cover{
-            height: 165px;
-        }
     }
 }

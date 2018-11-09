@@ -503,12 +503,11 @@
     margin-right: auto;
     @media screen and (min-width: $breakpointXSM){
         display: none;
-        top: 50%;
+        top: 50px;
         left: 0;
         right: 0;
         height: auto;
         z-index: 21;
-        @include setTransform(translateY(-50%));
         .custom-popup-header{
             .custom-popup-header-left,
             .custom-popup-header-right{
@@ -517,7 +516,6 @@
                 vertical-align: middle;
             }
         }
-        .custom-popup-body{padding-bottom: 20px;}
     }
     .title-line{
         position: relative;
@@ -551,7 +549,7 @@
     }
     .custom-popup-header{
         background:#d27fd4;
-        background: linear-gradient(to right, #d27fd4, #db9caf 24%, #9bbaf2 52%, #adff93);
+        background-image: linear-gradient(to right, #00e2fb, #4fa8ff 33%, #8476ff 61%, #e900ff);
         display: table;
         width: 100%;
         padding: 26px 35px;
@@ -574,13 +572,18 @@
                 display: inline-block;
                 vertical-align: middle;
                 width: auto;
+                padding-left: 15px;
+                padding-right: 15px;
                 &:first-child{
                     color: #fff;
                     margin-right: 30px;
                     span{font-size: 15px;}
                     @media screen and (min-width: $breakpointXSM){
+                        border: 1px solid transparent;
                         &:hover{
-                            color: $red;
+                            border: 1px solid #000;
+                            background: #fff;
+                            span{color: #000;}
                         }
                     }
                 }
@@ -601,7 +604,7 @@
     }
     .custom-popup-body{
         .short-info{
-            display: table !important;
+            display: table;
             width: 100%;
             background: #fff;
             @media screen and (min-width: $breakpointXSM){
@@ -702,6 +705,7 @@
 }
 
 @media screen and (min-width: $breakpointXSM){
+    .vailProductPp{z-index: 20;}
     .suggestions-popup-ready{
         .vailProductPp{opacity: 1; visibility: visible;}
         .suggestions-popup{
@@ -1062,6 +1066,7 @@
                 }
                 &-selling{
                     font-family: $avenir-bold;
+                    margin-right: 15px;
                     .urunDetay_satisFiyat{
                         &:before{
                             padding-right: 2px;
@@ -1073,7 +1078,6 @@
                 &-first{
                     font-family: $regular;
                     color: #9f9f9f;
-                    margin-right: 15px;
                     &:before{
                         padding-right: 2px;
                         font-size: 19px;
@@ -1136,6 +1140,7 @@
 .ems-page{
     &-detail {
         width: 100%;
+        .ems-container.order-3{position: relative; z-index: 0;}
         .navigasyon{
             > span{
                 display: inline-block;
@@ -1575,6 +1580,7 @@
             > div{
                 display: table-cell;
                 vertical-align: middle;
+                &:empty{display: none;}
             }   
         }
         &-bundle{
@@ -2122,6 +2128,7 @@
                         }
                     }
                 }
+                .urunDetay_btnStokHaberci {margin-top: 0;}
                 .urunDetay_btnStokHaberci table tbody tr th > .btnDefault,
                 .urunDetay_btnSepeteAt table tbody tr th > .btnDefault{
                     font-size: 16px;
@@ -2180,10 +2187,6 @@
             &-price{
                 &-right{ display: none; }
                 &-left{height: 0; width: 0; overflow: hidden;}
-                .urunDetay_btnSepeteAt > table,
-                .urunDetay_btnStokHaberci > table{
-                    display: none !important;
-                }
                 &-first,&-selling{
                     display:block;
                 }
@@ -2329,8 +2332,7 @@
                             height: 50px;
                             &:nth-child(1),
                             &:nth-child(2),
-                            &:nth-child(3),
-                            &:nth-child(4) {display: inline-block;}
+                            &:nth-child(3) {display: inline-block;}
                         }
                     }
                 }
@@ -2345,6 +2347,9 @@
                 padding-left: 5px;
                 padding-right: 5px; 
             }
+        }
+        &.tukendi {
+            .ems-prd-add-to-cart{padding-left: 10px;}
         }
     }
 

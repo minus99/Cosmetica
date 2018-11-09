@@ -3,7 +3,7 @@
         .ems-grid-message{
             .ems-grid-header {
                 display: flex;
-                border-bottom: 1px solid $border;
+                border-bottom: 1px solid $Gray;
                 padding-bottom: 10px;
                 &:not(:first-of-type){
                     display: none;
@@ -16,6 +16,8 @@
                         font-size: 13px;
                         color: #b8b8b8;
                     }
+                    padding-left:10px;
+                    &:first-child{padding-left: 0;}
                 }
                 .col-1 {
                     min-width: 30%;
@@ -24,6 +26,9 @@
                 .col-5 {
                     min-width: 10%;
                     max-width: 10%;
+                    @media screen and (min-width: $breakpointXSM){
+                        text-align: center;
+                    }
                 }
             }
             .ems-grid-row{
@@ -35,9 +40,11 @@
                     min-width: 20%;
                     max-width: 20%;
                     text-align: left;
-                    padding: 0px 15px 0px 0px;
+                    padding-left:10px;
+                    padding-right: 0;
                     font-family: $regular;
                     font-size: 14px;
+                    &:first-child{padding-left: 0;}
                 }
                 .col-1 {
                     min-width: 30%;
@@ -46,9 +53,109 @@
                 .col-5 {
                     min-width: 10%;
                     max-width: 10%;
+                    @media screen and (min-width: $breakpointXSM){
+                        text-align: center;
+                    }
                 }
             }
         }
+        .kutuMesaj{
+            .kutuFooterMesaj{display: none;}
+            .kutuHeaderMesaj{
+                > span{
+                    .page-top-title{
+                        margin-bottom: 20px;
+                        > span{
+                            display: inline-block;
+                            font-family: $avenir-bold;
+                            font-size: 16px;
+                            position: relative;
+                            z-index: 2;
+                            background: #fff;
+                            padding-right: 10px;
+                        }
+                        .line{
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -1px;
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            background: #e1e1e1;
+                            z-index: 1;
+                        }
+                    }   
+                }
+            }
+            .kutuBodyMesaj{
+                @include flex();
+                justify-content: space-between;
+                align-items: center;
+                border-bottom:2px solid $Gray;
+                margin-bottom: 30px;
+                > div{
+                    width: 33.333%;
+                    a{
+                        display: block;
+                        text-align: center;
+                        letter-spacing: 0.5px;
+                        font-size: 14px;
+                        font-family: $regular;
+                        padding: 12px 1px 15px 1px;
+                        position: relative;
+                        border-bottom: 2px solid transparent;
+                        margin-bottom: -2px;
+                        @media screen and (min-width: $breakpointXSM){
+                            &:hover{color: $red;}
+                        }
+                    }
+                    &.active{
+                        a{
+                            border-bottom-color: $red;
+                            color: $red;
+                            &:before,
+                            &:after{
+                                bottom: -2px;
+                                left: 50%;
+                                border: solid transparent;
+                                content: " ";
+                                height: 0;
+                                width: 0;
+                                position: absolute;
+                                pointer-events: none;
+                            }
+                            &:before{
+                                border-color: rgba(194, 225, 245, 0);
+                                border-bottom-color: #ee0676;
+                                border-width: 10px;
+                                margin-left: -10px;
+                            }
+                            &:after{
+                                border-color: rgba(136, 183, 213, 0);
+                                border-bottom-color: #fff;
+                                border-width: 8px;
+                                margin-left: -8px;
+                            }
+                        }
+                    }
+                    &.kutuMesaj_tum {display: none;}
+                    &.kutuMesaj_gelenMesaj{order: 1;}
+                    &.kutuMesaj_yeni{order: 2;}
+                    &.kutuMesaj_bekleyen{order: 3;}
+                }
+            }
+        }
+        .pageMesajGonder{
+            .pageHeaderMesaj{display: none;}
+            .ems-form{
+                .ems-form-inner{
+                    .ems-field.button{
+                        .ems-message{margin-top: 20px;}
+                    }
+                }
+            } 
+        }
+
     }
 }
 
@@ -74,8 +181,11 @@
                 }
             }
         }
+        .page-top-title{display: none;}
     }
+
     &-message-detail{
+        .page-top-title{display: none;}
         .ems-message-type, .msgDtHeader, .msgDtContent{
             li{
                 display: table;
@@ -92,7 +202,7 @@
                     }
                 }
                 &:first-child{
-                    > span{border-bottom: 0; font-size: 16px; font-family:$regular; color: #231f20;}
+                    > span{border-bottom: 0; font-size: 14px; font-family:$regular; color: #000;}
                 }
             }
         }
@@ -146,32 +256,22 @@
             align-items: center;
             .btnMesajKonuYeniGonder, .btnMesajCozuldu{
                 max-width: 49%;
-                background: $lDark;
+                background: $btnAlternateColor;
+                span{color: #fff;}
                 @media screen and (min-width: $breakpointXSM){
                     &:hover{
-                        background: $btnColor;
+                        background: $btnHover;
                     }
                 }
             }
         }
         .ems-message-detail-form{
+            .ems-message {
+                margin-top: 20px;
+            }
             .ems-form-inner {
                 margin-top: 50px;
                 .ems-field{
-                    &.success-hide{
-                        display: none;
-                    }
-                    &.frmLeft, &.frmRight {
-                        display: inline-block;
-                        vertical-align: top;
-                        width: 50%;
-                    }
-                    &.frmLeft{padding-right: 10px;}
-                    &.frmRight{padding-left: 10px;}
-                    &:nth-child(1),
-                    &:nth-child(2),
-                    &:nth-child(4),
-                    &:nth-child(5){display: none !important;}
                     textarea{
                         width: 100% !important;
                         height: 100px;
@@ -184,7 +284,7 @@
                         }
                         img{margin-top: 20px;}
                         input{
-                            max-width: 200px;
+                            max-width: 240px;
                         }
                     }
                     .geneltelefon{width: 100% !important;}
@@ -248,6 +348,21 @@
 @media screen and (max-width: $breakpointXSM){
     .ems-page {
         &-member{
+            .kutuMesaj{
+                .kutuHeaderMesaj{
+                    > span{
+                        .page-top-title{
+                            display: block;
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+                .kutuBodyMesaj{
+                    margin-bottom: 10px;
+                }
+            }
             .ems-grid-message{
                 @include flex();
                 flex-wrap: wrap;
@@ -257,10 +372,10 @@
                     @include flexDirection(column);
                     justify-content: space-around;
                     padding: 0;
-                    margin-bottom: 30px;
+                    margin-bottom: 20px;
                     > div{
                         width: 100%;
-                        padding: 10px 0px;
+                        padding: 20px 0px;
                         min-height: 30px;
                         line-height: 1;
                         flex: inherit;
@@ -319,9 +434,6 @@
             .ems-page-default{
                 &-message{
                     padding:20px;
-                    .page-top-title{
-                        display: block;
-                    }
                 }
                 &-message-detail{
                     .ems-page-default-info{

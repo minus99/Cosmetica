@@ -11,21 +11,9 @@
                         }
                     }
                 }
-                @media screen and (min-width: $breakpointXSM){
-                    .remove-list{text-align: right;}
-                }
                 .price-report{
                     .ems-message{
                         margin-bottom: 20px;
-                    }
-                }
-                .stock-report, .price-report{
-                    .inner-title{
-                        display:block;
-                        span{
-                            font-family: $mediumA;
-                            font-size: 14px;
-                        }
                     }
                 }
             }
@@ -44,12 +32,54 @@
             }
         }
         .ems-grid-default-stock, .ems-grid-follow-price{
+            @media screen and (min-width: $breakpointXSM){
+                .ems-grid-header{
+                    &:first-child{
+                        display: table;
+                        table-layout: fixed;
+                        width: 100%;
+                    }
+                    > div{
+                        display: table-cell;
+                        vertical-align: middle;      
+                        padding-left: 5px;
+                        padding-right: 5px;    
+                        text-align: center;
+                        font-size: 13px;
+                        color: #b8b8b8;
+                        padding-bottom: 10px;    
+                        font-family: $mediumA;   
+                    }
+                    .col-1{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .ems-grid-img{
+                        width: 80px;
+                        max-width: 80px;
+                        flex: inherit;    
+                        span{display: inline-block; text-indent: -99em; overflow: hidden;}    
+                    }
+                    .ems-name{
+                        text-align: center;   
+                    }
+                    .ems-grid-code{
+                        text-align: center;
+                    }
+                    .ems-grid-remove{
+                        width: 50px;
+                        span{display: inline-block; text-indent: -99em; overflow: hidden;}
+                    }
+                }
+            }
             .ems-grid-row{
-                margin-bottom: -1px;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                border-bottom: 1px solid $Gray;
-                border-top: 1px solid $Gray;
+                padding-top: 15px;
+                padding-bottom: 15px; 
+                @media screen and (min-width: $breakpointXSM){
+                    &:nth-child(2){
+                        border-top: 1px solid $Gray;
+                    }   
+                }
                 > div{
                     display: table-cell;
                     vertical-align: middle;
@@ -61,7 +91,6 @@
                     flex: inherit;        
                 }
                 .ems-name{
-                    padding-left: 10px;
                     a{display: block;}
                 }
                 .ems-grid-code{
@@ -78,13 +107,14 @@
                 .ems-price{
                     text-align: center;
                     font-family: $bold;
-                    font-size: 14px;
+                    font-size: 16px;
                     &:before{
                         font-family: $tl;
                         content:'t';
                         font-size: 12px;
                         font-weight: bold;
                     }
+                    .d{font-size: 12px;}
                 }
                 .ems-grid-remove{
                     width: 50px;
@@ -107,14 +137,17 @@
                     .page-top-title{
                         margin-top: 15px;
                         display: block !important;
+                        margin-left: 20px;
+                        margin-right: 20px;
                     }
-                    padding: 0 20px;
-                    .report-holder{
-                        .inner-title{padding-bottom: 20px;}
-                    }
+                    padding: 5px 0;
+                }
+                .remove-list{
+                    padding-left: 20px;
+                    margin-right: 20px;
                 }
                 .btnTakipListeFiyTumSil{
-                    margin-bottom: 30px;
+                    margin-bottom: 0;
                 }
                 &-empty {
                     padding: 50px 0 !important;
@@ -122,38 +155,51 @@
             }
             .ems-grid-default-stock,
             .ems-grid-follow-price{
+                padding-left: 20px;
+                padding-right: 20px;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                .ems-grid-header,
                 .ems-grid-row{
-                    padding-left: 160px;
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    align-items: center;
+                    border-bottom: 1px solid $Gray;
+                    padding-bottom: 10px;
                     > div{
-                        padding: 0;
+                        padding: 10px 0;
+                    } 
+                }
+                .ems-grid-header{
+                    > div{
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                    .ems-grid-remove{display: none;}
+                }
+                .ems-grid-row{
+                    padding-top: 0;
+                    > div{
                         text-align: left !important;
                     }
-                    .ems-grid-img{
-                        position: absolute;
-                        top: 50%;
-                        left: 60px;
-                        margin-top: -40px;
-                    }
-                    .ems-grid-remove{
-                        padding: 0;
-                        position: absolute;
-                        top: 50%;
-                        left: 20px;
-                        margin-top: -7px;
-                        width: 14px;
-                        height: 14px;
-                        text-align: center;
-                        z-index: 1;
-                    }
                     .ems-name{
-                        margin-bottom: 10px;
+                        margin-top: 0;
+                        margin-bottom: 0;
                         padding-left: 0;
+                        a{
+                            max-height: 16px;
+                            overflow: hidden;
+                        }
                     }
-                    .ems-price{margin-top: 10px;}
-                    .ems-name,
-                    .ems-grid-code,
-                    .ems-price{
-                        display: block;
+                    .ems-price{margin-top: 0;}
+                    .ems-grid-remove{
+                        width: 30px;
+                        position: absolute;
+                        top: 15px;
+                        right: 0;
+                        z-index: 1;
+                        padding-top: 0;
+                        padding-bottom: 0;
                     }
                 }
             }

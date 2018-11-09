@@ -9,7 +9,56 @@
                        border: none;
                     }
                     .select-cfg.ems-inline{
-                        display: none;
+                        display: table;
+                        width: 100%;
+                        table-layout: fixed;
+                        > div{
+                            display: table-cell;
+                            vertical-align: middle;
+                            text-align: center;
+                            width:25%;
+                            a{
+                                padding: 15px 5px 15px 5px;
+                                position: relative;
+                                transition: none;
+                                border-bottom: 2px solid transparent;
+                                font-size: 14px;
+                                font-family: $regular;
+                                letter-spacing: 0.5px;
+                                @media screen and (min-width: $breakpointXSM){
+                                    margin-bottom: -2px;
+                                    &:before, &:after{
+                                        bottom: -2px;
+                                        left: 50%;
+                                        border: solid transparent;
+                                        content: " ";
+                                        height: 0;
+                                        width: 0;
+                                        position: absolute;
+                                        pointer-events: none;
+                                        @include transition(all .2s ease);
+                                    }
+                                }
+                                @media screen and (min-width: $breakpointXSM){
+                                    &:hover{
+                                        color: $red;
+                                        border-bottom-color: $red;
+                                        &:before{
+                                            border-color: rgba(194, 225, 245, 0);
+                                            border-bottom-color: #ee0676;
+                                            border-width: 11px;
+                                            margin-left: -11px;
+                                        }
+                                        &:after{
+                                            border-color: rgba(136, 183, 213, 0);
+                                            border-bottom-color: #fff;
+                                            border-width: 8px;
+                                            margin-left: -8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                     @media screen and (min-width: $breakpointXSM){
                         .favorite-report{
@@ -28,7 +77,7 @@
                             position: absolute;
                             display: inline-block;
                             background-color: $red;
-                            &::after{
+                            &:after{
                                 content: '';
                                 display: block;
                                 width: 9%;
@@ -70,16 +119,14 @@
                     }
                 }
                 .btnFavoriListeTumSil{
-                    margin-top: 20px;
+                    margin-top: 30px;
                     width: 100%;
-                    border: 1px solid $lDark;
+                    background: $btnAlternateColor;
+                    max-width: 265px;
+                    span{color: #fff;}
                     @media screen and (min-width: $breakpointXSM){
-                        max-width: 190px;
                         &:hover {
-                            background: $lDark;
-                            span {
-                                color: #fff;
-                            }
+                            background: $btnHover;
                         }
                     }
                 }
@@ -237,15 +284,17 @@
                 .ems-price{
                     text-align: center;
                     font-family: $bold;
-                    font-size: 14px;
+                    font-size: 16px;
                     &:before{
                         font-family: $tl;
                         content:'t';
                         font-size: 12px;
                         font-weight: bold;
                     }
+                    .d{font-size: 12px;}
                 }
                 .ems-grid-report{
+                    display: none;
                     a.btnDefault{
                         padding: 6px 5px 4px 5px;
                         background: #7b58f5;
@@ -264,6 +313,39 @@
                 }
                 .ems-grid-remove{
                     width: 50px;
+                    .sStylerWrp_checkbox{
+                        .cStyler{
+                            cursor: pointer;
+                            width: 15px;
+                            height: 15px;
+                            border: 2px solid #9f9f9f;
+                            background: #fff;
+                            display: inline-block;
+                            vertical-align: middle;
+                            background: none;
+                            position: relative;
+                            &.checked{
+                                border-color: #000;
+                                &:after{
+                                    font-family: 'icomoon';
+                                    content: '\e92e';
+                                    width: 11px;
+                                    height: 11px;
+                                    font-size: 8px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    color: #000000;
+                                    display: block;
+                                    text-align: center;
+                                    line-height: 11px;
+                                }
+                            }
+                        }
+                    }
                 }
             } 
         }
@@ -283,7 +365,7 @@
                             .borderMaskLeft{
                                 bottom: 0;
                                 width: 41% !important;
-                                &::after{
+                                &:after{
                                     width: 23.5% !important;
                                     -webkit-transform: rotate(-22deg) !important;
                                     -moz-transform: rotate(-22deg) !important;
@@ -305,6 +387,39 @@
                         }
 
                     }
+                    .favorite-report{
+                        .select-cfg.ems-inline{
+                            > div{
+                                a{
+                                    &:active{
+                                        border-bottom-color: $red;
+                                        &:before, &:after{
+                                            bottom: -2px;
+                                            left: 50%;
+                                            border: solid transparent;
+                                            content: " ";
+                                            height: 0;
+                                            width: 0;
+                                            position: absolute;
+                                            pointer-events: none;
+                                        }
+                                        &:before{
+                                            border-color: rgba(194, 225, 245, 0);
+                                            border-bottom-color: #ee0676;
+                                            border-width: 11px;
+                                            margin-left: -11px;
+                                        }
+                                        &:after{
+                                            border-color: rgba(136, 183, 213, 0);
+                                            border-bottom-color: #fff;
+                                            border-width: 8px;
+                                            margin-left: -8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     div[id$="plhFavoriKayitYok1"]{
                         > span {
                             margin-bottom: 100px;
@@ -317,14 +432,14 @@
                         }
                     }
                     .ems-grid-row{
-                        padding-left: 160px;
+                        padding-left: 150px;
                         > div{
                             padding: 0;
                         }
                         .ems-grid-img{
                             position: absolute;
                             top: 50%;
-                            left: 60px;
+                            left: 50px;
                             margin-top: -40px;
                         }
                         .ems-grid-remove{
@@ -346,15 +461,14 @@
                             display: inline-block;
                         }
                         .ems-grid-piece{width: auto;}
-                        .ems-price{width: 50%; text-align: left; padding-left: 20px;}
-                        .ems-name,
-                        .ems-grid-report{   
+                        .ems-price{width: 50%; text-align: left; padding-left: 10px;}
+                        .ems-name{   
                             display: block;
                             vertical-align: top;
                             text-align: left;
                         }
-                        .ems-grid-report{margin-top: 20px;}
                     }
+                    .btnFavoriListeTumSil{margin-left: auto; margin-right: auto; display: block;}
                 }
             }
         }

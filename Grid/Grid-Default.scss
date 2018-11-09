@@ -79,8 +79,10 @@
                         }
                     }
                 }
-                .ems-price{
-                    color: #221e1f;
+                .ems-price, .ems-grid-total{
+                    color: #000;
+                    font-family: $bold;
+                    font-size: 14px;
                 }
                 .ems-grid-delete {
                     width: 10%;
@@ -91,7 +93,6 @@
             }
         }
         a.btnTakipListeStokTumSil, a.btnTakipListeFiyTumSil{
-            padding: 10px;
             margin: 20px 0 0 0;
             width: 100%;
             border: 1px solid $lDark;

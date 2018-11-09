@@ -232,7 +232,7 @@
     }
     @media screen and (min-width: $breakpointXSM){
         &:hover{
-            background: #000;
+            background: $red;
             i:before{
                 color: #fff;
             }
@@ -960,7 +960,7 @@ button.swiper-pagination-bullet {
                 display: block;
                 color: #fff;
                 &.title-1{font-family:$avenir-medium; font-size:30px;}
-                &.title-2{font-family:$regular; font-size:14px; margin-top: 5px; line-height: 20px;}
+                &.title-2{font-family:$regular; font-size:14px; margin-top: 5px; line-height: 22px;}
             }
         }
         .bnr-button{
@@ -976,6 +976,8 @@ button.swiper-pagination-bullet {
                 max-width: 210px;
                 @include transition(all .2s ease);
                 @media screen and (min-width: $breakpointXSM){
+                    margin-left: auto;
+                    margin-right: auto;
                     &:hover{
                         background: #000;
                         color: $White;   
@@ -1022,7 +1024,7 @@ button.swiper-pagination-bullet {
                     left: 0;   
                     z-index: 2;
                     min-width: 50%;
-                    width: 50%;
+                    width: 60%;
                     height: auto;
                     display: table;
                     &-inner{
@@ -1032,8 +1034,8 @@ button.swiper-pagination-bullet {
                             color: #ffffff;
                             display: block;
                         }
-                        .ttl-1{ font-family: $avenir-medium; font-size: 30px;}
-                        .ttl-2{ font-family: $regular; font-size: 14px; margin-top: 5px; line-height: 20px; }
+                        .ttl-1{ font-family:$avenir-bold; font-size:50px; font-size: 2.6vw;}
+                        .ttl-2{ font-family:$mediumA; font-size:16px; margin-top: 5px; line-height: 22px; }
                         .swiper-slide-button{
                             span{
                                 display: block;
@@ -1106,6 +1108,21 @@ button.swiper-pagination-bullet {
                         .ems-grid-brands{
                             @include setTransform(translateY(-20px));
                         }
+                    }
+                }
+                .discount-rate{
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    min-width: 35px;
+                    text-align: center;
+                    padding:10px 5px;
+                    background: $red;
+                    span{
+                        display: block;
+                        font-family: $bold;
+                        font-size: 14px;
+                        color: #fff;
                     }
                 }
             }
@@ -1191,7 +1208,7 @@ button.swiper-pagination-bullet {
                 background:#f5f5f5;
                 @media screen and (min-width: $breakpointXSM){
                     &:hover{
-                        background: #000;
+                        background: $red;
                     }
                 }
             }
@@ -1202,7 +1219,8 @@ button.swiper-pagination-bullet {
                 bottom: inherit;
                 padding-bottom: 15px;
                 padding-top: 15px;
-                display: block !important;
+                /*display: block !important;*/
+                display: block;
                 &-bullet{
                     background:rgba(0,0,0,.5);
                 }
@@ -1426,7 +1444,7 @@ button.swiper-pagination-bullet {
                 overflow: visible;
             }
             .swiper-slide{
-                width: 48%;
+                width: 100%;
                 .inner{
                     .buton-link{
                         .btnAlternate{
@@ -1454,6 +1472,11 @@ button.swiper-pagination-bullet {
                 padding-top: 20px;
                 &-bullet{background:rgba(0,0,0,.5);}
                 &-bullet-active{background: rgba(0,0,0,1);}
+            }
+        }
+        &-mb-triple {
+            .swiper-slide{
+                width: 100%;
             }
         }
         &-social{
@@ -1524,16 +1547,6 @@ button.swiper-pagination-bullet {
         &-default{
             .swiper-slide{
                 &-cover{ height: 375px; }
-            }
-        }
-        &-campaigns{
-            .swiper-slide{
-                width: 305px;
-            }
-        }
-        &-mb-triple {
-            .swiper-slide{
-                width: 285px;
             }
         }
     }
