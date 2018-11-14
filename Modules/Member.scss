@@ -47,143 +47,6 @@
     }
 }
 
-.popup.kombin{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 320px;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    z-index: 20;
-    @include setTransform(translateX(100%));
-    @include transition(transform 333ms ease-in-out);
-    .inside{
-        .rightPanel{
-            .lookBookHeader{
-                position: relative;
-                padding: 20px 50px 20px 20px;
-                border-bottom: 1px solid $border;
-                .closeBtn{
-                    position: absolute;
-                    top: 50%;
-                    right: 10px;
-                    margin-top: -12px;
-                    width: 24px;
-                    height: 24px;
-                    text-align: center;
-                    i{line-height: 24px;}
-                    i, i:before{
-                        font-size: 12px;
-                        color: $lDark;
-                    }
-                }
-                .kbTitle{
-                    font-family: $mediumA;
-                    font-size: 18px;
-                    color: $lDark;
-                }
-            }
-            .prdCnt{
-                ::-webkit-scrollbar {
-                    width: 2px;
-                }
-                ::-webkit-scrollbar-track {
-                    background: $dGray;
-                }
-                ::-webkit-scrollbar-thumb {
-                    background: $dGray;
-                }
-                ::-webkit-scrollbar-thumb:window-inactive {
-                    background: $lDark;
-                }
-                .inside{
-                    position: absolute;
-                    top: 80px;
-                    left: 0;
-                    width: 95%;
-                    height: calc(100% - 60px);
-                    overflow-x: hidden;
-                    padding: 20px;
-                }
-            }
-            ul.emosInfinite{
-                .ems-prd{
-                    width: 100%;
-                    padding: 20px 0;
-                    margin-top: 10px;
-                    border-top: 1px solid $border;
-                    &:first-child{
-                        margin-top: 0;
-                        border-top: none;
-                    }
-                    &-group, &-color-info, &-favorites{display: none;}
-                    &-content-mask{
-                        max-height: inherit;
-                    }
-                    &-image {
-                        > a{
-                            max-width: 180px;
-                            margin: 0 auto;
-                            img{
-                                max-width: 180px;
-                            }
-                        }
-                    }
-                    &-add-cart{
-                        display: table;
-                        width: 100%;
-                        table-layout: fixed;
-                        margin-top: 15px;
-                        > div{
-                            &:empty{display: none;}
-                            display: table-cell;
-                            vertical-align: middle;
-                            min-width: 50%;
-                        }
-                        .urunListe_adet{display: none;}
-                        .urunListe_sepet table{display: table !important;}
-                        .urunListe_sepet table .btnDefault {padding-top: 13px; padding-bottom: 13px;}
-                    }
-                    &-combine-size{
-                        padding-right: 10px;
-                        .urunListe_secenek {
-                            position: relative;
-                            div.urunListe_secenek1{display: none;}
-                            .sStylerMainWrp.sStylerWrp_select{
-                                .sStylerWrp{
-                                    height: 40px;;
-                                    line-height: 28px;
-                                    padding-right: 40px;
-                                    &:after{right: 10px;}
-                                }
-                            }
-                        }
-                    }
-                    &-add-cart-inner{
-                        padding-left: 10px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.kombinPopupReady{
-    overflow: hidden;
-    .popup.kombin{
-        visibility: visible;
-        opacity: 1;
-    }
-}
-.kombinPopupOpened{
-    .popup.kombin{
-        @include setTransform(translateX(0));
-    }
-    .vailCombine{opacity: 1; visibility: visible;}
-}
-
 .icerikTemplateListeContainer{
     max-width: 740px;
     margin-left: 0;
@@ -303,13 +166,18 @@
                         font-size: 14px;
                         font-family: $regularA;
                         color: #000;
+                        ul li{
+                            font-size: 14px;
+                            font-family: $regularA;
+                            color: #000;
+                        }
                         .aboutUs-title{
                             font-size: 16px;
                             font-family: $avenir-bold;
                             padding: 25px 0 10px 0;
                             color: #000;
                         }
-                        p{line-height: 22px;}
+                        p, ul li{line-height: 22px;}
                         p strong{font-family: $avenir-medium;}
                     }
                 }
@@ -386,7 +254,6 @@ body.member-layout{
                 }
             }
         }
-
         .pageDefault {
             display: table;
             margin: 0 auto 0 0;
@@ -420,7 +287,7 @@ body.member-layout{
                 background: white;
                 z-index: 0;
             }   
-            &.pageSifremiUnuttum::before{
+            &.pageSifremiUnuttum:before{
                 content: '';
                 position: absolute;
                 right: 100%;
@@ -641,7 +508,6 @@ body.member-layout{
         .member-menu-selecbox{
             display: none;
         }
-
         .member-menu {
             .member-menu-title{
                 padding-bottom: 30px;
@@ -727,7 +593,6 @@ body.member-layout{
                 }
             }
         }
-        //Member Paging
         .urunPaging{
             table{
                 tbody{
@@ -741,9 +606,14 @@ body.member-layout{
                             .urunPaging_pageNavigation{
                                 position: relative;
                                 text-align: center;
+                                &:empty{display: none;}
                                 > span{
-                                    display: block;
-                                    padding-top: 20px;
+                                    @media screen and (min-width: $breakpointXSM){
+                                        margin-top: 50px;
+                                    }
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    min-width: 20%;
                                     &:empty{
                                         display: none;
                                     }
@@ -751,18 +621,15 @@ body.member-layout{
                                         display: inline-block;
                                         vertical-align: middle;
                                         color: $lDark;
-                                        font-family: $mediumA;
-                                        font-size: 14px;
-                                        padding: 10px 0;
+                                        font-family: $avenir-medium;
+                                        font-size: 16px;
+                                        padding: 5px 0;
                                         width: 40px;
                                         height: 40px;
-                                        line-height: 22px;
-                                        border-bottom: 2px solid transparent;
+                                        line-height: 30px;
+                                        border: 1px solid #e1e1e1;
                                         text-align: center;
                                         @include transition(all .2s ease);
-                                        &:hover{
-                                            border-bottom-color: $lDark;
-                                        }
                                     }
                                     span.paging, a.paging{
                                         margin-left: 10px;
@@ -771,16 +638,54 @@ body.member-layout{
                                         }
                                     }
                                     span.paging{
-                                        border-bottom-color: $lDark;
+                                        border-color: transparent;
+                                        background: $red;
+                                        color: #ffffff;
+                                    }
+                                    a.paging{
+                                        @media screen and (min-width: $breakpointXSM){
+                                            &:hover{
+                                                background: $lDark;
+                                                color: #fff;
+                                            }
+                                        }
                                     }
                                 }
                                 > a.paging{
-                                    display: none;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding-top: 14px;
+                                    padding-bottom: 9px;
+                                    @media screen and (min-width: $breakpointXSM){
+                                        margin-top: 45px;
+                                        &:hover{
+                                            color: $red;
+                                        }
+                                    }
+                                    span {display: none;}
+                                }
+                                a[id$="lnkPrev"],
+                                a[id$="lnkNext"]{
+                                    &:after{
+                                        font-family: $avenir-medium;
+                                        letter-spacing: 1.8px;
+                                        font-size: 16px;
+                                    }
+                                }
+                                a[id$="lnkPrev"]{
+                                    color:#9f9f9f;
+                                    &:after{
+                                        content:'ÖNCEKİ';
+                                        margin-right: 20px;
+                                    }
+                                }
+                                a[id$="lnkNext"]{
+                                    &:after{
+                                        content:'SONRAKİ';
+                                        margin-left: 20px;
+                                    }
                                 }
                                 > a.firstPage, > a.lastPage{
-                                    display:none !important;
-                                }
-                                a.tumunuGoster{
                                     display:none !important;
                                 }
                             }
@@ -1544,212 +1449,9 @@ body.member-layout{
     }
 }
 
-.ems-press-room{
-    @media screen and (min-width: $breakpointXSM){
-        &-alternate{
-            padding-top: 50px;
-        }
-    }
-    ul{
-        @media screen and (min-width: $breakpointXSM){
-            display: table;
-            table-layout: fixed;
-            width: 100%;
-            max-width: 1380px;
-            padding: 10px;
-            margin-left: auto;
-            margin-right: auto;         
-            li{
-                width: 25%;
-                display: inline-block;
-                vertical-align: top;
-                margin-bottom: 25px;
-                &.big{
-                    width: 50%;
-                    .ems-press-room-text{
-                        span, p{
-                            max-width: 75%;
-                        }
-                    }
-                }
-                > a{
-                    padding: 10px;
-                }
-            }
-        }
-        li {
-            a{
-                display: block;
-                .ems-press-room-detail{
-                    display: none;
-                }
-            }
-            .ems-press-room-detail{
-                display: none;
-                position: fixed;
-                left: 0;
-                width: 100%;
-                background: #fff;
-                ::-webkit-scrollbar{
-                    width: 3px;
-                }
-                ::-webkit-scrollbar-track {
-                    background: $dGray;
-                }
-                ::-webkit-scrollbar-thumb {
-                    background: $lDark;
-                }
-                ::-webkit-scrollbar-thumb:window-inactive {
-                    background: $lDark;
-                }
-                &-date{
-                    display: block;
-                    margin-top: 35px;
-                }
-                &-title{
-                    span{
-                        color: $lDark;
-                        font-size: 36px;
-                        font-family: $regular;
-                        display: block;
-                        margin-top: 20px;
-                    }
-                }
-                &-date{
-                    span{
-                        letter-spacing: 3px;
-                        color: #0e3d6d;
-                        font-size: 14px;
-                    }
-                }
-                &-text{
-                    padding-top: 10px;
-                    p, > span{
-                        display: block;
-                        margin-top: 5px;
-                        margin-bottom: 5px;
-                        font-family: $regular;
-                        font-size: 14px;
-                        line-height: 22px;
-                        color: $lDark;
-                    }
-                }
-                .ems-press-room-close{
-                    position: absolute;
-                    top: 15px;
-                    right: 15px;
-                    width: 24px;
-                    height: 24px;
-                    text-align: center;
-                    cursor: pointer;
-                    i{line-height: 24px;}
-                    i, i,:before{
-                        font-size: 14px;
-                    }
-                }
-            }
-            &.selected{
-                .ems-press-room-detail{
-                    display: block;
-                }
-            }
-            @media screen and (min-width: $breakpointXSM){
-                .ems-press-room-detail{
-                    top: 100px;
-                    right: 0;
-                    max-width: 900px;
-                    margin: 0 auto;
-                    padding: 80px 20px;
-                    height: auto;
-                    z-index: 10;
-                    .ems-press-room-detail-inner{
-                        margin-left: auto;
-                        margin-right: auto;
-                        max-width: 710px;
-                        padding-right: 20px;
-                        max-height: 650px;
-                        overflow-x: hidden;
-                    }
-                }
-            }
-        }
-    }
-    &-hidden{
-        overflow: hidden;
-    }
-    &-cover{
-        background-size: cover !important;
-        background-position: top center !important;
-        img{opacity: 0; visibility: hidden; width: 100%;}
-    }
-    &-text{
-        padding: 15px;
-        span{
-            font-family: $mediumA;
-            font-size: 24px;
-            color: $lDark;
-        }
-        p{
-            margin-top: 20px;
-            margin-bottom: 0;
-            font-size: 14px;
-            line-height: 22px;
-            color: $lDark;
-        }
-    }
-    &-header{
-        ul{
-            table-layout: inherit;
-            width: auto;
-            padding: 0;
-            @media screen and (min-width: $breakpointXSM){
-                margin-top: 30px;
-                margin-bottom: 10px;
-            }
-            li{
-                display: table-cell;
-                vertical-align: middle;
-                width: inherit;
-                a{
-                    display: inline-block;
-                    padding: 20px;
-                    color: #bec1c6;
-                    @media screen and (min-width: $breakpointXSM){
-                        &:hover{
-                            color: $lDark;
-                        }
-                    }
-                }
-                &.selected{
-                    a{
-                        color: $lDark;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: $breakpointXSM){
-    .vailPressRoom{ z-index: 9; }
-    .ems-page-content-pressWrap{position: relative; z-index: 10;}
-    .ems-popup-room-open{
-        .vailPressRoom{
-            opacity: .7;
-            visibility: visible;
-        }
-    }
-}
-
 @media screen and (max-width: $breakpointXSM){
 
     .member-layout{
-        .site-footer{
-            width: 0;
-            height: 0;
-            font-size: 0;
-            overflow: hidden;
-        }
         .site-header{min-height: 70px;}
         .site-header-banner {display: none;}
     }
@@ -1854,7 +1556,7 @@ body.member-layout{
                 &-info{
                     padding: 20px;
                     max-width: 100%;
-                    margin-bottom: 30px;
+                    margin-bottom: 20px;
                     .ems-form{
                         &-inner{
                             position: inherit;
@@ -1878,7 +1580,7 @@ body.member-layout{
                                     padding-left: 0;
                                     .sStylerMainWrp.sStylerWrp_select{
                                         .sStylerWrp{
-                                            line-height: 38px;
+                                            line-height: 30px;
                                             font-size: 12px;
                                         }
                                     }
@@ -1988,7 +1690,80 @@ body.member-layout{
                     }
                 }
             }
-            
+            .urunPaging{
+                table{
+                    tbody{
+                        tr td {
+                            .urunPaging_pageNavigation{
+                                margin-top: 15px;
+                                > span{
+                                    span.paging, a.paging{
+                                        &:first-child{
+                                            margin-left: 0;
+                                        }
+                                    }
+                                    a.paging{
+                                        margin-left: 10px;
+                                        display: none;
+                                        &:nth-child(1),
+                                        &:nth-child(2),
+                                        &:nth-child(3){display: inline-block;}
+    
+                                        &:last-child{
+                                            display: inline-block;
+                                            position: relative;
+                                            margin-left: 45px;
+                                            &:before{
+                                                font-family:'icomoon';
+                                                content:'\e909';
+                                                font-size: 14px;
+                                                color: #000;
+                                                width: 35px;
+                                                height: 40px;
+                                                line-height: 60px;
+                                                display: inline-block;
+                                                position: absolute;
+                                                left: -41px;
+                                                top: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                a[id$="lnkPrev"],
+                                a[id$="lnkNext"]{
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    &:after{
+                                        font-family: 'icomoon';
+                                        font-size: 15px;
+                                        width: 30px;
+                                        height: 30px;
+                                        text-align: center;
+                                        display: block;
+                                        line-height: 30px;
+                                    }
+                                }
+                                a[id$="lnkPrev"]{
+                                    margin-right: 4%;
+                                    &:after{
+                                        content:'\e902';
+                                        color:#9f9f9f;
+                                        margin-right: 0;
+                                    }
+                                }
+                                a[id$="lnkNext"]{
+                                    margin-left: 4%;
+                                    &:after{
+                                        content:'\e903';
+                                        color:#000;
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             .ems-page-default-password{
                 .ems-form{
                     &-inner{
@@ -2189,29 +1964,6 @@ body.member-layout{
             }
         }
     }
-    .popup.kombin{
-        top: 0;
-        width: 100%;
-        .inside .rightPanel{
-            .lookBookHeader{
-                background: $lDark;
-                border-bottom: none;
-                padding-left: 50px;
-                .kbTitle{color: #fff; text-align: center;}
-                .closeBtn{
-                    i, i:before{
-                        color: #fff;
-                    }
-                }
-            }
-            .prdCnt{
-                .inside{height: calc(100% - 100px);}
-            }
-        }
-    }
-    .kombinPopupReady .ems-page-content-single{z-index: 10; position: relative;}
-    .ems-page-content-single .vailCombine{display: none;}
-
     .ems-logoff{
         .ems-page-content{
             padding-bottom: 40px;
@@ -2371,40 +2123,6 @@ body.member-layout{
             }
         }
     }
-
-    .ems-press-room{
-        > ul{
-            > li{
-                margin-bottom: 35px;
-            }
-        }
-        &-cover{
-            height: 330px;
-        }
-        &-text{
-            span{
-                font-family: $mediumA;
-                font-size: 24px;
-                color: $lDark;
-            }
-            p{
-                margin-top: 20px;
-                margin-bottom: 0;
-                font-size: 14px;
-                line-height: 22px;
-                color: $lDark;
-            }
-        }
-        &-header{
-            ul{
-                display: table;
-                margin: 20px auto 20px auto;
-                li{
-                    a{ padding: 10px; }
-                }
-            }
-        }
-    }
     .corporate-list{
         > ul {
             > li {
@@ -2429,10 +2147,5 @@ body.member-layout{
                 }
             }
         }
-    }
-
-    .ems-page-content-pressWrap{ position: relative; z-index: 2; }
-    .ems-popup-room-open{
-        overflow: hidden;
     }
 }

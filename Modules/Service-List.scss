@@ -23,9 +23,6 @@
     &-inner{
         min-height: 500px;
         position: relative;
-        @media screen and (min-width: 850px){
-            /*padding-right: 450px;*/
-        }
     }
     &-header{
         width: 100%;
@@ -57,6 +54,9 @@
                             height: 42px;
                             line-height: 30px;
                         }
+                        &-btn {
+                            display: inline-block !important;
+                        }
                     }
                     &.select-2{
                         margin-right: 20px;
@@ -64,13 +64,19 @@
                     }
                     &.select-4{
                         max-width: 260px;
+                        position: relative;
                         a.btnSrvArama{
-                            background: $lDark;
-                            @media screen and (min-width: $breakpointXSM){
-                                &:hover{
-                                    background: $btnColor;
-                                }
+                            position: absolute;
+                            right: 0px;
+                            top: 0px;
+                            width: auto;
+                            padding: 11px 10px;
+                            i {
+                                font-size: 20px;
                             }
+                        }
+                        input {
+                            padding-right: 38px;
                         }
                     }
                 }
@@ -88,16 +94,14 @@
     
     &-body{
         @media screen and (min-width: 850px){
-        /*position: absolute;
-        top: 55px;
-        right: 0;*/
         width: 420px;
         height: 100%;
+        padding-bottom: 20px;
             ::-webkit-scrollbar {
                 width: 0;
             }
             ::-webkit-scrollbar-track {
-                background: $dGray;
+                background: $Gray;
             }
             ::-webkit-scrollbar-thumb {
                 background: $lDark;
@@ -107,7 +111,7 @@
             }
             &:hover{
                 ::-webkit-scrollbar {
-                    width: 3px;
+                    width: 4px;
                 }
             }
         }
@@ -129,9 +133,6 @@
     
     .service-list{
         @media screen and (min-width: 850px){
-            /*position: absolute;
-            top: 0;
-            left: 0;*/
             width: 95%;
             height: 100%;
             max-height: 501px;
@@ -143,43 +144,24 @@
         @include flex();
         flex-wrap: wrap;
         align-items: flex-start;
-        @media screen and (min-width: 850px){
-            /*max-width: 340px;*/
-        }
         .servis_bilgi{display: none;}
         .pServisListe {
             @include flex();
             @include flexDirection(column);
             justify-content: flex-start;
             width: 100%;
-            /*height: 50px;*/
             overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
             position: relative;
             > div{
                 &:empty{display: none;}
             }
             .divServisListe_FirmaAdi{
-                font-family: $avenir-bold;
                 font-size: 14px;
                 order: 1;
                 padding: 5px 0;
+                font-weight: bold;
                 position: relative;
-                /*cursor: pointer;*/
-                /*&:after{
-                    font-family: 'icomoon';
-                    content: '\e90c';
-                    width: 24px;
-                    height: 24px;
-                    line-height: 24px;
-                    font-size: 12px;
-                    text-align: center;
-                    color: $lDark;
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -12px;
-                    right: 10px;
-                }*/
             }
             .divServisListe_Adres{
                 order: 3;
@@ -250,23 +232,13 @@
                     }
                 }
             }
-            /*&.selected{
-                height: auto;
-                margin-bottom: 10px;
-                background: #f6f7f9;
-                padding-bottom: 15px;
-                .divServisListe_FirmaAdi{
-                    border: none;
-                    &:after{display: none;}
-                }
-            }*/
             .divServisListe_DepoSec,
             .divServisListe_ServisTur,
             .divServisListe_WebAdresi,
             .divServisListe_UlkeSehirSemt,
             .divServisListe_Fax,
             .tableServisListe_tdResim{display: none;}
-            .divServisListe_Yetkili {order: 2; color: $light; margin-bottom: 5px;}
+            .divServisListe_Yetkili {order: 2; color: $light; margin: 7px 0;}
         }
     }
 }
@@ -283,23 +255,29 @@
             margin-left: auto;
         }
         &-header{
-            padding: 30px 20px 20px;
+            margin: 0;
             > span > span{
                 font-size: 18px;
             }
             .ems-form{
                 &-inner{
                     @include flex();
-                    @include flexDirection(column);
+                    @include flexDirection(row);
                     margin-bottom: 0;
                     .ems-field{
-                        margin-bottom: 10px;
                         &.select-2,
                         &.select-3{
                             margin-right: 0;
                         }
+                        &.select-2 {
+                            width: 50%;
+                            max-width: none;
+                            margin-right: 15px;
+                        }
                         &.select-4{
                             margin-bottom: 0;
+                            width: 50%;
+                            max-width: none;
                         }
                     }
                 }
@@ -311,6 +289,13 @@
                 width: 100%;
                 max-width: 100%;
             }
+        }
+        .address-detail {
+            position: relative;
+            width: 100%;
+            max-width: none;
+            display: inline-block;
+            height: 260px;
         }
     }
     .service-list-layout{

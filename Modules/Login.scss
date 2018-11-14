@@ -622,7 +622,7 @@
             .ems-container{
                 .ems-login-cover{
                     height: 200px;
-                    background:url(#{$baseHref + "/UPLOAD/BANNERS/covers/login-page-cover.jpg"}) center center no-repeat !important;
+                    background:url(#{$baseHref + "/UPLOAD/BANNERS/covers/login-page-mobile-cover.jpg"}) 100% 100% no-repeat !important;
                     background-size: cover !important;
                 }
             }
@@ -648,6 +648,9 @@
                             margin-top: 20px;
                         }
                     }
+                }
+                [id$="plhLoginSifreUnut1"]{
+                    text-align: center;
                 }
             }
         }

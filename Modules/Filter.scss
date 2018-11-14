@@ -302,8 +302,9 @@
                         .mobile-element-filter-span-select{
                             float: right;
                             color: #6c6c6c;
-                            width: 60%;
-                            overflow-x: hidden;
+                            width: 50%;
+                            min-height: 15px;
+                            overflow: hidden;
                             white-space: nowrap;
                             text-overflow: ellipsis;
                         }
@@ -324,7 +325,10 @@
         }
     }
     body.mobiOpened {
-        .ems-page-list .ems-container-full-last-left-inner{top:0; height: calc(100% - 50px);}
+        .ems-page-list .ems-container-full-last-left-inner{
+            top:0;
+            height: calc(100% - 50px);
+        }
         
         .kutuOzellikFiltre .kutuBodyOzellikFiltre > table > tbody > tr > td{
             .urunKiyaslamaOzellik_ozellik {

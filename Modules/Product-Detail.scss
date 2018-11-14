@@ -806,7 +806,7 @@
                                 }
                             }
                             img{
-                                max-width: 100px;
+                                max-width: 100%;
                             }
                         }
                         .urnAd{
@@ -942,6 +942,7 @@
                 &-holder{z-index: 1;}
             }
         }
+        .shpLogo{margin-top: 20px; max-width: 90px;}
         .ems-prd{
             &-add-to-cart{
                 .pnlSepetGrup{
@@ -1519,6 +1520,7 @@
                     margin-top: 30px;
                     .tableYorumListe_ratingbar{
                         margin-right: 10px;
+                        cursor: pointer;
                     }
                     span[id$="lblURUNYORUM_ORTALAMAPUAN"]{
                         display: inline-block;
@@ -1528,6 +1530,7 @@
                         font-family: $regular;
                         position: relative;
                         top: 1px;
+                        cursor: pointer;
                         &:empty{display: none;}
                     }
                 }
@@ -1990,14 +1993,18 @@
         .swiper-button-prev,
         .swiper-button-next{display: none;}
         .swiper-pagination{
+            display: block !important;
             position: relative;
             left: inherit;
             bottom: 0;
             &-bullet{
+                margin-top: 20px;
+                margin-left: 10px;
                 background: rgba(0,0,0,0.5);
+                &:first-child{margin-left: 0;}
             }
             &-bullet-active{
-                background: rgba(0,0,0,1);
+                background: #000;
             }
         }
         .new-icon{

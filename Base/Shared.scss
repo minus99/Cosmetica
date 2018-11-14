@@ -104,7 +104,7 @@ body { overflow-x: hidden; }
 .ems-message{
 	&:empty{ display: none; }
 	padding: 15px;
-	font-family: $mediumAA;
+	font-family: $regular;
 	border-radius: 2px;
 	margin-bottom: 20px;
 	color: #000;
@@ -124,14 +124,14 @@ body { overflow-x: hidden; }
 	&-warning{
 		border-color: $red;
 	}
-	b{ font-weight: normal; font-family: $regular; }
+	b{ font-weight: normal; font-family: $avenir-medium; }
 }
 
 .ems-message, .pageLogin_yeniUyelikHata, .pageErrorUyeSifre, .pageErrorSifremiUnuttum, .pageSifremiUnuttum_mesaj, .ems-page-new-address .pageErrorDefault {
-	b{ font-weight: normal; font-family: $regular; }
+	b{ font-family: $avenir-medium; font-weight: normal; }
 }
 
-.pageLogin_yeniUyelikHata { color:inherit !important; b { font-weight:normal; } }
+.pageLogin_yeniUyelikHata { color:inherit !important; b { font-weight:normal;font-family: $avenir-medium; } }
 
 .ems-element-copy{
 	display: none;

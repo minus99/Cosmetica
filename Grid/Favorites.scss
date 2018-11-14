@@ -279,6 +279,7 @@
                     padding-right: 0;
                 }
                 .ems-grid-piece{
+                    display: none;
                     text-align: center;
                 }
                 .ems-price{
@@ -388,33 +389,23 @@
 
                     }
                     .favorite-report{
+                        @include flex();
+                        @include flexDirection(column);
                         .select-cfg.ems-inline{
+                            order: 5;
                             > div{
+                                width: 100%;
+                                display: block;
+                                max-width: 265px;
+                                margin:0  auto;
                                 a{
-                                    &:active{
-                                        border-bottom-color: $red;
-                                        &:before, &:after{
-                                            bottom: -2px;
-                                            left: 50%;
-                                            border: solid transparent;
-                                            content: " ";
-                                            height: 0;
-                                            width: 0;
-                                            position: absolute;
-                                            pointer-events: none;
-                                        }
-                                        &:before{
-                                            border-color: rgba(194, 225, 245, 0);
-                                            border-bottom-color: #ee0676;
-                                            border-width: 11px;
-                                            margin-left: -11px;
-                                        }
-                                        &:after{
-                                            border-color: rgba(136, 183, 213, 0);
-                                            border-bottom-color: #fff;
-                                            border-width: 8px;
-                                            margin-left: -8px;
-                                        }
+                                    margin-top: 20px;
+                                    background: #e2e2e2;
+                                    span{
+                                        letter-spacing: 1.2px;
+                                        font-family: $avenir-bold;
+                                        color: #000;
+                                        font-size: 14px;
                                     }
                                 }
                             }
@@ -456,19 +447,20 @@
                         .ems-name{
                             margin-bottom: 10px;
                         }
-                        .ems-grid-piece,
                         .ems-price{
                             display: inline-block;
                         }
                         .ems-grid-piece{width: auto;}
-                        .ems-price{width: 50%; text-align: left; padding-left: 10px;}
+                        .ems-price{width: 100%; text-align: left;}
                         .ems-name{   
                             display: block;
                             vertical-align: top;
                             text-align: left;
                         }
                     }
-                    .btnFavoriListeTumSil{margin-left: auto; margin-right: auto; display: block;}
+                    .btnFavoriListeTumSil{
+                        display: none;
+                    }
                 }
             }
         }

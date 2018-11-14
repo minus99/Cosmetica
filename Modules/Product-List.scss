@@ -958,6 +958,14 @@ ul.emosInfinite {
             }
             &:empty{display: none;}
         }
+        .free-shipping {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: $regular;
+            font-size: 14px;
+            color: $green;
+        }
         &-stock{
             .urunListe_urunStokUyari{
                 height: 20px;
@@ -1039,6 +1047,10 @@ ul.emosInfinite {
             > span{
                 display: inline-block;
                 margin-bottom: 5px;
+                font-weight: normal;
+                font-family: $regular;
+                font-size: 14px;
+                color: #7c7c7c;
                 &:before{
                     content: '+';
                     font-family: $regular;
@@ -1048,13 +1060,14 @@ ul.emosInfinite {
                     padding-right: 2px;
                     color: #7c7c7c;
                 }
-                b{padding-right: 2px; }
-                b, span{
-                    font-weight: normal;
+                &:after{
+                    content:'Renk';
+                    color: #7c7c7c;
                     font-family: $regular;
                     font-size: 14px;
-                    color: #7c7c7c;
+                    padding-left: 2px;
                 }
+                &:empty{display: none;}
             }
         }
         &-group{ display: none; }
@@ -1096,7 +1109,6 @@ ul.emosInfinite {
                         content:'';
                         position: absolute;
                         top: 50%;
-                        margin-top: -1px;
                         left: 0;
                         background: #6c6c6c;
                         width: 100%;
@@ -1575,7 +1587,7 @@ ul.emosInfinite {
                         .swiper-content{
                             left: 20px;
                             bottom: 20px;
-                            max-width: 50%;
+                            max-width: 65%;
                             &-inner{
                                 > span{
                                     &.title-1{font-size: 25px;}
@@ -1664,6 +1676,18 @@ ul.emosInfinite {
                     z-index: 20;
                     @include transition(transform 333ms ease-in-out);
                     @include setTransform(translateX(-100%));
+                    ::-webkit-scrollbar {
+                        width: 3px;
+                    }
+                    ::-webkit-scrollbar-track {
+                        background: $Gray;
+                    }
+                    ::-webkit-scrollbar-thumb {
+                        background: $lDark;
+                    }
+                    ::-webkit-scrollbar-thumb:window-inactive {
+                        background: $lDark;
+                    }
                 }
                 &-last-left-inner{
                     position: absolute;
@@ -1731,7 +1755,7 @@ ul.emosInfinite {
             .urnList{
                 .ems-prd-list{
                     .emosInfinite{
-                        padding: 15px;
+                        padding: 15px 10px;
                     }
                 }
             }
@@ -1890,7 +1914,7 @@ ul.emosInfinite {
                 }
             }
             &-content{
-                min-height: 170px;
+                min-height: 220px;
             }
             &-inner{
                 padding:10px 5px 0 5px;
@@ -1902,7 +1926,7 @@ ul.emosInfinite {
                     font-size: 14px;
                     .urunListe_brutFiyat:before{
                         font-size: 12px;
-                        top: 4px;
+                        top: 0;
                     }
                     .d{
                         font-size: 12px;
@@ -1931,7 +1955,26 @@ ul.emosInfinite {
                     display: block;
                 }
             }
-            &-add-cart{ display:none; }
+            &-color-info{
+                > span{
+                    font-size: 12px;
+                    &:before{display: none;}
+                    &:after{font-size: 12px;}
+                }
+            }
+            &-comment-line{
+                .urunListe_yorum {
+                    height: 12px;
+                    .urunListe_yorumSayi{display: none;}
+                }
+            }
+            &-add-cart{
+                &-view{display: none;}
+                .urunListe_stokHaberci .btnDefault span,
+                .urunListe_sepetGrup .btnDefault span{
+                    font-size: 11px;
+                }
+            }
         }
     }
 
@@ -1967,7 +2010,9 @@ ul.emosInfinite {
         .page-empty{
             .product-empty{
                 .mobile-element.cover{
-                    height: 310px;
+                    height: 200px;
+                    background-size: cover !important;
+                    background-position: 100% 50% !important
                 }
                 > .ems-container-full {
                     max-width: 100%;
@@ -1983,7 +2028,6 @@ ul.emosInfinite {
                     padding: 20px;
                     margin-left: auto;
                     margin-right: auto;
-                    margin-bottom: 50px;
                     .title-bold{
                         font-size: 90px;
                     }
@@ -2025,7 +2069,9 @@ ul.emosInfinite {
             opacity: 1;
             display: block;
         }
-            &-last-left{ @include setTransform(translateX(0)); }
+        &-last-left{
+            @include setTransform(translateX(0));
+            }
         }
     }
 }
