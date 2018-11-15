@@ -273,7 +273,7 @@
                         width: calc(100% - 220px);
                         margin: 0 0 0 220px;
                         height: 100%;
-                        padding: 10px 5px 10px 20px;
+                        padding: 10px 10px 10px 20px;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -308,6 +308,8 @@
                                 &:last-child > li{
                                     height: 100%;
                                     > a{
+                                        padding-left: 0;
+                                        padding-right: 0;
                                         height: 100%;
                                     }
                                 }
@@ -835,6 +837,7 @@ body.ems-login{
                     left: 10px;
                     bottom: 15px;
                     width: 75%;
+                    pointer-events: none;
                     > span{
                         display: block;
                         color: #000;

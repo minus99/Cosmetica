@@ -830,7 +830,6 @@
     .ems-cat-description{
         padding: 50px 10px 10px 10px;
         min-height: 130px;
-        max-height: 320px;
         overflow: hidden;
         &-inner{
             text-align: left;
@@ -844,6 +843,7 @@
                 height: 100%;
                 max-height: 110px;
                 background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55), #ffffff);
+                display: none;
             }
             p{
                 margin: 5px 0;
@@ -880,6 +880,7 @@
         }
         &.opened{
             max-height: inherit;
+            overflow: visible;
             .ems-cat-description-inner{
                 &:after{display: none;}
             }
@@ -889,6 +890,7 @@
                     .hide-read{display: inline-block;}  
                 }
             }
+            p{color: #000;}
         }
     }
 }
@@ -1044,30 +1046,36 @@ ul.emosInfinite {
             }
         }
         &-color-info{
-            > span{
-                display: inline-block;
-                margin-bottom: 5px;
-                font-weight: normal;
-                font-family: $regular;
-                font-size: 14px;
-                color: #7c7c7c;
-                &:before{
-                    content: '+';
+            .urunListe_grupurunSayisi{
+                display: block !important;
+                &:empty{
+                    display: none !important;    
+                }
+                > span{
+                    display: inline-block;
+                    margin-bottom: 5px;
+                    font-weight: normal;
                     font-family: $regular;
                     font-size: 14px;
-                    position: relative;
-                    top: -1px;
-                    padding-right: 2px;
                     color: #7c7c7c;
+                    &:before{
+                        content: '+';
+                        font-family: $regular;
+                        font-size: 14px;
+                        position: relative;
+                        top: -1px;
+                        padding-right: 2px;
+                        color: #7c7c7c;
+                    }
+                    &:after{
+                        content:'Renk';
+                        color: #7c7c7c;
+                        font-family: $regular;
+                        font-size: 14px;
+                        padding-left: 2px;
+                    }
+                    &:empty{display: none;}
                 }
-                &:after{
-                    content:'Renk';
-                    color: #7c7c7c;
-                    font-family: $regular;
-                    font-size: 14px;
-                    padding-left: 2px;
-                }
-                &:empty{display: none;}
             }
         }
         &-group{ display: none; }
@@ -1956,10 +1964,12 @@ ul.emosInfinite {
                 }
             }
             &-color-info{
-                > span{
-                    font-size: 12px;
-                    &:before{display: none;}
-                    &:after{font-size: 12px;}
+                .urunListe_grupurunSayisi{
+                    > span{
+                        font-size: 12px;
+                        &:before{display: none;}
+                        &:after{font-size: 12px;}
+                    }
                 }
             }
             &-comment-line{
