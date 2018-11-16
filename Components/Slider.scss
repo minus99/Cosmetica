@@ -1442,7 +1442,7 @@ button.swiper-pagination-bullet {
                 overflow: visible;
             }
             .swiper-slide{
-                width: 100%;
+                width: 50%;
                 .inner{
                     .buton-link{
                         .btnAlternate{
@@ -1540,6 +1540,11 @@ button.swiper-pagination-bullet {
         &-default{
             .swiper-slide{
                 &-cover{ height: 375px; }
+            }
+        }
+        &-campaigns {
+            .swiper-slide{
+                width: 100%;
             }
         }
     }

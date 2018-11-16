@@ -457,8 +457,8 @@
     height: 70px;
     padding:5px 10px; 
     z-index: 25;
-    background: #fbfbfb;
-    @include transition(top .2s ease);
+    background-image: linear-gradient(to right,#00e2fb,#4fa8ff 33%,#8476ff 61%,#e900ff);
+    @include transition(top .3s ease);
     > div{
         display: table-cell;
         vertical-align: middle;
@@ -466,7 +466,15 @@
         padding: 5px;
         text-align: center;
         &.img{
-            img{max-width: 20px;}
+            img{
+                max-width: 20px;
+                width: 20px;
+                background: #fff;
+                border-radius: 20px;
+                padding: 5px;
+                height: 20px;
+                display: block;
+            }
         }
         &.mbCart{
             a{
@@ -477,6 +485,7 @@
                 i{line-height: 20px;}
                 i, i:before{
                     font-size: 20px;
+                    color: #fff;
                 }
             }
         }
@@ -485,6 +494,7 @@
             letter-spacing: 0.6px;
             font-size: 13px;
             font-family: $avenir-bold;
+            color: #fff;
         }
         &.icons{
             > a{
@@ -492,7 +502,10 @@
                 width: 20px;
                 height: 20px;
                 text-align: center;
-                i{line-height: 20px;}
+                i{
+                    line-height: 20px;
+                    &:before{color: #fff;}
+                }
             }
         }
     }

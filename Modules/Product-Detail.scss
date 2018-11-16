@@ -1615,8 +1615,8 @@
                                 position: absolute;
                                 bottom: 20px;
                                 right: 0;
-                                .sStylerWrp_checkbox{
-                                    .cStyler{
+                                .sStylerWrp_checkbox, .sStylerWrp_radio{
+                                    .cStyler, .rStyler{
                                         display: inline-block;
                                         border: 1px solid #979797;
                                         padding: 4px 5px;
@@ -1644,7 +1644,8 @@
                                             }
                                         }
                                     }
-                                    .sCheckbox{opacity: 0; visibility: hidden;}
+                                    .sCheckbox, .sRadio{opacity: 0; visibility: hidden;}
+                                    .sRadio{width:0; height: 0; overflow: hidden;}
                                 }
                             }
                             .resim{
@@ -2295,7 +2296,7 @@
                             background: $Gray;
                             margin-top: -1px;
                         }
-                    }
+                    } 
                     .tableBagliUrun{
                         tbody{
                             tr {

@@ -1811,14 +1811,19 @@ ul.emosInfinite {
                     tr td {
                         .urunPaging_pageNavigation{
                             margin-top: 15px;
+                            @include flex();
+                            align-items: center;
+                            justify-content: center;
                             > span{
                                 span.paging, a.paging{
                                     &:first-child{
                                         margin-left: 0;
                                     }
                                 }
+                                span.paging, a.paging{
+                                    margin-left: 5px;
+                                }
                                 a.paging{
-                                    margin-left: 10px;
                                     display: none;
                                     &:nth-child(1),
                                     &:nth-child(2),
@@ -1859,7 +1864,7 @@ ul.emosInfinite {
                                 }
                             }
                             a[id$="lnkPrev"]{
-                                margin-right: 4%;
+                                margin-right: 2%;
                                 &:after{
                                     content:'\e902';
                                     color:#9f9f9f;
@@ -1867,7 +1872,7 @@ ul.emosInfinite {
                                 }
                             }
                             a[id$="lnkNext"]{
-                                margin-left: 4%;
+                                margin-left: 2%;
                                 &:after{
                                     content:'\e903';
                                     color:#000;
@@ -1996,8 +2001,7 @@ ul.emosInfinite {
             width: 100%;
         }
     }
-    
-    /*Listeye ozel widget css*/
+
     .ems-page{
         &-list{
             .widget {

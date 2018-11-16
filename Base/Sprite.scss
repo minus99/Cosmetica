@@ -12,6 +12,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ico_makeUp2:before {
+  content: "\e932";
+}
+.icon-ico_box:before {
+  content: "\e92d";
+}
+.icon-ico_check:before {
+  content: "\e92e";
+}
+.icon-ico_exclamation:before {
+  content: "\e92f";
+}
+.icon-ico_map:before {
+  content: "\e930";
+}
+.icon-ico_rocket:before {
+  content: "\e931";
+}
 .icon-ico_arrow-bottom:before {
   content: "\e900";
 }
@@ -147,21 +165,6 @@
 .icon-ico_woman:before {
   content: "\e92c";
 }
-.icon-ico_box:before {
-  content: "\e92d";
- }
- .icon-ico_check:before {
-  content: "\e92e";
- }
- .icon-ico_exclamation:before {
-  content: "\e92f";
- }
- .icon-ico_map:before {
-  content: "\e930";
- }
- .icon-ico_rocket:before {
-  content: "\e931";
- }
 
 .ems-icon {
 	position: relative;
