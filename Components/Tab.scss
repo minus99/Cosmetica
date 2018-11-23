@@ -48,11 +48,6 @@
                         position: relative;
                         margin-bottom: -2px;
                         border-bottom: 2px solid $Gray;
-                        @media screen and (min-width: $breakpointXSM){
-                            &:hover{
-                                color: $red;
-                            }
-                        }
                     }
                     &.selected{
                         a{
@@ -132,9 +127,6 @@
                 width: 100%;
                 border-bottom: 2px solid $Gray;
                 margin-bottom: 30px;
-                @media screen and (min-width: $breakpointXSM){
-                    max-width: 600px;
-                }
                 > li{
                     display: table-cell;
                     vertical-align: middle;
@@ -231,6 +223,7 @@
         }
     }
 }
+
 @media screen and (min-width: $breakpointXSM){
     .ems-tab {
         &-detail-page{
@@ -238,6 +231,22 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 65px;
+            .ems-tab-inner{
+                > ul.navigation-js{
+                    > li{
+                        a:hover{  
+                            color: $red;
+                        }
+                    }
+                }
+            }
+        }
+        &-grids{
+            .ems-tab-inner{
+                > ul.navigation-js{
+                    max-width: 600px;
+                }
+            }
         }
         &-widget{
             .swiper-inner{padding-top: 20px;}

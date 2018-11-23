@@ -403,8 +403,8 @@
             }
         }
         &-alternate{
-            min-height: 120px;
-            height: 120px;;
+            min-height: 125px;
+            height: 125px;;
             > div{
                 width: 100%;
                 max-width: 1210px;
@@ -412,7 +412,8 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
                 .text-multiple{
-                    padding-left: 50px;
+                    padding-left: 30px;
+                    width: 70%;
                     .title-1{
                         font-family: $regular;
                     }
@@ -736,11 +737,13 @@ body.ems-login{
 @media screen and (max-width: $breakpointXSM){
 
     /*Site kampanya banner*/
-    .site-discount-banner > div{padding: 20px;}
+    .site-discount-banner > div{padding: 15px 10px;}
     .site-discount-banner > div .text{margin-right: 0; }
-    .site-discount-banner-alternate{min-height: 140px; @include flex(); @include flexDirection(column); justify-content: center;}
-    .site-discount-banner-alternate > div .text-multiple{padding: 0;}
-    .site-discount-banner-alternate > div .text-multiple .title-2{line-height: normal;}
+    .site-discount-banner-alternate{min-height: 170px; @include flex(); @include flexDirection(column); justify-content: center;}
+    .site-discount-banner-alternate > div {padding: 10px;}
+    .site-discount-banner-alternate > div .text-multiple{padding: 0; width: 100%;}
+    .site-discount-banner-alternate > div .text-multiple .title-1{font-size: 14px;}
+    .site-discount-banner-alternate > div .text-multiple .title-2{line-height: normal; font-size: 21px;}
 
     .site-header{
         min-height: 110px;

@@ -717,6 +717,7 @@ button.swiper-pagination-bullet {
     }
 }
 
+
 .swiper-container{
     position: relative;
     z-index: 1;
@@ -766,12 +767,6 @@ button.swiper-pagination-bullet {
             .btnAlternate{
                 border: none;
                 width: auto;
-                @media screen and (min-width: $breakpointXSM){
-                    &:hover{
-                        background: none;
-                        span, i:before{color: $red;}
-                    }
-                }
             }
         }
     }
@@ -785,11 +780,6 @@ button.swiper-pagination-bullet {
             text-align: center;
             .btnAlternate{
                 margin-top: 15px;
-                &:hover{
-                    span{
-
-                    }
-                }
             }
         }
     }
@@ -851,13 +841,7 @@ button.swiper-pagination-bullet {
                         }
                     }
                 }
-                .text-line{
-                    margin-top: 10px;
-                    @media screen and (min-width: $breakpointXSM){
-                        overflow: hidden;
-                        max-height: 67px;
-                    }
-                }
+                .text-line{ margin-top: 10px; }
                 .title,
                 .sub-title{display: block;}
                 .title{font-family: $avenir-medium; font-size: 20px;}
@@ -867,31 +851,7 @@ button.swiper-pagination-bullet {
                         max-width: 100%;
                     }
                 }
-                @media screen and (min-width: $breakpointXSM){
-                    .buton-link{
-                        @include transition(all .2s ease);
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 40px;
-                        z-index: 1;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        @include setTransform(translateY(40px))
-                    }
-                    &:hover{
-                        .buton-link{
-                            @include setTransform(translateY(0))
-                        }
-                    }
-                }
             }
-        }
-        @media screen and (min-width: $breakpointXSM){
-            .all-view-button{
-                > a{margin-top: 30px !important;}
-            }   
         }
     }
     .swiper-navigation-controls{
@@ -931,7 +891,6 @@ button.swiper-pagination-bullet {
     &-mb-triple{
         .swiper-slide{
             > a{
-                /*position: relative;*/
                 &:after{
                     content:'';
                     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
@@ -991,19 +950,12 @@ button.swiper-pagination-bullet {
                 font-size: 15px;
                 max-width: 210px;
                 @include transition(all .2s ease);
-                @media screen and (min-width: $breakpointXSM){
-                    margin-left: auto;
-                    margin-right: auto;
-                    &:hover{
-                        background: #000;
-                        color: $White;   
-                    }
-                }
             }
         }
     }
 }
 
+/*single desktop*/
 @media screen and (min-width: $breakpointXSM){
     .ems-page-home{
         .main-slider-container{
@@ -1135,14 +1087,23 @@ button.swiper-pagination-bullet {
                 grid-row-end: span 2;
             }
             .ems-grid-brands{
-                @media screen and (min-width: $breakpointXSM){
-                    @include transition(transform .2s ease);
-                    @include setTransform(translateY(0));
-                }
+                @include transition(transform .2s ease);
+                @include setTransform(translateY(0));
             }
             .swiper-button-prev,
             .swiper-button-next,
             .swiper-pagination{display: none;}
+
+            .bnr-button{
+                span{
+                    margin-left: auto;
+                    margin-right: auto;
+                    &:hover{
+                        background: #000;
+                        color: $White;   
+                    }
+                }
+            }
         }
         &-grid{
             .swiper-title{padding-top: 20px; padding-bottom: 20px;}
@@ -1155,7 +1116,7 @@ button.swiper-pagination-bullet {
             }
             .swiper-slide{
                 &-cover{
-                    img{visibility: hidden; opacity: 0; }
+                    img{ visibility: hidden; opacity: 0; }
                 }
                 > a{
                     .text-holder, .text{
@@ -1204,13 +1165,10 @@ button.swiper-pagination-bullet {
         &-full-controls{
             .swiper-button-prev,
             .swiper-button-next{
-                /*display: inline-block !important;*/
                 display: inline-block;
                 background:#f5f5f5;
-                @media screen and (min-width: $breakpointXSM){
-                    &:hover{
-                        background: $red;
-                    }
+                &:hover{
+                    background: $red;
                 }
             }
             .swiper-button-prev{left: -42px;}
@@ -1231,14 +1189,20 @@ button.swiper-pagination-bullet {
         }
         &-social{
             .swiper-slide{
-                > a {
-                    padding: 5px 2.5px;
-                }
+                > a { padding: 5px 2.5px; }
                 .swiper-slide-cover{background-position: center center !important;}
             }
             .swiper-button-prev,
             .swiper-button-next{
                 margin-top: inherit;
+            }
+            .all-view{
+                .btnAlternate{
+                    &:hover{
+                        background: none;
+                        span, i:before{color: $red;}
+                    }
+                }
             }
         }
         &-campaigns {
@@ -1249,13 +1213,43 @@ button.swiper-pagination-bullet {
                 margin-right: 10px;
                 margin-left: 10px;
             }
-            .swiper-wrapper{ justify-content: space-between;}
-             .swiper-slide{ width: 25%; }
+            .swiper-wrapper{ justify-content: space-between; }
+             .swiper-slide{
+                 width: 25%;
+                 .inner{
+                    .text-line{
+                            overflow: hidden;
+                            min-height: 67px;
+                            max-height: 67px;
+                    }
+                    .buton-link{
+                        @include transition(all .2s ease);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 40px;
+                        z-index: 1;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        @include setTransform(translateY(40px));
+                    }
+                    &:hover{
+                        .buton-link{
+                            @include setTransform(translateY(0));
+                        }
+                    }
+                }
+            }
              .swiper-button-prev,
              .swiper-button-next,
              .swiper-pagination{display: none;}
+             .all-view-button{
+                > a{margin-top: 30px !important;}
+            }
         }
     }
+    /*Single banner*/
     .ems-single-banner{
         .swiper-container {
             &-default {
@@ -1315,6 +1309,7 @@ button.swiper-pagination-bullet {
         .swiper-pagination{display: none;}
     }
 }
+
 
 @media screen and (max-width: $breakpointXSM){
     .mobile-swiper-padding{

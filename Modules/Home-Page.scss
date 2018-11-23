@@ -145,15 +145,16 @@
     .ems-page-grid-navigation{
         order: 2;
         ul{
-            display: table;
-            border-bottom: 1px solid $Gray;
+            @include flex();
+            flex-wrap: wrap;
+            justify-content: flex-start;
             width: 100%;
+            border-bottom: 1px solid $Gray;
             li{
                 display: inline-block;
                 vertical-align: middle;
-                text-align: left;
-                margin-left: 3%;
-                &:first-child{margin-left: 0;}
+                text-align: center;
+                flex-basis: 25%;
                 a{
                     display: inline-block;
                     padding: 10px 20px 10px 20px;
@@ -499,8 +500,9 @@
                 font-size: 0;
                 border-bottom: none;
                 display: inherit;
+                justify-content: inherit;
+                flex-wrap: inherit;
                 li{
-                    margin-left: 0;
                     display: block;
                     a{
                         display: block;
