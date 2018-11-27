@@ -142,19 +142,27 @@
     padding-bottom: 50px;
     @include flex();
     @include flexDirection(column);
+    .loader-button{
+        order: 100;
+        display: none;
+        text-align: center;
+        .loader-button-btn{
+            display: inline-block;
+            font-family: $bold;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    &.loader-show{
+        .loader-button{
+            display: block;
+        }
+    }
     .ems-page-grid-navigation{
         order: 2;
-        ul{
-            @include flex();
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            width: 100%;
-            border-bottom: 1px solid $Gray;
+        ul.dropdown{
             li{
-                display: inline-block;
-                vertical-align: middle;
-                text-align: center;
-                flex-basis: 25%;
                 a{
                     display: inline-block;
                     padding: 10px 20px 10px 20px;
@@ -170,7 +178,7 @@
                 &.selected{
                     a{
                         border-bottom: 1px solid $red;
-                    margin-bottom: -1px;
+                        margin-bottom: -1px;
                     }
                 }
             }
@@ -204,10 +212,14 @@
             z-index: 1;
         }
     }
-    > ul{
+    > ul.list{
         order: 3;
         margin-top: 20px;
         li{
+            display: none;
+            &:nth-child(-n+24){
+                display: inline-block;   
+            }
             .inner{
                 padding: 10px 10px 0 10px;
                 position: relative;
@@ -300,16 +312,53 @@
     }
 }
 
-@media screen and (min-width: $breakpointXSM){
-    .ems-container{
-        padding: 0 10px;
+.ems-page-grid-layout.loader-show-more{
+    > ul.list li{
+        display: inline-block;
     }
+    .loader-button{ display: none; }
+}
+
+@media screen and (min-width: $breakpointXSM){
+    .ems-container{ padding: 0 10px; }
 
     /*Kampanyalar*/
     .ems-page-grid-layout{
         .ems-page-grid-navigation{
-            padding-left: 10px;
-            padding-right: 10px;
+            .swiper-container {
+                padding-left: 40px;
+                padding-right: 40px;
+                overflow: visible;
+                border-bottom: 1px solid #e1e1e1;
+                .swiper-slide {
+                    width: 25%;
+                    a{
+                        display: block;
+                        padding: 10px 5px;
+                        text-align: center;
+                        position: relative;
+                        font-size: 14px;
+                        font-family: "avenir-medium";
+                        letter-spacing: 1px;
+                        &:hover{color: $red;}
+                    }
+                    &.selected{
+                        a{
+                            color: $red;
+                            border-bottom:1px solid $red;
+                        }
+                    }
+                }
+                .swiper-button-prev,
+                .swiper-button-next{background: $red; width: 26px; height: 26px; margin-top: -13px}
+                .swiper-button-prev i,
+                .swiper-button-next i{line-height: 27px; font-size: 10px;}
+                .swiper-button-prev i:before,
+                .swiper-button-next i:before{color: #fff; font-size: 10px;}
+                .swiper-button-prev{ left: 10px; }
+                .swiper-button-next{ right: 10px; }
+                .swiper-pagination {display: none !important;}
+            }
         }
         &-title{
             margin-left: 10px;
@@ -335,10 +384,9 @@
                 z-index: 1;
             }
         }
-        > ul{
+        > ul.list{
             li{
                 width: 25%;
-                display: inline-block;
                 vertical-align: top;
                 margin-bottom: 30px;
                 .inner{ 
@@ -494,7 +542,7 @@
                     line-height: 24px;
                 }
             }
-            ul{
+            ul.dropdown {
                 height: 0;
                 overflow: hidden;
                 font-size: 0;
@@ -504,6 +552,7 @@
                 flex-wrap: inherit;
                 li{
                     display: block;
+                    flex-basis: 100%;
                     a{
                         display: block;
                         text-align: left;
@@ -526,7 +575,7 @@
                         @include setTransform(rotateX(180deg));
                     }
                 }
-                ul{
+                ul.dropdown {
                     height: auto;
                     overflow: visible;
                     font-size: inherit;
