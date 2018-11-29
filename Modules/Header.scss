@@ -736,11 +736,15 @@ body.ems-login{
 
 @media screen and (max-width: $breakpointXSM){
 
+    /*Siparis sonuc*/
+    .ems-cart-layout-success{
+        .mbHeader > div.mbCart {display: none;}
+    }
+    
     /*Site kampanya banner*/
     .site-discount-banner > div{padding: 15px 10px;}
     .site-discount-banner > div .text{margin-right: 0; }
-    .site-discount-banner-alternate{min-height: 170px; @include flex(); @include flexDirection(column); justify-content: center;}
-    .site-discount-banner-alternate > div {padding: 10px;}
+    .site-discount-banner-alternate{min-height: auto; height: auto; @include flex(); @include flexDirection(column); justify-content: center;}
     .site-discount-banner-alternate > div .text-multiple{padding: 0; width: 100%;}
     .site-discount-banner-alternate > div .text-multiple .title-1{font-size: 14px;}
     .site-discount-banner-alternate > div .text-multiple .title-2{line-height: normal; font-size: 21px;}

@@ -534,10 +534,13 @@
     }
 
     .ems-cart-layout-success{
-        .mod-mini-login-body{
-            top: 55px;
-            height: calc(100vh - 55px);
-        }
+
+        .site-header{width: initial; height: initial; min-height: initial; font-size: initial; overflow: initial;}
+        .site-header .ems-container-full-top .ems-inline-table > .ems-col.ems-col-2 > .ems-cell-2 > .ems-cell:last-child.desktop-element,
+        .site-header .ems-container-full-top .ems-inline-table > .ems-col.ems-col-2 > .ems-cell-2 > .ems-cell-mobile-login,
+        .ems-page-cart .ems-page-cart-row-1 {display: none;}
+
+        .site-header .ems-container-full-top .ems-inline-table > .ems-col.ems-col-2 > .ems-cell-2{float: right; width: auto;}
     }
 
     .page-cart-empty-layout{
