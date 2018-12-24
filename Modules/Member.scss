@@ -803,6 +803,169 @@ body.member-layout{
     }
 }
 
+.ems-page-member{
+    .pageSitemap{
+        margin-left: auto;
+        .pageHeadersitemap{
+            > span{
+                padding-bottom: 0;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                position: relative;
+                span{
+                    position: relative;
+                    background: #fff;
+                    z-index: 1;
+                    padding-bottom: 0;
+                    display: inline-block;
+                    padding-right: 30px;
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                }
+                .line{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: #e1e1e1;
+                    margin-top: -1px;
+                    @include setTransform(translateY(-50%));
+                }
+            }
+        }
+        .urunKategoriListe{
+            > ul{
+                li{
+                    position: relative;
+                    a{
+                        display: inline-block;
+                    }
+                }
+                > li{
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        background: #fef0f7;
+                        width: 100%;
+                        height: 65px;
+                        top: 0;
+                        left: 0;
+                    }
+                    > a{
+                        padding: 20px 30px;
+                        font-family: $bold;
+                        font-size: 17px;
+                        position: relative;
+                        z-index: 1;
+                        text-transform: uppercase;
+                    }
+                }
+                .seviye1{
+                    @include flex();
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    margin-bottom: 30px;
+                    > li{
+                        margin-top: 20px;
+                        width: 33.333%;
+                        > a{
+                            font-family: $regular;
+                            font-size: 16px;
+                            padding-bottom: 15px;
+                            border-bottom: 1px solid #979797;
+                            width: calc(100% - 20px);
+                        }
+                    }
+                }
+                .seviye2{
+                    margin-top: 25px;
+                    > li{
+                        > a{
+                            padding-top: 6px;
+                            padding-bottom: 6px;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .icerikKategoriListe{
+            ul li b{display: none;}
+            > ul{
+                > li {
+                    > ul {
+                        > li{
+                            position: relative;
+                            margin-top: 25px;
+                            > ul{
+                                margin-top: 25px;
+                                > li > a{
+                                    display: inline-block;
+                                    padding-top: 6px;
+                                    padding-bottom: 6px;
+                                    padding-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 850px){
+    .ems-page-member{
+        .pageSitemap{
+            padding-bottom: 50px;
+            .urunKategoriListe{
+                > ul{
+                    > li{
+                        > a{
+                            font-size: 23px;
+                        }
+                    }
+                    .seviye1{
+                        margin-bottom: 50px;
+                        > li{
+                            margin-top: 40px;
+                            min-width: 200px;
+                            max-width: 200px;
+                        }
+                    }
+                }
+            }
+            .icerikKategoriListe{
+                > ul{
+                    > li {
+                        > ul {
+                            @include flex();
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            > li{
+                                width: 25%;
+                                margin-top: 40px;
+                                > a{
+                                    font-size: 23px;
+                                    font-family: $regular;
+                                    font-size: 16px;
+                                    padding-bottom: 15px;
+                                    border-bottom: 1px solid #979797;
+                                    width: calc(100% - 30%);
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .ems-logoff{
     .pageSifremiUnuttum{
         width: 100%;
@@ -1143,130 +1306,6 @@ body.member-layout{
     .ems-page-member{
         .ems-col-full{
             padding-left: 20px;
-        }
-    }
-}
-
-.corporate-list{
-    > ul{
-        @media screen and (min-width: $breakpointXSM){
-            @include flex();
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-        > li{
-            @media screen and (min-width: $breakpointXSM){
-                display: inline-block;
-                vertical-align: top;
-                &.big{width: 58%;}
-                &.medium{width: 42%;}
-                &.small{width: 33.333%;}
-                > a{
-                    padding: 10px;
-                }
-            }
-            > a{
-                display: block;
-            }
-            .hidden{
-                overflow: hidden;
-                position: relative;
-            }
-            .cover{
-                background-size: cover !important;
-                background-position: top center !important;
-                img{
-                    width: 100%;
-                    opacity: 0;
-                    visibility: hidden;
-                }
-            }
-            .text{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                padding: 5px;
-                > span{
-                    display: block;
-                    line-height: 1;
-                }
-                .big-text{
-                    font-family: $regular;
-                    font-size: 60px;
-                    color: #fff;
-                }
-                .special{
-                    letter-spacing: 3px;
-                    font-size: 18px;
-                    color: #fff;
-                }
-                .btn-view{
-                    margin-top: 30px;
-                    font-family: $regular;
-                    font-size: 16px;
-                    small{
-                        font-family: $regular;
-                        font-size: 16px;
-                        padding-bottom: 5px;
-                        position: relative;
-                        color: #fff;
-                        &:after{
-                            content: '';
-                            width: 0;
-                            height: 1px;
-                            background: #fff;
-                            display: block;
-                            overflow: hidden;
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            @include transition(all .2s ease);
-                        }
-                    }
-                }
-            }
-            &.big, &.medium{
-                .cover{
-                    img{max-height: 600px;}
-                }
-                .text{
-                    width: 80%;
-                    margin-left: auto;
-                    margin-right: auto;
-                    right: 0;
-                    top: 50%;
-                    @include setTransform(translateY(-50%));
-                }
-            }
-            &.small{
-                .cover{
-                    img{
-                        max-height: 600px;
-                    }
-                }
-                .text{
-                    top: 50px;
-                    .big-text{
-                        font-size: 48px;
-                        color: $darkBlack;
-                    }
-                    .btn-view{
-                        small{
-                            color: $darkBlack;
-                            &:after{
-                                background: $lDark;
-                            }
-                        }
-                    }
-                }
-            }
-            > a:hover{
-                .text .btn-view small{
-                    &:after{width: 100%; overflow: visible;}
-                }
-            }
         }
     }
 }
@@ -1812,6 +1851,113 @@ body.member-layout{
                     }
                 }
             }
+            .pageSitemap{
+                padding-left: 20px;
+                padding-right: 20px;
+                .pageHeadersitemap{
+                    display: block;
+                }
+                .urunKategoriListe{
+                    li a{
+                        display: block;
+                    }
+                    > ul{
+                        > li{
+                            margin-bottom: 20px;
+                            &:before{
+                                display: none;
+                            }
+                            &:after{
+                                font-family:'icomoon';
+                                content:'\e920';
+                                font-size:17px;
+                                width: 34px;
+                                height: 34px;
+                                text-align: center;
+                                line-height: 34px;
+                                position: absolute;
+                                top: 15px;
+                                right: 10px;
+                                z-index: 1;
+                            }
+                            > a{
+                                padding: 24px 40px 23px 25px;
+                                display: block;
+                                background: #f5f5f5;
+                            }
+                            &.opened{
+                                > a{
+                                    background: #fef0f7;
+                                }
+                                &:after{
+                                    content:'\e918';
+                                }
+                                .seviye1{
+                                    @include flex();
+                                }
+                            }
+                        }
+                    }
+                    > ul{
+                        .seviye1{
+                            display: none;
+                            > li{
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+                .icerikKategoriListe{
+                    ul{
+                        li{
+                            ul.lev2{
+                                li.sev2 {
+                                    > a{
+                                        padding: 24px 40px 23px 25px;
+                                        display: block;
+                                        background: #f5f5f5;
+                                        font-family: $bold;
+                                        font-size: 17px;
+                                        position: relative;
+                                        z-index: 1;
+                                        text-transform: uppercase;
+                                        &:after{
+                                            font-family:'icomoon';
+                                            content:'\e920';
+                                            font-size:17px;
+                                            width: 34px;
+                                            height: 34px;
+                                            text-align: center;
+                                            line-height: 34px;
+                                            position: absolute;
+                                            top: 15px;
+                                            right: 10px;
+                                            z-index: 1;
+                                        }
+                                    }
+                                }
+                            }
+                            ul.lev3{
+                                display: none;
+                            }
+                        }
+                    }
+                    > ul > li {
+                        > ul > li{
+                            margin-top: 20px;
+                            &.opened{
+                                > a{
+                                    background: #fef0f7 !important;
+                                    &:after{
+                                        content:'\e918' !important;
+                                    }
+                                }
+                                ul.lev3{display: block;}
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -2119,31 +2265,6 @@ body.member-layout{
                             }
                         }
                     }
-                }
-            }
-        }
-    }
-    .corporate-list{
-        > ul {
-            > li {
-                margin-top: 20px;
-                &:first-child{margin-top: 0;}
-                &.big, &.medium{
-                    .text{width: 100%;}
-                    .cover img{max-height: 210px;}
-                }
-                &.small{
-                    .cover img{max-height: 210px;}
-                    .text{
-                        top: 50%;
-                        @include setTransform(translateY(-50%));
-                        .big-text{font-size: 40px;}
-                    }
-                }
-                .text{
-                    .special{font-size: 16px;}
-                    .big-text{font-size: 40px;}
-                    .btn-view{margin-top: 15px;}
                 }
             }
         }
