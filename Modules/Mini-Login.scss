@@ -283,9 +283,10 @@
                     padding:15px 30px;
                     .ems-field-flex{
                         padding-top: 10px;
-                        @include flex();
-                        justify-content: space-between;
+                        /*@include flex();
+                        justify-content: space-between;*/
                         align-items: center;
+                        text-align: center;
                         @media screen and (min-width: $breakpointXSM){
                             margin-left: 35px;
                             margin-right: 35px;
@@ -293,6 +294,8 @@
                     }
                     .ems-field{
                         .seperator {
+                            display: block !important;
+                            margin: 10px 0;
                             span{
                                 font-style: italic;
                                 font-size: 13px;
@@ -308,6 +311,7 @@
                                 display: inline-block;
                                 vertical-align: middle;
                                 .lnkUyeOlmak{
+                                    display: block;
                                     padding-top: 10px;
                                     padding-bottom: 10px;
                                     font-size: 13px;
@@ -365,6 +369,20 @@
                                 text-align: center;
                                 margin-top: 30px;
                             }
+                        }
+                        &-remember {
+                            label {
+                                font-size: 13px;
+                                color: #757575;
+                                font-family: $mediumAA;
+                            }
+                            position: relative;
+                            padding-left: 25px;
+                        }
+                        &-checkLogin {
+                            @include flex;
+                            justify-content: space-between;
+                            align-items: center;
                         }
                     }
                     .pageLogin_btnFacebookLoginKutu{

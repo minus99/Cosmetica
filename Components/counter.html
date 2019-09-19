@@ -1,0 +1,37 @@
+<script type="text/javascript" src="/UPLOAD/js/jquery.countdown.js"></script>
+<script type="text/javascript" src="/UPLOAD/js/jquery.countdown-tr.js"></script>
+<script type="text/javascript">// <![CDATA[
+(function(){
+	var e = $('.main-slider [data-countdown]');
+	if( e.length > 0 ){
+		
+		e
+		.each(function(){
+            var ths = $( this ), c = ths.attr('data-countdown'), d = new Date( c );
+			
+				ths.find('.countdown').countdown({ until: d, alwaysExpire: true, onExpiry: function(){ $( this ).parent('.countdown-wrp').addClass('end-campaing'); } });
+        });
+	}	
+}());
+// ]]></script>
+<style>
+@media screen and (min-width:800px) {
+ 
+
+.countdown-wrp {    position: absolute;    top: 0;    right: 0;    background-color: #ad002d;}
+.countdown-wrp * {color: #fff;}
+.countdown-wrp > span {    display: block;    text-align: center;    font-size: 16px;    margin-top: 10px;}
+.countdown-wrp .countdown .countdown_row {display: block;}
+.countdown-wrp .countdown .countdown_row .countdown_section {    padding: 5px 10px;    font-size: 14px;    display: inline-block;}
+.countdown-wrp .countdown .countdown_row .countdown_section br {    display: none;}
+.countdown-wrp .countdown .countdown_row .countdown_section span {    font-size: 18px;    margin-right: 3px;}
+.countdown-wrp.end-campaing > * {    display: none;}
+.countdown-wrp.end-campaing:before {content: 'Kampanya sona ermiştir.';color: #fff;padding: 10px;display: block;}
+}
+@media screen and (max-width:800px) {
+ 
+
+.countdown-wrp {    display:none;}
+
+}
+</style>

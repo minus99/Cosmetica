@@ -88,7 +88,8 @@
         > ul{
             width: 100%;
             max-width: 100%;
-            display: table;
+            display: flex;
+            justify-content: space-around;
             text-align: left;
             > li{
                 display: table-cell;
@@ -149,6 +150,15 @@
                         transform: translateY( 0px );
                         animation: menuSlideDown .2s cubic-bezier(0.230, 1.000, 0.320, 1.000);
                     }
+                }
+                &.order-11 {
+                    order: 1;
+                }
+                &.order-13 {
+                    order: 13;
+                }
+                &.order-1 {
+                    order: 14;
                 }
             }
         }

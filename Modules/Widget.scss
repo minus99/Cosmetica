@@ -208,6 +208,14 @@
                             span{color: $red;}
                         }
                     }
+                    &.tumUrunler {
+                        a {
+                            span {
+                                font-family: $bold;
+                                color: $Blue; 
+                            }
+                        }
+                    }
                 }
             }
             .content-js{
