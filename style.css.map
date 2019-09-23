@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "style.css",
+	"file": "genel.css",
 	"sources": [
-		"style.scss",
+		"genel.scss",
 		"Shared/Helpers/Vendor.scss",
 		"Shared/Helpers/Variables.scss",
 		"Shared/Helpers/Mixins.scss",

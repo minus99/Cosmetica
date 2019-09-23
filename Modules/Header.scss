@@ -37,27 +37,27 @@
                     > .ems-col{
                         &.ems-col-1{
                             float: left;
-                            width: 225px;
+                            width: 215px;
                             display: table;
                             padding-right: 10px;
                         }
                         &.ems-col-2{
                             display: table;
                             table-layout: fixed;
-                            width: calc(100% - 227px);
+                            width: calc(100% - 215px);
                             > .ems-cell {
                                 float: left;
                                 display: table;
                                 table-layout: fixed;
                                 &-1{
-                                    width: 60%;
-                                    max-width: 595px;
+                                    width: 50%;
+                                    max-width: 490px;
                                     padding-bottom: 10px;
                                     padding-top: 10px;
                                 }
                                 &-2{
-                                    width: 40%;
-                                    padding-left: 40px;
+                                    width: 50%;
+                                    padding-left: 20px;
                                     > .ems-cell{
                                         display: table-cell;
                                         vertical-align: middle;
@@ -74,6 +74,15 @@
                         }
                     }
                 }
+            }
+        }
+        .hd-blog-hrf{
+            text-align: center;
+            display: block;
+            span{
+                font-family: "avenir-bold";
+                display: inline-block;
+                color: #ee0676;
             }
         }
     }
